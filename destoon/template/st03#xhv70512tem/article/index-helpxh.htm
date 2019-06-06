@@ -1,0 +1,104 @@
+{template 'header-help'}
+<div class="layout banner">
+  <div class="gallery">
+    <ul>
+      <li> <img src="{DT_SKIN}image/help/helpbg.jpg" height="300" width="1200" alt=""> </li>
+    </ul>
+  </div>
+  <div class="h-search">
+    <h1>客服服务热线：{$DT[telephone]}</h1>
+    <form id="destoon_search" action="{$MOD[linkurl]}search.php" onsubmit="return Dsearch(1);">
+      <input type="hidden" name="moduleid" value="{$moduleid}" id="destoon_moduleid"/>
+      <input type="hidden" name="spread" value="0" id="destoon_spread"/>
+      <div class="h-search-box">
+        <input name="kw" id="destoon_kw" type="text" class="h-search-txt" placeholder="搜搜您的问题" />
+      </div>
+      <input type="submit" class="h-search-btn" value="搜索" />
+    </form>
+    <div class="search-all">有任何问题都可以随时查询 ，或是直接联系<a href="{DT_PATH}about/contact.html" title="在线客服">&nbsp;在线客服 <span style="font-family:SimSun;font-weight:bold;">&gt;</span></a> </div>
+  </div>
+</div>
+<!-- main -->
+<div class="layout">
+  <div class="w900 fl">
+    <div class="unit-hd">
+      <h3>新手指南</h3>
+    </div>
+    <div class="unit novice-guide">
+      <div class="ng-item"> <a href="{cat_url(9772)}" class="ng-box">
+        <div class="ng-icon"> <i class="i-1 i-icon2"></i> </div>
+        <p class="ng-title">注册/登录</p>
+        </a> </div>
+      <div class="ng-item"> <a href="{cat_url(9774)}" class="ng-box">
+        <div class="ng-icon"> <i class="i-2 i-icon2"></i> </div>
+        <p class="ng-title">搜索产品</p>
+        </a> </div>
+      <div class="ng-item"> <a href="{cat_url(9795)}" class="ng-box">
+        <div class="ng-icon"> <i class="i-3 i-icon2"></i> </div>
+        <p class="ng-title">联系供应商</p>
+        </a> </div>
+      <div class="ng-item"> <a href="{cat_url(9775)}" class="ng-box">
+        <div class="ng-icon"> <i class="i-4 i-icon2"></i> </div>
+        <p class="ng-title">安全交易</p>
+        </a> </div>
+      <div class="ng-item"> <a href="{cat_url(9773)}" class="ng-box">
+        <div class="ng-icon"> <i class="i-5 i-icon2"></i> </div>
+        <p class="ng-title">信息</p>
+        </a> </div>
+      <div class="line"></div>
+    </div>
+    <div class="unit-hd">
+      <h3>自助服务</h3>
+    </div>
+    <div class="unit self-service clf">
+      <div class="ss-item"> <a href="{$MODULE[2][linkurl]}send.php" target="_blank" class="ss-box"> <i class="i-icon i-psw"></i>
+        <p class="ss-title">找回密码</p>
+        </a> </div>
+      <div class="ss-item"> <a href="{$MODULE[2][linkurl]}edit.php" target="_blank" class="ss-box"> <i class="i-icon i-safe"></i>
+        <p class="ss-title">个人资料</p>
+        </a> </div>
+      <div class="ss-item"> <a href="{$MODULE[2][linkurl]}home.php" target="_blank" class="ss-box"> <i class="i-icon i-club"></i>
+        <p class="ss-title">商铺管理</p>
+        </a> </div>
+      <div class="ss-item last"> <a href="{$EXT[guestbook_url]}" target="_blank" class="ss-box"> <i class="i-icon i-ask"></i>
+        <p class="ss-title">问题反馈</p>
+        </a> </div>
+    </div>
+    <div class="unit-hd">
+      <h3>热点问题</h3>
+    </div>
+    <div class="unit hot">
+      <ul class="hot-list clf">
+      <!--{tag("moduleid=$moduleid&condition=status=3&pagesize=10&cols=2&order=hits desc&template=xiaohei-helplist")}-->
+      </ul>
+    </div>
+  </div>
+  <div class="w280 fl ml-20">
+    <div class="unit-hd">
+      <h3>问题栏目</h3>
+    </div>
+    <div class="unit side" style="width: 247px;">
+      <ul class="menu">
+       {php $mid = $moduleid;}
+  {php $child = get_maincat(0, $mid, 1);}
+   {loop $child $i $c}
+        <li class="m-item sub-menu-a current" id="h_{$i}"> <a href="{$MODULE[$mid][linkurl]}{$c[linkurl]}" class="m-hd" target="_blank">{set_style($c[catname], $c[style])}</a><i class="i-arrow"></i>
+        <div class="sub-menu-b" id="sub_{$i}" style="display:none">
+          <ul>
+           {if $c[child]}
+{php $sub = get_maincat($c[catid], $mid, 1);}
+{loop $sub $j $s}
+   <li class="s-item"><a class="s-link " href="{$MODULE[$mid][linkurl]}{$s[linkurl]}">{set_style($s[catname], $s[style])}</a></li>
+              {/loop}
+              {/if}
+          </ul>
+        </div>
+        </li>
+        {/loop}
+      
+      </ul>
+      
+    </div>
+  </div>
+</div>
+{template 'footer-mini'}

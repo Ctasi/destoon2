@@ -1,0 +1,162 @@
+{template 'header'} 
+<script type="text/javascript">var sh = '{$MOD[linkurl]}search.php?catid={$catid}';</script> 
+<script type="text/javascript" src="{DT_SKIN}js/category_list.js"></script>
+<div class="wrapper mt20 clear">
+<div class="main-content clear">
+  <div class="sort-filter ">
+    <div class="sf-hot">
+      <h3>你现在的位置：</h3>
+      <ul>
+        <li><a href="{$MODULE[1][linkurl]}" target="_self">首页</a> » <a href="{$MOD[linkurl]}">{$MOD[name]}</a> » {cat_pos($CAT, ' » ')} {$kw}</li>
+        <li class="fr mr-10">共找到 <b class="red">{$items}</b> 条<strong class="red"> {$CAT[catname]} </strong> 产品信息</li>
+      </ul>
+    </div>
+    <div class="sf-content">
+      <h3>分&nbsp;&nbsp;类：</h3>
+      <div class="sf-link">
+        <div class="zk close">
+          <ul>
+            <li><a  href="{$MOD[linkurl]}" class="current">全部</a></li>
+             {php $mid = $moduleid;}
+				{php $child = get_maincat(0, $mid, 1);}
+				{loop $child $i $c}
+            <li><a {if $c[catid]==$catid} class="current"{/if} href="{$MOD[linkurl]}{$c[linkurl]}" target="_self">{$c[catname]}{if !$cityid} <span>{$c[item]}</span>{/if}</a></li>
+            {/loop}
+    </ul>
+    <a class="more theca" href="javascript:void(0)">更多</a>
+     </div>
+      </div>
+    </div>
+    <div class="sf-content">
+      <h3>区&nbsp;&nbsp;域：</h3>
+      <div class="sf-link sf-unfold">
+        <div class="zk close">
+          <ul>
+            <li><a href="{$MOD[linkurl]}" class="current">全部</a></li>
+            {php $mainarea = get_mainarea(0)}
+            {loop $mainarea $k $v}
+            <li><a href="{$MOD[linkurl]}search.php?areaid={$v[areaid]}&catid={$catid}" {if $v[areaid]==$areaid} class="current"{/if}>{$v[areaname]}</a></li>
+            {/loop}
+          </ul>
+          <a class="more theca" href="javascript:void(0)">更多</a> </div>
+      </div>
+    </div>
+    <div class="sf-content">
+      <h3>类&nbsp;&nbsp;别：</h3>
+      <div class="sf-link">
+        <ul>
+          <li><a  href="{$MOD[linkurl]}" class="current">全部</a></li>
+          {loop $TYPE $k $v}
+          <li><a href="javascript:Go('{$MOD[linkurl]}{rewrite('search.php?typeid='.$k.'&catid='.$catid)}');" {if $typeid==$k}class="current"{/if}>{$v}</a></li>
+          {/loop}
+        </ul>
+      </div>
+    </div>
+    {if $CP}{template 'property_search', 'chip'}{/if} 
+    <div class="hot_search"> <span class="fl">热门搜索：</span>
+        <div class="fl">
+          <ul>
+            <!--{tag("moduleid=$searchid&table=keyword&condition=moduleid=$searchid and status=3&pagesize=18&order=total_search desc&template=list-search_kw")}-->
+          </ul>
+        </div>
+        <div class="fr">
+         <select onchange="Go(sh+'&typeid='+this.value)">
+            <option value="">信息类型</option>
+            <option value="0">求购</option>
+            <option value="1">求购二手</option>
+            <option value="2">寻求加工</option>
+            <option value="3">寻求合作</option>
+            <option value="4">招标</option>
+          </select>
+          <select onchange="Go(sh+'&vip='+this.value)">
+            <option value="0" selected="selected">安全速采</option>
+            <option value="1">vip采购</option>
+          </select>
+          <select onchange="Go(sh+'&day='+this.value)">
+            <option value="0">更新时间</option>
+            <option value="1">1天内</option>
+            <option value="3">3天内</option>
+            <option value="7">7天内</option>
+            <option value="15">15天内</option>
+            <option value="30">30天内</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <!--列表开始-->
+  <div class="clear purpose-main" style="position: relative"> 
+    <!--左边列表 开始-->
+    <div class="purposes-l">
+      <div class="showlist ">
+        <ul>
+          {if $page==1 && $kw}
+      {ad($moduleid,$catid,$kw,6)}
+      {load('m'.$moduleid.'_k'.urlencode($kw).'.htm')}
+      {/if}
+          {if $tags}
+          {template 'xiaohei-buylist', 'tag'}
+          {else}
+	       {template 'empty', 'chip'}
+          {/if}
+        </ul>
+      </div>
+    </div>
+    <!--左边列表 end--> 
+    <!--右边推荐开始-->
+    <div class="purposes-r">
+      <div class="order">
+        <p class="title-new"><span class="fir">免费</span><span class="sec">委托找货</span></p>
+        <div class="progress-wrap"> <span class="step  inline-block">填写需求</span> <span class="step-split inline-block"></span> <span class="step step2  inline-block">选择报价</span> <span class="step-split  inline-block"></span> <span class="step step3  inline-block">交易成功</span> </div>
+        <p class="try">快来试试</p>
+      <a href="{$MODULE[2][linkurl]}{$DT[file_my]}?mid=6&action=add" class="button" rel="nofollow">我要委托找货</a> </div>
+      <div class="purposes-r">
+        <div class="trade">
+          <div class="head"> <span>最新<span class="sec">{$MOD[name]}</span></span> </div>
+          <div class="clear">
+            <ul class="purposes-trade-detail">
+ <!--{php $tags=tag("moduleid=$moduleid&length=24&condition=status=3&areaid=$cityid&pagesize=15&order=addtime desc&template=null");}-->
+{loop $tags $k $t}
+              <li class="row show-trade-info-all">
+               <span class=" inline-block content-new ellipsis"><a href="{$t[linkurl]}" target="_blank" title="{$t[alt]}">{$t[title]} </a></span> 
+               <span class=" inline-block status ellipsis"> <span class="so">{area_pos($t[areaid], '')}</span> </span> 
+               <span class=" inline-block time ellipsis"> <?php
+$ti = $DT_TIME - $t[edittime];
+$di = floor($ti/60/60/24);
+$hi = floor($ti/60/60);
+$ii = floor($ti/60);
+$si = floor($ti/1);
+if(1<$di){
+echo "$di 天前";
+}
+elseif(1<$hi)
+{
+echo "$hi 时前";
+}
+elseif(1<$ii)
+{
+echo "$ii 分前";
+}
+elseif(1<$si)
+{
+echo "$si 秒前";
+}
+?>  </span> 
+               </li>
+               {/loop}
+            </ul>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+
+  {if $showpage && $pages}
+  <div class="pages clear">{$pages}</div>
+  {/if} 
+ 
+</div>
+</div>
+<div class="clear"></div>
+<!--底部版权--> 
+
+{template 'footer'}

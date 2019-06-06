@@ -1,0 +1,8 @@
+﻿ {loop $tags $i $t}
+  {if $i%3==0}<div class="buy-list">{/if}        
+    <div class="{if $i%3==2}b_m0 {/if}buy-item">        
+    <p class="info-index"> <span class="fcolor">【采购】</span> <span class="title-index"><a href="{$t[linkurl]}" target="_blank" alt="{$t[alt]}" title="{$t[alt]}">{$t[title]}</a></span> <b class="fcolor ml10">{group_name($t[groupid])}报价</b> </p>
+     <div class="clearfix row"> <a href="{$t[linkurl]}" target="_blank" rel="nofollow" class="ksbtn" alt="{$t[alt]}" title="立即报价">立刻报价</a> <span class="lowestPriceWarp"> <span class="fl ">采购地区：</span> <span> <b>{area_pos($t[areaid], '', 1)}</b> </span> </span> <span class="lowestPriceWarp"> <span>采购数量：</span> <span> <b>{if $t[amount]}{$t[amount]}{else}大量{/if}</b> </span> </span> <span class="lowestPriceWarp"> <span>截止日期：</span><b>{timetodate($t[totime], 3)}</b> </span> </div>         
+      </div>           
+	{if $i%3==2}</div>{/if}		
+{/loop} 

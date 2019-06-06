@@ -1,0 +1,42 @@
+{loop $tags $k $t}
+<div class="pcmp-itembox">
+  <div class="infobox">
+    <div class="maininfo clearfix">
+      <div class="proinfo">
+        <div class="proname"><a href="{$t[linkurl]}" target="_blank" class="gsm">{$t[company]}</a> {if $t[validated]}&nbsp;<i title="已经通过企业信息认证" class="okvali"></i>{/if}</div>
+        <div class="comintro">
+          <ul>
+            <li class="pro">
+              <label>主营产品:</label>{dsubstr($t[business],40,'...')}</li>
+            <li class="bus">
+              <label>经营模式:</label>{$t[mode]}
+              <label>会员类型:</label><i class="red">{group_name($t[groupid])}</i></li>
+            <li class="cont"><label>联系电话:</label>
+          {$t[telephone]}&nbsp;{if $t[username] && $DT[im_web]}{im_web($t[username].'&mid='.$moduleid.'&itemid='.$t[itemid])}&nbsp;{/if}
+          {if $t[qq] && $DT[im_qq]}{im_qq($t[qq])}&nbsp;{/if}
+          {if $t[wx] && $DT[im_wx]}{im_wx($t[wx])}&nbsp;{/if}</li>
+            <li class="addr"><label>地&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;址:</label>{$t[address]}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="picbox">
+    <div class="maininfo clearfix">
+      <div class="proshow">
+        <ul>
+          <!--{php $tags=tag("moduleid=5&length=20&condition=status=3 and username='".$t[username]."'&areaid=$cityid&pagesize=3&order=edittime desc&template=null");}--> 
+          {loop $tags $k $t}
+          <li>
+            <dl>
+              <dt><a href="{$t[linkurl]}" target="_blank"><img src="{if $t[thumb]}{str_replace('thumb', 'middle', $t[thumb])}{else}{DT_SKIN}image/nopic100.gif{/if}" alt="{$t[alt]}" width="120" height="120" onerror="this.src='{DT_SKIN}image/nopic100.gif'"></a></dt>
+              <dd><a href="{$t[linkurl]}" title="{$t[alt]}" target="_blank">{$t[title]}</a></dd>
+            </dl>
+          </li>
+          {/loop}
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+{/loop} 

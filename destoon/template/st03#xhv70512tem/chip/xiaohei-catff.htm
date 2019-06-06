@@ -1,0 +1,16 @@
+{php $child = get_maincat($c[catid], 5,1);}
+{loop $child $i $c}
+{if $i < 8}
+<li>
+<h3><a href="{$MODULE[5][linkurl]}{$c[linkurl]}" target="_blank" title="$c[catname]}" rel="nofollow"><strong>{set_style($c[catname], $c[style])}</strong></a></h3>
+{if $c[child]}
+{php $sub = get_maincat($c[catid], 5, 1);}
+<p>
+{loop $sub $j $s}{if $j < 4} <a rel="nofollow" target="_blank" href="{$MODULE[5][linkurl]}{$s[linkurl]}" title="{$s[catname]}">{set_style($s[catname], $s[style])}</a> {/if}
+{/loop}
+</p>
+{/if}
+</li>
+{/if}
+{/loop}
+

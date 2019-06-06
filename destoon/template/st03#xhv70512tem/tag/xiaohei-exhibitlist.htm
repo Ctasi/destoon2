@@ -1,0 +1,20 @@
+  {loop $tags $i $t}
+    <div class="arc-list">
+      <dl>
+        <dt><a href="{$t[linkurl]}" target="_blank"><img alt="{$t[alt]}" src="{if $t[thumb]}{str_replace('thumb', 'middle', $t[thumb])}{else}{DT_SKIN}image/nopic200.gif{/if}" onerror="this.src='{DT_SKIN}image/nopic200.gif'"></a></dt>
+        <dd>
+          <div class="arc-details-h">
+            <h3> <a href="{$t[linkurl]}" title="{$t[alt]}" target="_blank"> <span class="pic_title">{$t[title]}</span> </a> </h3>
+            <p> {dsubstr($t[introduce], 140, '..')} </p>
+          </div>
+          <div class="left">
+         <?php $lasted_day =(strtotime(timetodate($t[fromtime], 3))-strtotime(date('Y-m-d')))/3600/24;?>
+          <div class="bq"><span>地点：</span>{$t[address]} {if $t[totime] > $DT_TIME}{if $lasted_day>0} &nbsp;&nbsp; <font class="daojs">离开展还有 {$lasted_day} 天</font>{else}<font class="yiks">已经开展</font>{/if} {else}&nbsp;&nbsp; <font class="jies">展会已结束</font>{/if}</div>
+          </div>
+          <div class="interaction right"> <a class="date" href="javascript:void(0);">{timetodate($t[fromtime], 3)}</a> <a class="yuedu" href="javascript:void(0);">已有 {$t[hits]} 人围观</a> </div>
+          <div class="clear"></div>
+        </dd>
+      </dl>
+      <div class="clear"></div>
+    </div>
+  {/loop}

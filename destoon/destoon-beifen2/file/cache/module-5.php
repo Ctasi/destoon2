@@ -1,0 +1,1 @@
+<?php defined('IN_DESTOON') or exit('Access Denied'); return array ('moduleid' => '5','name' => '供应','moduledir' => 'sell','module' => 'sell','ismenu' => '1','domain' => '','linkurl' => 'http://destoon.yzt-tools.com/sell/','mobile' => 'http://destoon.yzt-tools.com/mobile/sell/',); ?>

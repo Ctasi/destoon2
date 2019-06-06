@@ -1,0 +1,114 @@
+@charset "utf-8";
+/*
+ST03-CSS-xiaohei-qq:290948585-dtmuban.com-20180414 v7
+*/
+.exh_rec {padding:0 0 10px 0;background:#FFFFFF;border: 1px solid #e5e5e5;border-top: 0;border-radius: 0 0 3px 3px;}
+.exh_rec ul {border-bottom: #DDDDDD 1px dashed;}
+.exh_rec a {font-weight:bold;font-size:14px;}
+.exh_rec li {color:#666666;padding:0 5px 0 5px;height:23px;line-height:23px;overflow:hidden;}
+.exh_month {width:145px;height:150px;padding:10px 0 0 15px;overflow:hidden;}
+.exh_month div {float:left;width:36px;height:25px;line-height:25px;border:#DDDDDD 1px solid;background:url('image/pos.gif') repeat-x;margin:0 10px 10px 0;text-align:center;}
+.ctb {background:#DDDDDD;}
+.ltd {width:100px;text-align:center;background:#F3F3F3;font-weight:bold;color:#333333;}
+.rtd {background:#FFFFFF;}
+
+/*展会首页*/
+/*展会预告*/
+.yg {width:400px;margin-left:20px}
+.yg-1 {width:100px;}
+.yg-2 {width:300px;}
+.yg-3 {width:120px;}
+/*展会合作*/
+.exhibit_01 {margin:0 10px 0 10px;padding:4px 0 3px 0;border-top:1px solid #FAFAFA;}
+.exhibit_01 li {font-size:12px;height:25px;line-height:25px;overflow:hidden;font-size:14px;}
+.exhibit_02 {padding:3px 0 0 0;overflow:hidden;    margin-bottom: 10px;}
+.exhibit_02 li {float:left;width:125px;margin:0 0 0 10px;font-size:14px;height:32px;line-height:32px;}
+.exhibit_02 li a {color:#FFFFFF;}
+.exhibit_03 {background:#0193DE;color:#FFFFFF;border:none;border-radius:3px;text-align:center;}
+.exhibit_03:hover {background:#5E94DD;color:#FFFFFF;border:none;border-radius:3px;text-align:center;} 
+.exhibit_04 {background:#FF6600;color:#FFFFFF;border:none;border-radius:3px;text-align:center;}
+.exhibit_04:hover {background:#F18B1C;color:#FFFFFF;border:none;border-radius:3px;text-align:center;} 
+/*展会速搜*/
+.exhibit_5 {padding:0 10px 6px 0;}
+.exhibit_5 ul {height:36px;line-height:36px;overflow:hidden;}
+.exhibit_5 li {float:left;height:36px;line-height:36px;overflow:hidden;}
+.exhibit_6 {width:280px;font-size:14px;padding:11px 0 11px 0;margin:10px 0 10px 0;background:#0193DE;color:#FFFFFF;border:none;border-radius:3px;text-align:center;}
+.exhibit_6:hover {width:280px;font-size:14px;padding:11px 0 11px 0;margin:10px 0 10px 0;background:#5E94DD;color:#FFFFFF;border:none;border-radius:3px;text-align:center;} 
+/*广告图*/
+.z_w_01 {width:300px;}
+/*20160504以下是列表页*/
+.left{ float: left;}
+.right{ float:right;}
+.interaction{float:right;line-height:14px;}
+.interaction a{margin-left:15px;background:url(image/zh/ico.png) no-repeat;padding-left:20px;color:#999; font-size:12px;height:14px;display:inline-block;float:left;}
+/**阅读**/
+.interaction a.yuedu{background-position:0px -230px;}
+.interaction a.yuedu:hover{color:#999;cursor:default;}
+/**时间**/
+.interaction a.date{background-position:0px -1217px;}
+.interaction a.date:hover{color:#999;cursor:default;}
+/**标签**/
+.bq{line-height:14px;font-size:12px;}
+.bq span{color:#999;}
+.bq a{font-size:12px; color:#E26464;margin-left:10px;}
+/**面包屑**/
+.bread{height: 48px;line-height: 48px;font-size: 14px;color:#5E5E5E;border-bottom: 1px solid #e5e5e5;padding: 0 10px;}
+.bread a{padding:0px 5px;color:#5E5E5E;}
+.bread em{padding:0px 5px;}
+/*列表*/
+.g-mb-30 { margin-bottom:30px;}
+.g-mb-10 { margin-bottom:10px;}
+.g-mb-20 { margin-bottom:20px;}
+.ad1 {width:336px;}
+.ico{background:url(image/zh/ico.jpg) no-repeat;}
+.zh-left{width: 875px;overflow:hidden;background-color: #fff;border-radius:3px;border: 1px solid #e5e5e5;}
+.hot{background-color:#f7f7f7;}
+.arc-list{padding: 15px 15px;font-size:12px;border-bottom:1px solid #f5f5f5;}
+.arc-list h2{font-size:14px;margin-bottom:15px;color:#cc0000;width:85px;height:30px;line-height:30px;display:block;background-color:#c33;text-align:center;color:#fff;}
+.arc-list dl dt{float:left;width:195px;height:130px;overflow:hidden;margin-right:15px;border: 1px solid #f5f5f5;}
+.arc-list dl dt img{width:195px;height:130px;overflow:hidden;}
+.arc-list dl dd{display:block;}
+/*.arc-list dl dd h3{margin-bottom:10px;line-height:22px;}*/
+.arc-list dl dd h3 a{font-size:20px;padding-bottom:10px;display:block;font-weight:bold;}
+.arc-list dl dd h3 a:hover{color:#cc0000; text-decoration:none;}
+.arc-list dl dd p{line-height:28px;display:block;color:#666; font-size:14px;}
+.arc-details-h{height: 110px;}
+
+.daojs{background-color: #ff2726; padding: 0px 4px;color: #fff;}
+.yiks{background-color: #4CAF50; padding: 0px 4px;color: #fff;}
+.jies{background-color: #999; padding: 0px 4px;color: #fff;}
+/*列表右边*/
+.zh-right{width: 300px;overflow:hidden;}
+.r-box{margin-bottom: 20px;width: 298px;border: 1px solid #DADADA;background-color: #fff;border-radius:3px;}
+.r-box-content{width: 268px;padding:0px 15px 5px 15px;background-color: #fff;}
+.category-zh{border-bottom:1px solid #DADADA;height:39px;line-height:39px;padding-left:15px;background-color:#fff;}
+.category-zh h2{font-size:18px;color: #333333;font-weight: bold;}
+.category-zh h2 a{font-size:18px;color: #333333;font-weight: bold;}
+.tuijian dl{float:left;padding: 10px;}
+.tuijian dl dt a{display:block;}
+.tuijian dl dt img{width:140px;height:93px;overflow:hidden;}
+.tuijian dl dd{line-height:24px;font-size:12px;padding-top:5px;width: 142px;overflow: hidden;}
+
+.foucs { width: 334px;overflow:hidden; margin-bottom: 5px;position: relative;}
+
+/**专题策划**/
+.new_r_titx_tit{line-height:40px;height:40px;color:#000;white-space:nowrap;width: 268px;overflow:hidden;text-overflow: ellipsis;font-size: 14px;}
+.new_r_titx_tit a{font-weight:bold;}
+.new_r_titx{padding-bottom: 5px;border-bottom: #DDDDDD 1px dashed;}
+.new_r_titx dl{display:inline-block;}
+.new_r_titx dl.ch{padding-bottom:5px;}
+.new_r_titx dl dt{color:#808080;line-height:24px;}
+.new_r_titx dl dt a{color:#666;font-size:12px;}
+.new_r_titx dl dd{height:73px;width:110px;padding-right:15px;}
+.new_r_titx dl dd a{display:block;}
+.new_r_titx p a{color:#666;}
+.new_r_titx img{width:110px;height:73px;overflow:hidden;}
+
+/**排行**/
+.new_ph_zh{width: 268px;padding:15px;}
+.new_ph_zh ul li{display:block;line-height:32px;font-size: 14px;}
+.new_ph_zh ul li a{white-space:nowrap;width:240px;display:block;overflow:hidden;text-overflow:ellipsis;float:left;}
+.new_ph_zh ul li.l36{line-height:36px;}
+.new_ph_zh ul li.h30{height:30px;margin-bottom:5px;}
+.new_ph_zh ul li span{width:16px;line-height:16px;height:16px;display:block;color:#FFF;text-align:center;background:#666;font-size:12px; margin-right:10px; margin-top:10px; float:left;}
+.new_ph_zh ul li span.g-hong{background:#cc0000;color:#fff;}

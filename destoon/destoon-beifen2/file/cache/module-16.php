@@ -1,0 +1,1 @@
+<?php defined('IN_DESTOON') or exit('Access Denied'); return array ('moduleid' => '16','name' => '商城','moduledir' => 'mall','module' => 'mall','ismenu' => '1','domain' => '','linkurl' => 'http://destoon.yzt-tools.com/mall/','mobile' => 'http://destoon.yzt-tools.com/mobile/mall/',); ?>

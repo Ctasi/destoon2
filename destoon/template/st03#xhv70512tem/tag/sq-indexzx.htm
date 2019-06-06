@@ -1,0 +1,6 @@
+ {loop $tags $i $t}  
+ <li class="post-item fd-clr">
+        <a class="post-category" href="{$t[caturl]}" target="_blank">[{$t[catname]}]</a>
+        <a href="{$t[linkurl]}" target="_blank" class="post-title">{$t[title]}</a><span class="click-count">{$t[hits]}</span></li>
+		{/loop}
+

@@ -1,0 +1,21 @@
+<ul>
+{loop $tags $i $t}
+<li class="catlist_li">
+<table>
+<tbody><tr>
+             <td align="left" colspan="2"><a href="{$t[linkurl]}" target="_blank"><strong>{$t[title]}</strong></a></td>
+</tr>
+<tr align="center">
+                 <td align="left" class="thumb"><a href="{$t[linkurl]}" target="_blank"><img src="{if $t[thumb]}{str_replace('thumb', 'middle', $t[thumb])}{else}{DT_SKIN}image/nopic100.gif{/if}" width="140" height="90" alt="{$t[alt]}" onerror="this.src='{DT_SKIN}image/nopic100.gif'"></a></td>
+                 <td align="left"> 
+<ul style="font-size: 13px;color: #666;width: 665px;padding-left: 15px;">
+ <li>{dsubstr($t[introduce], 200, '…')} </li>
+<li class="f_gray"><span class="f_r"><a href="{$t[linkurl]}" target="_blank" style="font-size: 14px;">阅读全文</a> </span>{if $datetype}{timetodate($t[addtime], $datetype)}{/if}</li>
+</ul>
+             </td>
+</tr>
+</tbody></table>
+<li class="catlist_sp">&nbsp;</li>
+{/loop}
+</ul>
+{if $showpage && $pages}<div class="pages">{$pages}</div>{/if}

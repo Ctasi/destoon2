@@ -1,0 +1,26 @@
+<script type="text/javascript">
+    var destoon_uname = get_cookie('username');
+    document.write('<div class="user-header">');
+    document.write('<a class="head-picnew" target="_blank" href="{$MODULE[2][linkurl]}"><img src="'+DTPath+'api/avatar/show.php?size=large&reload={DT_TIME}&username='+destoon_uname+'" width="50" height="50"/></a>');
+    document.write('<div class="head-text">');
+    if(get_cookie('auth')) {
+      document.write('<span class="say-hello">Hi,'+destoon_uname+'</span><span class="last-login">欢迎您回来!</span>');
+    } else {
+      if(destoon_uname) {
+        document.write('<span class="say-hello">Hi,'+destoon_uname+'</span><span class="last-login"><a href="{$MODULE[2][linkurl]}{$DT[file_login]}">登录</a></span>');
+      } else {
+        document.write('<span class="say-hello">Hi,请登录</span><span class="last-login">免费注册送豪礼！</span>');
+      }
+    }
+    document.write('</div>');
+    document.write('</div>');
+    if(get_cookie('auth')) {
+      document.write('<div class="operation"><ul class="register_after"><li><a href="{$MODULE[2][linkurl]}" target="_blank" title="进入会员中心" rel="nofollow">进入会员中心</a></li><li><a href="{$MODULE[2][linkurl]}{$DT[file_my]}?mid=5&action=add" target="_blank" title="发布信息" rel="nofollow">发布信息</a></li><li><a href="{$MODULE[2][linkurl]}home.php" target="_blank" title="管理商铺" rel="nofollow">管理商铺</a></li><li><a href="{$MODULE[2][linkurl]}logout.php" title="注销登陆" rel="nofollow">注销登陆</a></li></ul></div>');
+    } else {
+      if(destoon_uname) {
+    document.write('<div class="operation"><div><a href="{$MODULE[2][linkurl]}{$DT[file_login]}" target="_blank" class="login-btn fl" rel="nofollow">登录</a><a href="{$MODULE[2][linkurl]}{$DT[file_register]}" target="_blank" class="regist-btn fl" rel="nofollow">免费注册</a></div></div>');
+    } else {
+      document.write('<div class="operation"><div><a href="{$MODULE[2][linkurl]}{$DT[file_login]}" target="_blank" class="login-btn fl" rel="nofollow">登录</a><a href="{$MODULE[2][linkurl]}{$DT[file_register]}" target="_blank" class="regist-btn fl" rel="nofollow">免费注册</a></div></div>');
+      }
+    }
+</script>

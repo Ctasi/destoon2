@@ -1,0 +1,18 @@
+{loop $tags $i $t}
+ <div class="small-goods">
+ <!--span class="pictj{$i}"></span-->
+ <a class="small-goods-img" href="{$t[linkurl]}">
+ <img src="{if $t[thumb]}{str_replace('thumb', 'middle', $t[thumb])}{else}{DT_SKIN}image/nopic200.gif{/if}" width="220" height="220" alt="{$t[alt]}" onerror="this.src='{DT_SKIN}image/nopic200.gif'"/></a>
+<div class="small-goods-info">
+ <span class="price">
+ <em>¥</em>{if $t[unit] && $t[price]>0}{$t[price]}{else}面议{/if}</span>
+ <span class="number"><i id="hits">{$t[hits]}</i>人浏览</span>
+ </div>
+  <h4> <spn class="small-goods-text"><a href="{$t[linkurl]}">{$t[title]}</a></span></h4>
+ <div class="small-goods-consult">
+   <span>推荐</span>
+{if $t[username] && $DT[im_web]}{im_web($t[username].'&mid='.$moduleid.'&itemid='.$t[itemid])}&nbsp;{/if}
+{if $t[qq] && $DT[im_qq]}{im_qq($t[qq])}&nbsp;{/if}
+{if $t[ali] && $DT[im_ali]}{im_ali($t[ali])}&nbsp;{/if} </div>
+ </div>
+{/loop}

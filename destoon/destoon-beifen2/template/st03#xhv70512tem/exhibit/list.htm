@@ -1,0 +1,137 @@
+{template 'header'} 
+<script type="text/javascript">var sh = '{$MOD[linkurl]}search.php?catid={$catid}';</script>
+<div class="m"> 
+  <div class="nav bd-b"><a href="{$MODULE[1][linkurl]}">首页</a> <i>&gt;</i> <a href="{$MOD[linkurl]}">{$MOD[name]}</a> <i>&gt;</i> {cat_pos($CAT, ' <i>&gt;</i> ')}</div>
+</div>
+<div class="wrapper clear">
+  <div class="zh-left left">
+    <div class="sort">
+      <div class="sort-k">行业</div>
+      <div class="sort-v">
+        <ul>
+        {loop $maincat $k $v}
+        <li{if $v[catid]==$catid} class="on"{/if}><a href="{$MOD[linkurl]}{$v[linkurl]}">{set_style($v[catname],$v[style])}</a>{if !$cityid} <i>({$v[item]})</i>{/if}<li>
+        {/loop}
+        </ul>
+      </div>
+      <div class="c_b"></div>
+    </div>
+    <div class="sort">
+      <div class="sort-k">地区</div>
+      <div class="sort-v">
+        <ul>
+        {php $mainarea = get_mainarea(0)}
+        {loop $mainarea $k $v}
+        <li><a href="{$MOD[linkurl]}{rewrite('search.php?catid='.$catid.'&areaid='.$v['areaid'])}">{$v[areaname]}</a><li>
+        {/loop}
+        </ul>
+      </div>
+      <div class="c_b"></div>
+    </div>
+    <div class="sort">
+      <div class="sort-k">月份</div>
+      <div class="sort-v">
+        <ul>        
+        {php for($i=1;$i<13;$i++) { }
+        <li><a href="{$MOD[linkurl]}{rewrite('search.php?month='.$i.'&catid='.$catid)}">{$i}月</a></li>
+        {php } }
+        </ul>
+      </div>
+      <div class="c_b"></div>
+    </div>
+    {if $CP}{template 'property_listto', 'chip'}{/if}
+    <div class="img_tip" id="img_tip" style="display:none;">&nbsp;</div>
+    {if $tags}
+    {template 'xiaohei-exhibitlist', 'tag'}
+    {else}
+	{template 'noresult', 'message'}
+     {/if}
+
+   {if $showpage && $pages}<div class="pages">{$pages}</div>{/if}
+   </div>
+  <!--right--> 
+
+  <div class="zh-right right"> 
+    <!--广告-->
+    <div class="ad1 g-mb-20"> 
+    <img src="{DT_SKIN}image/zh/aa_list01.gif" alt="">
+    </div>
+    <!--展会推荐排行-->
+    <div class="r-box">
+      <div class="category-zh">
+        <h2>最新展会</h2>
+      </div>
+      <div class="new_ph_zh">
+        <ul>
+         <!--{php $tagsxh=tag("moduleid=$moduleid&length=40&condition=status=3&areaid=$cityid&pagesize=10&order=addtime desc&template=null");}--> 
+        {loop $tagsxh $i $t}
+          <li> <span class="{if $i<3}g-hong{/if}">{$i+1}</span> <a title="{$t[title]}" href="{$t[linkurl]}" target="_blank">{$t[title]}</a> </li>
+       {/loop}
+        </ul>
+        <div class="clear"></div>
+      </div>
+    </div>
+    <!--精选阅读-->
+    <div class="r-box">
+      <div class="category-zh g-mb-10">
+        <h2>推荐展会</h2>
+      </div>
+   <!--{php $tagsxh=tag("moduleid=$moduleid&length=40&condition=status=3 and level=1 and thumb!=''&areaid=$cityid&pagesize=5&order=addtime desc&template=null");}--> 
+        {loop $tagsxh $i $t}
+      <div class="r-box-content">
+        <div class="new_r_titx">
+          <div class="new_r_titx_tit"> <a href="{$t[linkurl]}" title="{$t[title]}" target="_blank" class="hiddentitle-300">{$t[title]}</a></div>
+          <dl class="ch">
+            <dd class="left"> <a href="{$t[linkurl]}" target="_blank"> <img src="{if $t[thumb]}{str_replace('thumb', 'middle', $t[thumb])}{else}{DT_SKIN}image/nopic100.gif{/if}" width="110" height="73" alt="{$t[alt]}" onerror="this.src='{DT_SKIN}image/nopic100.gif'"/></a> </dd>
+            <dt>{dsubstr($t[introduce], 60, '..')}</dt>
+            <div class="clear"> </div>
+          </dl>
+          <div class="clear"> </div>
+        </div>
+      </div>
+      {/loop}
+    </div>
+    <!--深度策划-->
+    
+    <div class="r-box">
+      <div class="category-zh g-mb-10">
+        <h2><a href="{$MODULE[21][linkurl]}" target="_blank">图文资讯</a></h2>
+      </div>
+      <!--{php $tagsxh=tag("moduleid=21&length=40&condition=status=3 and thumb!=''&areaid=$cityid&pagesize=5&order=addtime desc&template=null");}--> 
+        {loop $tagsxh $i $t}
+      <div class="r-box-content">
+        <div class="new_r_titx">
+          <div class="new_r_titx_tit"> <a href="{$t[linkurl]}" title="{$t[title]}" target="_blank" class="hiddentitle-300">{$t[title]}</a></div>
+          <dl class="ch">
+            <dd class="left"> <a href="{$t[linkurl]}" target="_blank"> <img src="{if $t[thumb]}{str_replace('thumb', 'middle', $t[thumb])}{else}{DT_SKIN}image/nopic100.gif{/if}" width="110" height="73" alt="{$t[alt]}" onerror="this.src='{DT_SKIN}image/nopic100.gif'"/></a> </dd>
+            <dt>{dsubstr($t[introduce], 60, '..')}</dt>
+            <div class="clear"> </div>
+          </dl>
+          <div class="clear"> </div>
+        </div>
+      </div>
+      {/loop}
+    </div>
+    
+    <!--排行-->
+    <div class="r-box">
+      <div class="category-zh">
+        <h2>热门文章</h2>
+      </div>
+      <div class="new_ph_zh">
+        <ul>
+         <!--{php $tagsxh=tag("moduleid=21&length=40&condition=status=3&areaid=$cityid&pagesize=10&order=addtime desc&template=null");}--> 
+        {loop $tagsxh $i $t}
+          <li> <span class="{if $i<3}g-hong{/if}">{$i+1}</span> <a title="{$t[title]}" href="{$t[linkurl]}" target="_blank">{$t[title]}</a> </li>
+       {/loop}
+        </ul>
+        <div class="clear"></div>
+      </div>
+    </div>
+
+   
+  </div>
+
+  <!--right end--> 
+</div>
+{template 'footer'}

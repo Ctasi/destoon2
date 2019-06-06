@@ -1,0 +1,10 @@
+ {loop $tags $i $t}
+<li class="sr-item">
+  <p class="sr-title"><a href="{$t[linkurl]}" target="_blank" title="{$t[alt]}">{$t[title]}</a></p>
+  <div class="sr-con">{dsubstr($t[introduce], 120, '..')}<a href="{$t[linkurl]}">[详情]</a></div>
+</li>
+{/loop}
+
+{if $showpage && $pages}
+<div class="pages">{$pages}</div>
+{/if}

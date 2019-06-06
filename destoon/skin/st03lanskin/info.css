@@ -1,0 +1,13 @@
+@charset "utf-8";
+/*
+ST03-CSS-xiaohei-qq:290948585-dtmuban.com-20180414 v7
+*/
+.info_main {padding:10px 10px 0 10px;}
+.info_main li {padding:8px 0 8px 15px;}
+
+.brand {padding:5px 0 5px 0;}
+.brand img {padding:3px;}
+.brand li {height:22px;line-height:22px;overflow:hidden;}
+
+.ab_im{border-top:2px solid #C0C0C0;border-bottom: 1px solid #C0C0C0;border-right: 1px solid #C0C0C0;border-left: 1px solid #C0C0C0;padding: 2px;margin: 10px 0 10px 32px;}
+.ab_on{border-top:2px solid #ff6600;border-bottom: 1px solid #C0C0C0;border-right: 1px solid #C0C0C0;border-left: 1px solid #C0C0C0;padding: 2px;margin: 10px 0 10px 32px;}

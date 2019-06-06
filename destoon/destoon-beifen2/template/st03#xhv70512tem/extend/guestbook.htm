@@ -1,0 +1,223 @@
+{template 'header-mini'}
+<link rel="stylesheet" type="text/css" href="{DT_SKIN}webpage.css"/>
+<link rel="stylesheet" type="text/css" href="{DT_SKIN}help.css"/>
+<!-- header -->
+<div class="header-wrap">
+  <div class="header">
+    <div class="top">
+      <div class="logo fl"> <a href="{$MODULE[1][linkurl]}" class="fl" target="_blank" title="{$DT[sitename]}"> <img src="{DT_SKIN}image/logo.png" height="80" width="210" alt="{$DT[sitename]}"> </a> </div>
+      <h1 class="title-about fl"><a href="{$EXT[guestbook_url]}">留言反馈</a></h1>
+      <div class="h-nav fr">
+        <ul>
+          <li class="nav-itm"><a href="{$MODULE[1][linkurl]}">网站首页</a></li>
+          <li class="current"><a href="{$EXT[guestbook_url]}" id="menu_0" rel="nofollow">留言反馈</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- path -->
+<div class="layout">
+  <div class="path"> <a href="{$MODULE[1][linkurl]}">首页</a> <span>&gt;</span> <a href="{$EXT[guestbook_url]}">网站留言</a></div>
+  <div class="path_to fr"><a href="{$url}index.php?action=add">提交留言</a></div>
+</div>
+<!-- main -->
+<div class="layout">
+  <div class="container clf">
+    <div class="main-mod">
+    {if $action == 'add'}
+    <div class="content-hd">网站反馈留言</div>
+    <div class="form-wrap">
+    <form action="{$url}index.php" method="post" onsubmit="return check();">
+    <input type="hidden" name="action" value="{$action}"/>
+    <table cellpadding="16" cellspacing="0" class="tf">
+    <tr>
+    <td class="tl">留言类型</td>
+    <td>
+    <select name="post[type]" id="type">
+    <option value="">请选择</option>
+    {loop $TYPE $k $v}
+    <option value="{$v}">{$v}</option>
+    {/loop}
+    </select>
+    </td>
+    </tr>
+    <tr>
+    <td class="tl"><span class="f_red">*</span> 留言内容</td>
+    <td title="留言内容不支持任何语法，仅限文字"><textarea name="post[content]" rows="6" cols="80" id="content">{$content}</textarea><br/>
+    <span id="dcontent" class="f_red"></span>
+    </td>
+    </tr>
+    <tr>
+    <td class="tl">与您联系</td>
+    <td>
+    <input type="radio" name="my" value="1" id="my_1" onclick="$('#gb_contact').show(300);"/> <label for="my_1">需要</label>&nbsp;&nbsp;&nbsp;&nbsp;
+    <input type="radio" name="my" value="0" id="my_0" checked onclick="$('#gb_contact').hide(100);"/> <label for="my_0">不需要</label>
+    </td>
+    </tr>
+    <tbody id="gb_contact" style="display:none;">
+    <tr>
+    <td class="tl">姓名</td>
+    <td>
+    <input type="text" name="post[truename]" size="10" id="truename" value="{$truename}"/>&nbsp;
+    <input type="checkbox" name="post[hidden]" value="1" id="hidden" checked/><label for="hidden" title="选择匿名后，姓名仅网站工作人员可见"> 匿名留言</label>
+    <span id="dtruename" class="f_red"></span>
+    </td>
+    </tr>
+    <tr>
+    <td class="tl">电话</td>
+    <td>
+    <input type="text" name="post[telephone]" size="30" id="telephone" value="{$telephone}"/>
+    <span id="dtelephone" class="f_red"></span>
+    </td>
+    </tr>
+    <tr>
+    <td class="tl">邮箱</td>
+    <td>
+    <input type="text" name="post[email]" size="30" id="email" value="{$email}"/>
+    <span id="demail" class="f_red"></span>
+    </td>
+    </tr>
+    {if $DT[im_qq]}
+    <tr>
+    <td class="tl">QQ</td>
+    <td><input type="text" size="20" name="post[qq]" id="qq" value="{$qq}"/></td>
+    </tr>
+    {/if}
+    {if $DT[im_wx]}
+    <tr>
+    <td class="tl">微信</td>
+    <td><input type="text" size="20" name="post[wx]" id="wx" value="{$wx}"/></td>
+    </tr>
+    {/if}
+    {if $DT[im_ali]}
+    <tr>
+    <td class="tl">阿里旺旺</td>
+    <td><input type="text" size="20" name="post[ali]" id="ali" value="{$ali}"/></td>
+    </tr>
+    {/if}
+    {if $DT[im_skype]}
+    <tr>
+    <td class="tl">Skype</td>
+    <td><input type="text" size="20" name="post[skype]" id="skype" value="{$skype}"/></td>
+    </tr>
+    {/if}
+    </tbody>
+    {if $MOD[guestbook_captcha]}
+    <tr>
+    <td class="tl"><span class="f_red">*</span> 验证码</td>
+    <td>
+    {template 'captcha', 'chip'}
+    <span id="dcaptcha" class="f_red"></span>
+    </td>
+    </tr>
+    {/if}
+    <tr>
+    <td class="tl"></td>
+    <td><input type="submit" name="submit" value="提 交" class="btn-green"/></td>
+    </tr>
+    </table>
+    </form>
+    {load('guest.js')}
+      </div>
+    {else}
+    {if $lists}
+    <div class="gb_list">
+      <style>
+      .fsearch{height: 40px;line-height: 40px;font-size: 14px;}
+      table, td {border:1px solid #ccc;border-collapse:collapse;}
+      td{height: 35px;line-height: 35px;text-indent: 10px;}
+      .gb_list{padding:20px;}
+      </style>
+      <div class="b10">&nbsp;</div>
+      <div class="fsearch">
+      <form action="{$url}index.php">
+      <strong>关键词：</strong>
+      <input type="text" size="50" name="kw" value="{$kw}" ondblclick="if(this.value){Go('{$url}');}" placeholder="搜索" title="输入关键词，按回车搜索" style="text-indent: 3px;height: 20px;line-height: 20px;"/>
+      <input type="submit" value="搜索" style="padding: 1px 8px;font-size: 13px; background: #2170d9;color: #ffffff;height: 30px;"/>
+      <input type="button" value="重置" onclick="Go('{$EXT[guestbook_url]}');" style="padding: 1px 6px;font-size: 13px;height: 30px;"/>
+      </form>
+      </div>
+      {loop $lists $k $v}
+      <div class="b10">&nbsp;</div>
+      <table width="100%" cellpadding="8" cellspacing="1" bgcolor="#E3EEF5">
+      <tr>
+      <td align="right" bgcolor="#F1F7FC" width="200">{if $v[hidden]}匿名{else}{$v[truename]}{/if} <span class="px11">{$v[adddate]}</span> 提问：&nbsp;&nbsp;</td>
+      <td bgcolor="#FFFFFF" class="lh18">{$v[content]}</td>
+      </tr>
+      {if $v[reply]}
+      <tr>
+      <td align="right" bgcolor="#F1F7FC">网站 <span class="px11">{$v[editdate]}</span> 回复：&nbsp;&nbsp;</td>
+      <td bgcolor="#FFFFFF" style="color:#D9251D;">{$v[reply]}</td>
+      </tr>
+      {/if}
+      </table>
+      {/loop}   
+      {if $pages}<div class="pages">{$pages}</div>{/if}
+  </div>
+   {else}
+    <br/><br/><br/><br/>
+    <center class="px16">{if $kw}未找到与“<span class="f_red">{$kw}</span>”相关的留言，请调整关键词<a href="{$url}" class="b">重新搜索</a>{else}暂时没有留言&nbsp;&nbsp;&nbsp;&nbsp;<a href="{$url}index.php?action=add" class="b">来抢个沙发吧</a>{/if}</center>
+    <br/><br/><br/><br/>
+    {/if}
+    {/if}
+
+    </div>
+    <div class="side-mod">
+      <div class="service-item si-qq">
+        <div class="si-hd">在线客服</div>
+        <div class="si-con"> <a href="//wpa.qq.com/msgrd?v=3&uin={$DT[qq1]}&site=qq&menu=yes" class="btn-blue">点击咨询</a> </div>
+        <div class="si-con mt-10 ft-gray">
+          <p>解决用户问题 <br>
+            电话：{$DT[telephone]} <br>
+            在线时间：周一至周五：09:00-18:00 <br>
+            其他时间请留言</p>
+        </div>
+      </div>
+      <div class="service-item si-email">
+        <div class="si-hd">客服邮箱</div>
+        <div class="si-con">
+          <p class="ft-gray">{$DT[emaill]}<br>
+            服务时间：7*24小时均可 <br>
+            客服收到邮件会在1个工作日和你回复</p>
+        </div>
+      </div>
+      <div class="side">
+      <form action="{$url}index.php"><input type="search" name="kw" value="{$kw}" ondblclick="if(this.value){Go('{$url}');}" placeholder="搜索" title="输入关键词，按回车搜索"/></form>
+      </div>
+    </div>
+  </div>
+   
+
+
+
+</div>
+{if $action == 'add'}
+<script type="text/javascript">
+function check() {
+  var l;
+  var f;
+  f = 'content';
+  l = Dd(f).value.length;
+  if(l < 5 || l > 1000) {
+    Dmsg('内容应为5-1000字，当前已输入'+l+'字', f);
+    return false;
+  }
+  {if $MOD[guestbook_captcha]}
+  f = 'captcha';
+  if($('#c'+f).html().indexOf('ok.png') == -1) {
+    Dmsg('请填写验证码', f);
+    return false;
+  }
+  {/if}
+  return true;
+}
+{if isset($report)}
+$(function(){
+$('#type').val('不良信息');
+Dd('content').value = Dd('content').value+"\n-------------------------------\n举报理由：\n";
+});
+{/if}
+</script>
+{/if}
+{template 'footer-mini'}

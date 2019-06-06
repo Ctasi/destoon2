@@ -1,0 +1,1 @@
+<?php defined('IN_DESTOON') or exit('Access Denied'); return array (19 => array ('catid' => '19','catname' => '分类类别','style' => '','catdir' => 'fenleileibie','linkurl' => 'list.php?catid=19','letter' => 'f','level' => '1','property' => '0','parentid' => '0','arrparentid' => '0','child' => 0,'arrchildid' => 19,),); ?>

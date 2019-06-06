@@ -1,0 +1,47 @@
+{loop $tags $k $t}
+<div class="goods" id="item_{$t[itemid]}">
+                    <a class="goods-img" href="{$t[linkurl]}" target="_blank">
+                        <img class="dynload" src="{if $t[thumb]}{str_replace('thumb', 'middle', $t[thumb])}{else}{DT_SKIN}image/nopic200.gif{/if}" width="220" height="220" alt="{$t[alt]}" onerror="this.src='{DT_SKIN}image/nopic200.gif'"/>
+                    </a>
+                  <h3>
+         <input type="checkbox" id="check_{$t[itemid]}" name="itemid[]" value="{$t[itemid]}" onclick="sell_tip(this, {$t[itemid]});" style="vertical-align:middle;width: 7%;"/>&nbsp; <a class="goods-name" href="{$t[linkurl]}" target="_blank" title="{$t[alt]}" id="title">{$t[title]}</a>
+                    </h3>
+                    <div class="goods-con">
+                    <p class="goods-text">{$t[introduce]}</p>
+                    </div>
+                     <div class="goods-info">
+                     <span class="price"><em>{$DT[money_sign]}</em>{$t[price]}</span>
+                        <span class="money"></span>
+                        
+                        <span class="number-gou">
+   <a href="{$MODULE[2][linkurl]}cart.php?mid={$moduleid}&itemid={$t[itemid]}" title="加入购物车">加入购物车</a>
+   </span>
+</div>
+                       <div class="goods-company">
+                       <span><a href="{$t[linkurl]}" target="_blank" title="{$t[company]}" class="sell_CompanyName">{$t[company]}</a>
+<a rel="nofollow"  href="{$t[linkurl]}" target="_blank" title="成交量：{$t[orders]}笔" class="right">成交量：{$t[orders]}笔</a>
+                       
+                       </span>
+</div>
+ <div class="goods-tags">
+  <div class="area">
+  <img src="{DT_SKIN}image/sell/ico-dw.png" width="12" height="16" title="店铺所在地" align="absmiddle"/>&nbsp;{area_pos($t[areaid], '/', 2)} </div>
+    <div class="web">
+{if $t[username] && $DT[im_web]}{im_web($t[username].'&mid='.$moduleid.'&itemid='.$t[itemid])}&nbsp;{/if}
+{if $t[qq] && $DT[im_qq]}{im_qq($t[qq])}&nbsp;{/if}
+{if $t[ali] && $DT[im_ali]}{im_ali($t[ali])}&nbsp;{/if}
+ </div>
+  <div class="vali">
+ {if $t[vtruename]}<i title="实名认证" class="icon-vali_name"></i>&nbsp;{/if}
+  {if $t[validated]}<i title="资质认证" class="icon-vali_gong"></i>&nbsp;{/if}
+  {if $t[vmobile]}<i title="手机认证" class="icon-vali_phone"></i>&nbsp;{/if}
+  {if $t[vemail]}<i title="邮箱认证" class="icon-vali_email"></i> &nbsp;{/if} 
+  </div>
+         </div>
+          <div class="tag_sell_button">
+<div class="tag_sell_box1">
+<dl class="tag_sell_box2"><dd class="shoucang"><a href="{userurl($t[username])}" target="_blank">店铺</a></dd><dd class="shangpu"><a href="{$t[linkurl]}" target="_blank">详情</a></dd></dl>
+</div>
+</div>
+        </div>
+{/loop}

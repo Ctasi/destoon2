@@ -1,0 +1,84 @@
+{template 'header-mini'}
+<link rel="stylesheet" type="text/css" href="{DT_SKIN}webpage.css"/>
+<!-- header -->
+<div class="header-wrap">
+    <div class="header">
+        <div class="top">
+            <div class="logo fl">
+                <a href="{DT_PATH}" class="fl" target="_blank" title="{$DT[sitename]}">
+                    <img src="{DT_SKIN}image/logo.gif" height="68" width="200" alt="{$DT[sitename]}">
+                </a>
+            </div>
+            <h1 class="title-about fl"><a href="{DT_PATH}">{$title}</a></h1>
+            <div class="h-nav fr">
+                <ul>
+                 <li class="nav-itm"><a href="{DT_PATH}">网站首页</a></li>
+                  <!--{php $tags=tag("table=webpage&condition=item='$_item'&areaid=$cityid&pagesize=99&order=listorder desc,itemid desc&template=null");}--> 
+          {loop $tags $k $t}
+<li class="nav-itm" id="webpage_{$t[itemid]}"><a href="{if $t[domain]}{$t[domain]}{else}{DT_PATH}{$t[linkurl]}{/if}">{$t[title]}</a></li>
+          {/loop}
+           </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- path -->
+    <div class="layout">
+        <div class="path">当前位置: <a href="{$MODULE[1][linkurl]}">首页</a> &raquo; <a href="{DT_PATH}{$linkurl}">{$title}</a><span>&gt;</span></div>
+    </div>
+   <!-- main -->
+    <div class="layout">
+        <div class="main clf">
+            <div class="unit content-about">
+                <h2 class="content-hd">联系客服</h2>
+                <div class="detail">
+                    <div class="service-bd clf">
+                    <dl class="o">
+                        <i class="icon-contact icon-contact01"></i>
+                        <dt>7×24在线服务</dt>
+                        <dd>在线对话，为您解决遇到的问题</dd>
+                        <dd>周一至周日  全天服务</dd>
+                        <a class="btn btn-primary" href="//wpa.qq.com/msgrd?v=3&uin={$DT[qq1]}&site=qq&menu=yes" rel="nofollow">立即咨询</a>
+                    </dl>
+                    <dl class="t">
+                        <i class="icon-contact icon-contact02"></i>
+                        <dt>{$DT[telephone]}</dt>
+                        <dd>周一至周日 9:00 至 18:00</dd>
+                        <dd>你可以留下联系方式我们回拨你。</dd>
+                        <a class="btn btn-primary" href="{$EXT[guestbook_url]}index.php?action=add" target="_blank" rel="nofollow">我要留言</a>
+                    </dl>
+                    <dl class="o">
+                        <i class="icon-contact icon-contact03"></i>
+                        <dt>{$DT[qq2]}</dt>
+                        <dd>7*24小时均可</dd>
+                        <dd>QQ在线客服随时留言咨询</dd>
+                        <a class="btn btn-primary" href="//wpa.qq.com/msgrd?v=3&uin={$DT[qq2]}&site=qq&menu=yes" rel="nofollow">立即咨询</a>
+                    </dl>
+                    <dl class="t">
+                        <i class="icon-contact icon-contact04"></i>
+                        <dt>{$DT[emaill]}</dt>
+                        <dd>7*24小时均可 </dd>
+                        <dd>客服收到邮件会在1个工作日给你回复</dd>
+                        <a class="btn btn-primary" href="mailto:{$DT[emaill]}">发送邮件</a>
+                    </dl>
+                </div>
+			<!--地址 S-->	
+				  <div class="content_diz">
+                <h2 class="content_dizname">公司地址</h2>
+                <div class="detail_diz">
+				<ul>
+				<li>公司名称：{$DT[gongsi]}</li>
+				<li>详细地址：{$DT[dizhi]}</li>
+				<li>邮政编码：{$DT[youbian]}</li>
+				</ul>
+				</div>
+				</div>
+					<!--地址 END-->	
+                </div>
+            </div>
+        </div>
+    </div>
+
+  
+<script type="text/javascript">try{Dd('webpage_{$itemid}').className='current';}catch(e){}</script>
+{template 'footer-mini'}

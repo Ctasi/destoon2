@@ -1,0 +1,45 @@
+{template 'header-mini'}
+<link rel="stylesheet" type="text/css" href="{DT_SKIN}webpage.css"/>
+<!-- header -->
+<div class="header-wrap">
+    <div class="header">
+        <div class="top">
+            <div class="logo fl">
+                <a href="{DT_PATH}" class="fl" target="_blank" title="{$DT[sitename]}">
+                    <img src="{DT_SKIN}image/logo.gif" height="68" width="200" alt="{$DT[sitename]}">
+                </a>
+            </div>
+            <h1 class="title-about fl"><a href="{DT_PATH}">{$title}</a></h1>
+            <div class="h-nav fr">
+                <ul>
+                 <li class="nav-itm"><a href="{DT_PATH}">网站首页</a></li>
+                  <!--{php $tags=tag("table=webpage&condition=item='$_item'&areaid=$cityid&pagesize=99&order=listorder desc,itemid desc&template=null");}--> 
+          {loop $tags $k $t}
+<li class="nav-itm" id="webpage_{$t[itemid]}"><a href="{if $t[domain]}{$t[domain]}{else}{DT_PATH}{$t[linkurl]}{/if}">{$t[title]}</a></li>
+          {/loop}
+           </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- path -->
+    <div class="layout">
+        <div class="path">
+当前位置: <a href="{$MODULE[1][linkurl]}">首页</a> &raquo; <a href="{DT_PATH}{$linkurl}">{$title}</a><span>&gt;</span>
+                    </div>
+    </div>
+    <!-- main -->
+    <div class="layout">
+        <div class="main clf">
+            <div class="unit content-about">
+                <h2 class="content-hd">{$title}</h2>
+                <div class="detail">
+                    <div class="article">
+                    <span style="font-size:32px;" id="content">{$content}</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+<script type="text/javascript">try{Dd('webpage_{$itemid}').className='current';}catch(e){}</script>
+{template 'footer-mini'}

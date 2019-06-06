@@ -1,0 +1,239 @@
+{template 'header'}
+<link rel="stylesheet" type="text/css" href="{DT_SKIN}clubshow.css"/>
+<script type="text/javascript">var module_id= {$moduleid},item_id={$itemid},content_id='',img_max_width={$MOD[max_width]};</script>
+<style>
+.club_show_r{padding-left:15px}
+.thread-detail-comment-users{margin: 30px 5px 0 0;padding: 0 0 0 10px;}
+</style>
+<div class="m mt15">
+<div class="crumbs">
+<span class="f_r"><a href="{$MODULE[2][linkurl]}{$DT[file_my]}?mid={$moduleid}&action=add&gid={$gid}" class="group_post" rel="nofollow">发帖</a>
+	<a href="{$MODULE[2][linkurl]}{$DT[file_my]}?mid={$moduleid}&job=reply&action=add&tid={$itemid}" class="group_post2" rel="nofollow">回复</a>
+	</span>
+当前位置: <a href="{$MODULE[1][linkurl]}">首页</a> &raquo; <a href="{$MOD[linkurl]}">{$MOD[name]}</a> &raquo; {cat_pos($CAT, ' &raquo; ')}  &raquo; <a href="{$MOD[linkurl]}{$GRP[linkurl]}">{$GRP[title]}{$MOD[seo_name]}</a>
+</div>
+</div>
+
+<div class="main-content mt15">
+<div class="layoutshow">
+            <div class="grid-5">
+    <!--圈左侧信息 start-->
+    <div class="mod mod-circle-info">
+        <a class="circle-avatar" href="{$MOD[linkurl]}{$GRP[linkurl]}" title="{$GRP[title]}{$MOD[seo_name]}"><img src="{$GRP[thumb]}" width="120" height="120"/></a>        <a class="circle-name" href="{$MOD[linkurl]}{$GRP[linkurl]}" title="{$GRP[title]}{$MOD[seo_name]}"><h1 >{$GRP[title]}{$MOD[seo_name]}</h1></a>
+        <ul class="circle-data fd-clr">
+            <li><a href="{$MOD[linkurl]}{rewrite('fans.php?gid='.$gid)}" class="showMemberList" title="本圈成员{$GRP[fans]}">{$GRP[fans]}</a><span>成员</span></li>
+            <li class="split"></li>
+            <li><a title="本圈主题{$GRP[post]}">{$GRP[post]}</a><span>主题</span></li>
+        </ul>
+<div class="button-action" {if !$admin} style="display:none;"{/if}><a href="{$MODULE[2][linkurl]}{$DT[file_my]}?mid={$moduleid}&job=manage&gid={$gid}&pid=1" class="qui-btn qui-btn-action join-group">管理本圈</a></div>
+<div class="button-action"><a href="{$MODULE[2][linkurl]}{$DT[file_my]}?mid={$moduleid}&job=join&action=add&gid={$gid}" class="qui-btn qui-btn-action join-group">加入本圈</a></div>
+<div class="button-action"><a href="javascript:SendFav();" class="qui-btn qui-btn-action join-group">收藏本贴</a></div>
+{if $replys}
+<div class="thread-detail-comment-users" style="display: block;">
+            <h3>参与评论状态</h3>
+            <!--{php $lists=tag("table=club_reply_$moduleid&condition=tid=$itemid&order=addtime desc&pagesize=8&template=null");}-->
+            <ol class="fd-clr">
+           {loop $lists $v}
+<li>
+    <a href="{$MODULE[2][linkurl]}{$DT[file_my]}?mid={$moduleid}&job=reply&action=add&tid={$itemid}" title="" target="_blank">
+        <img src="{useravatar($v[username], 'large')}">
+    </a>
+</li>
+{/loop}
+</ol>
+        </div>
+{/if}
+    </div>
+    <!--圈左侧信息 end-->
+    </div>
+           <!--圈中间信息-->                  
+           <div class="grid-18">
+                <div class="mid-content">
+                   <div class="thread-detail-content">
+                          <h1 class="thread-title"> <span id="title">{$title}</span>   
+                          {if $item[ontop]}
+		<img src="{DT_SKIN}image/club_ontop_{$item[ontop]}.gif" alt="" title="{if $t[ontop]==1}本圈{else}全局{/if}置顶"/>
+		{elseif $item[level]}
+		<img src="{DT_SKIN}image/club_level_{$item[level]}.gif" alt="" title="精华{$t[level]}"/>
+		{elseif $item[thumb]}
+		<img src="{DT_SKIN}image/club_thumb.gif" alt="" title="图片帖"/>
+		{elseif $item[video]}
+		<img src="{DT_SKIN}image/club_video.gif" alt="" title="视频帖"/>
+		{else}
+		&nbsp;
+		{/if} 
+        
+                        </h1>
+                        <div class="thread-info">
+                            <span class="fd-left">楼主&nbsp;&nbsp;<a href="javascript:SendFav();" class="b">收藏</a> &nbsp;&nbsp;<a href="javascript:SendReport();" class="b">举报</a> </span>
+                            <span class="fd-left">&nbsp;&nbsp;帖子创建时间:&nbsp;&nbsp;{timetodate($addtime, 5)} </span>
+                            <span class="fd-left thread-split"></span>
+                            <span class="fd-left">回复：<a class="thread-comment" href="#postreplyfield"><span class="count" id="reply">{$reply}</span></a></span>
+                            <span class="fd-left" style="padding-left: 10px;">关注量：<a class="thread-views" href="javascript:void(0)"><span class="count" id="hits">{$hits}</span></a></span>
+                            <div class="actions fd-right" {if !$admin} style="display:none;"{/if}>
+                                <ul class="fd-clr"><a href="{$MODULE[2][linkurl]}{$DT[file_my]}?mid={$moduleid}&job=manage&tid={$itemid}" class="b" target="manage">管理</a>
+                                </ul>
+                            </div>
+                   </div>
+                        {if $CP}{template 'property_show', 'chip'}{/if}                        
+                        <div class="thread-body" id="question">{$content} </div>
+                    <div class="thread-footer">
+                            <div class="shares">
+        <a href="javascript:SendFav();" class="rpl">收藏</a>
+        <a href="{$MODULE[2][linkurl]}{$DT[file_my]}?mid={$moduleid}&job=reply&action=add&tid={$itemid}" class="rpl">回复楼主</a>
+                            </div>
+                        </div>
+                        
+                       <!--左赞--> 
+                        <div class="thread-operation-area" style="left: 214.5px; display: block; bottom: 80px;">
+                            <ol class="fd-clr">
+                                <li>
+                                    <a class="comments" href="#huifu">
+                                        <i></i>
+                                        <span>评论</span>
+                                    </a>
+                                </li>
+                                /ol>
+                        </div>
+                         <!--左赞-->
+ <div id="thread-detail-comments-area">
+ <div class="mod-comment" id="huifu">
+ 
+ <!--圈回复信息-->
+{if $replys}
+<ul class="topcomments">
+	{loop $replys $k $v}
+    <li class="post-list-li fd-clr  post-list-li-top-comment">
+	<a name="R{$v[itemid]}"></a>
+		<table>
+		<tr>
+		<td valign="top" class="club_show_l">
+		<li id="u_{$v[itemid]}">
+		</li>
+		<li><a class="circle-avatar1"><img src="{useravatar($v[username], 'large')}" alt="" width="50" height="50"/></a></li>
+		{if $v[username] && $DT[im_web]}<li class="qq1">{im_web($v[username], 1)}</li>{/if}
+		{if $v[username] == $GRP[username]}
+		<li class="f_red">圈主</li>
+		{elseif in_array($v[passport], $GRP[managers])}
+		<li class="f_blue">版主</li>
+		{/if}
+		<li></li>
+		
+		</td>
+		<td valign="top" class="club_show_r">
+			<div class="club_info">
+				<span class="f_r">
+				<span class="manage"{if !$admin} style="display:none;"{/if}><a href="{$MODULE[2][linkurl]}{$DT[file_my]}?mid={$moduleid}&job=manage&rid={$v[itemid]}&pid={$page}" class="b" target="manage">管理</a> | </span><a href="{$MODULE[2][linkurl]}{$DT[file_my]}?mid={$moduleid}&job=reply&action=add&tid={$itemid}&rid={$v[itemid]}" class="b" rel="nofollow">回复</a> | <a href="javascript:RR({$v[itemid]});" class="b">举报</a>&nbsp;&nbsp;&nbsp;&nbsp;{if $v[fname]}{$v[fname]}{else}{$v[floor]}楼{/if}
+				</span>
+{if $v[username]}<a href="{userurl($v[username])}" target="_blank" class="b"><strong>{$v[passport]}</strong></a>{else}<strong title="{hide_ip($item[ip])}">游客</strong>{/if}
+&nbsp;&nbsp;评论于&nbsp;<span class="px11">{timetodate($v[addtime], 5)}</span>{if $v[username] == $item[username]}&nbsp;&nbsp;<span class="f_gray">楼主</span>{/if}
+			</div>
+			<div class="contentt" id="R_{$v[itemid]}">{$v[content]}</div>
+		</td>
+		</tr>
+		</table>
+        </li>
+	{/loop}
+    </ul>
+{/if}
+ </div>
+                        </div>
+                </div>
+                </div>
+            </div>
+            <!--圈右侧信息-->
+     <div class="grid-7 grid-fixed"> 
+      <div class="right-content">
+<div class="mod mod-thread-author">
+    <div class="m-header fd-clr"><h3 class="titleclub">本文作者</h3></div>
+    <div class="m-content">
+     {if $item[username]}
+            <div class="user_info fd-clr">
+                <a class="fd-left" href="{$MOD[linkurl]}{rewrite('search.php?username='.$item['username'])}" target="_blank"><img src="{useravatar($item[username], 'large')}"/></a>
+                <div class="user-name">
+                   <a title="{$item[passport]}" href="{$MOD[linkurl]}{rewrite('search.php?username='.$item['username'])}" target="_blank" class="nickname">{$item[passport]}</a>
+                    <a class="follow-me" href="{$MODULE[2][linkurl]}friend.php?action=add&username={$item[username]}" target="_blank">+加好友</a>
+                    <div class="user-menu">
+                    {if $item[username] == $GRP[username]}<a title="本圈圈主"><span style="color:#FF0000">本圈圈主</span></a>{elseif in_array($item[passport], $GRP[managers])}<a title="本圈版主"><span style="color:#FF0000">本圈版主</span></a>{/if}
+                        <a title="作者帖子" href="{$MOD[linkurl]}{rewrite('search.php?username='.$item['username'])}" target="_blank" class="user-feeds">作者帖子</a>
+                        <a title="企业店铺" href="{userurl($item[username])}" target="_blank" class="user-blog">企业店铺</a>
+                    </div>
+                </div>                               
+            </div> 
+        {else}
+		<span style="color:#FF0000"><strong title="{hide_ip($item[ip])}">游客</strong></span>
+		{/if}           
+    </div>    
+</div>
+<div class="mod mod-author-threads">
+    <div class="m-header fd-clr">
+        <h3 class="titleclub fd-left">Ta的圈贴</h3><a href="{$MOD[linkurl]}{rewrite('search.php?username='.$item['username'])}" target="_self" class="fd-right">更多</a>
+    </div>
+    <div class="m-content">
+    <!--{php $tagsx=tag("moduleid=$moduleid&condition=status=3 and username='".$item[username]."'&areaid=$cityid&order=addtime desc&pagesize=8&template=null");}-->
+        <ul class="thread-list">
+        {loop $tagsx $t}  
+           <li class="list-item"><a href="{$t[linkurl]}" title="">{$t[title]}</a></li>
+        {/loop}
+        </ul>        
+    </div>    
+</div>
+    <div class="mod mod-sale-group" data-spm='a360v'>
+        <div class="m-header fd-clr"><h3 class="titleclub fd-left">最新创建圈子</h3></div>
+        <div class="m-content fd-clr">
+         <!--{php $tagsx=tag("moduleid=$moduleid&table=club_group_$moduleid&condition=status=3&areaid=$cityid&order=addtime desc&pagesize=5&template=null");}-->
+            <ul class="lists fd-left">
+            {loop $tagsx $i $t}
+                <li><a href="{$t[linkurl]}" title=""><img src="{$t[thumb]}"><span>{$t[title]}{$MOD[seo_name]} {timetodate($addtime, 5)}</span></a> <div class="infoclub fd-clr"><span class="renqi">圈主：{$t[passport]} &nbsp;&nbsp;帖子：{$t[post]}</span></div></li>
+                {/loop}
+            </ul>
+        </div>
+    </div>
+ <!--最新话题-->    
+   <div class="mod mod-author-threads">
+    <div class="m-header fd-clr">
+        <h3 class="titleclub fd-left">最新话题</h3><a href="{$MODULE[2][linkurl]}{$DT[file_my]}?mid={$moduleid}&action=add&gid={$gid}" target="_self" class="fd-right">我要发帖</a>
+    </div>
+    <div class="m-content">
+     <!--{php $tagsx=tag("moduleid=$moduleid&condition=status=3&areaid=$cityid&order=addtime desc&pagesize=10&template=null");}-->
+        <ul class="thread-list">
+        {loop $tagsx $t}  
+           <li class="list-item"><a href="{$t[linkurl]}" target="_blank" title="{$t[alt]}">{$t[title]}</a></li>
+                   {/loop}
+        </ul>        
+    </div>    
+</div>
+ <!--最新话题-->    
+                </div>
+            </div>
+        </div>
+ </div> 
+ </div>
+
+
+{if $pages}
+    <div class="grid-23"><div class="pages">{$pages}</div></div>
+{/if}
+<div class="m">
+	<div class="nav">
+	<span class="f_r" style="padding-top:6px;">
+	<a href="{$MODULE[2][linkurl]}{$DT[file_my]}?mid={$moduleid}&action=add&gid={$gid}" class="group_post">发帖</a>
+	<a href="{$MODULE[2][linkurl]}{$DT[file_my]}?mid={$moduleid}&job=reply&action=add&tid={$itemid}" class="group_post2">回复</a>
+	</span>
+	<div style="padding-top:0px;"><a href="{$MOD[linkurl]}{$GRP[linkurl]}" class="px14 b">&#171;查看{$GRP[title]}{$MOD[seo_name]}其他贴</a></div>
+	<div class="c_b"></div>
+	</div>
+</div>
+<script type="text/javascript" src="{DT_STATIC}file/script/content.js"></script>
+<script style="text/javascript">
+function RR(id) {
+    var c = Dd('R_'+id).innerHTML;
+    if(c.indexOf('club_break') != -1) {
+        var t = c.split('club_break');
+        c = t[1];
+        c = c.substring(c.indexOf('>') + 1);
+    }
+    SendReport('{$MOD[name]}回复举报，回复ID:'+id+'\n回复内容:\n'+c);
+}
+</script>
+{template 'footer'}

@@ -1,0 +1,1 @@
+var DTPath = "http://destoon.yzt-tools.com/";var DTMob = "http://destoon.yzt-tools.com/mobile/";var SKPath = "http://destoon.yzt-tools.com/skin/st03lanskin/";var MEPath = "http://destoon.yzt-tools.com/member/";var DTEditor = "fckeditor";var CKDomain = "";var CKPath = "/";var CKPrex = "crn_";

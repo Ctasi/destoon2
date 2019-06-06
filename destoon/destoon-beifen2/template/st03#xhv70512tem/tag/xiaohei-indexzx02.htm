@@ -1,0 +1,3 @@
+  {loop $tags $i $t}
+ <li>{if $datetype}<span class="time">&nbsp;[{timetodate($t[addtime], $datetype)}]</span>{/if}<a href="{$t[linkurl]}" class="w330" target="_blank" title="{$t[alt]}">{$t[title]}</a> </li>
+  {/loop}

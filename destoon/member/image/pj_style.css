@@ -1,0 +1,24 @@
+@charset "utf-8";
+/*ST06-CSS-xiaohei-dtmuban.com-20171118*/
+/*评分*/
+.sell_pf{width: 980px;border: 1px #e6e6e6 solid;background-color: #ffffff;margin-top:10px;margin-bottom:10px;}
+.sell_pf_top{width: 965px;height: 44px;border-bottom: 1px #ddd solid;float:left;padding-left: 15px;}
+.sell_pf_top span{line-height: 44px;color: #E60000;font-size:18px;}
+.sell_pf_top a,.sell_pf_top b{color: #F44336;line-height: 44px;padding-right:25px;}
+.sell_pf_top font{white-space:nowrap;height: 44px;line-height: 44px;margin:0px;text-indent:20px;-padding-left:20px;}
+.sell_pf_content{width: 940px;padding:10px 20px;float:left;}
+.sell_pf_content h3{margin:0px;display:block;width:50px;height:30px;line-height:26px;font-weight: 700;font-style:normal;font-size: 16px;color: #ff2726;}
+.sell_pf_content ul{display:block;width: 900px;padding: 0 20px;}
+.sell_pf_content ul li{height: 30px;}
+.sell_pf_content ul li p{height:26px;float:left;line-height:26px;margin:0px;}
+.sell_pf_content ul li p span{color:#7B7B7B;padding-left: 10px;}
+.sell_pf_content ul li a{display:block;width: 70px;height:26px;float:right;line-height:26px;color:#0B5FBB;}
+.sell_pf_content ul li a:hover{ text-decoration:underline;}
+/*各各提示*/
+.fl{float:left}
+.fr{float:right}
+.gtsi{}
+.gtsi strong{font-size: 14px;color: #ff2726;height: 38px;line-height: 38px;}
+.gtsi_2{overflow:hidden}
+.gtsi_t{padding: 20px;background-color: #FFF;line-height: 25px;border: 1px solid #DDDDDD;color: #666;font-size: 13px;}
+.gtsi_3{width: 455px;padding: 20px;background-color: #FFF;color: #666;line-height: 25px;margin-top:10px;border:1px solid #e1e1e1;}

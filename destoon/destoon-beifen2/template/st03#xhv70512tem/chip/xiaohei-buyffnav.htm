@@ -1,0 +1,8 @@
+{php $child = get_maincat($catid, 6);}
+  {loop $child $i $c}
+  {if $i < 11}
+  <li class="item {if $i==1}evenitem{elseif $i==3}evenitem{elseif $i==5}evenitem{elseif $i==7}evenitem{elseif $i==9}evenitem{elseif $i==11}evenitem{/if}">
+  <h3 class="itemHead"><a href="{$MODULE[$mid][linkurl]}{$c[linkurl]}">{$c[catname]}</a></h3>
+  </li>
+{/if}
+  {/loop} 

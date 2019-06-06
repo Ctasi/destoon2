@@ -1,0 +1,17 @@
+ <form action="{$MOD[linkurl]}search.php" id="fsearch">
+{loop $PPT $p}
+<div class="sf-content">
+	<h3>{$p[name]}：</h3>
+	<div class="sf-link">
+	<input type="hidden" name="ppt_{$p[oid]}" id="ppt_{$p[oid]}" value="{$p[select]}"/>
+<ul>
+<li><a href="javascript:;" onclick="Dd('ppt_{$p[oid]}').value='';Dd('fsearch').submit();"{if $p[select]==''} class="current"{/if}>全部</a></li>
+		{loop $p[options] $o}
+		<li><a href="javascript:;" onclick="Dd('ppt_{$p[oid]}').value='{$o}';Dd('fsearch').submit();"{if $p[select]==$o} class="current"{/if}>{$o}</a></li>
+		{/loop}
+		</ul>
+	</div>
+	<div class="c_b"></div>
+</div>
+{/loop}
+</form>

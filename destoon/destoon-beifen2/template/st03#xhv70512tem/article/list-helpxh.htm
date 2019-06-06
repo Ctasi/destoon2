@@ -1,0 +1,61 @@
+{template 'header-help'} 
+<script type="text/javascript">var sh = '{$MOD[linkurl]}search.php?catid={$catid}';</script>
+ <div class="layout">
+        <div class="path">
+            <a href="{$MODULE[1][linkurl]}">首页</a> <span>&gt;</span> <a href="{$MOD[linkurl]}">{$MOD[name]}</a> <span>&gt;</span> {cat_pos($CAT, ' &raquo; ')} </div>
+        <div class="l-search">
+        <div class="h-search">
+                <form id="destoon_search" action="{$MOD[linkurl]}search.php" onsubmit="return Dsearch(1);">
+                <input type="hidden" name="moduleid" value="{$moduleid}" id="destoon_moduleid"/>
+<input type="hidden" name="spread" value="0" id="destoon_spread"/>
+                    <div class="h-search-box">
+                        <input name="kw" id="destoon_kw" type="text" class="h-search-txt" placeholder="搜搜您的问题" />
+                    </div>
+                    <input type="submit" class="h-search-btn" value="搜索" />
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- main -->
+    <div class="layout">
+        <div class="main clf">
+          <div class="unit side">
+                <p class="side-hd"><b>帮助问题分类</b></p>
+                
+                <ul class="menu">
+       {php $mid = $moduleid;}
+  {php $child = get_maincat(0, $mid, 1);}
+   {loop $child $i $c}
+        <li class="m-item sub-menu-a current" id="h_{$i}"> <a href="{$MODULE[$mid][linkurl]}{$c[linkurl]}" class="m-hd" target="_blank">{set_style($c[catname], $c[style])}</a><i class="i-arrow"></i>
+        <div class="sub-menu-b" id="sub_{$i}" style="display:none">
+          <ul>
+           {if $c[child]}
+{php $sub = get_maincat($c[catid], $mid, 1);}
+{loop $sub $j $s}
+   <li class="s-item"><a class="s-link " href="{$MODULE[$mid][linkurl]}{$s[linkurl]}">{set_style($s[catname], $s[style])}</a></li>
+              {/loop}
+              {/if}
+          </ul>
+        </div>
+        </li>
+        {/loop}
+      
+      </ul>
+            </div>
+            
+            <div class="unit content-help">
+                <div class="content-hd">
+                    <h3>问题列表之{$CAT[catname]}</h3></div>
+                <div class="search-results">
+                <ul>
+       {if $tags}{template 'xiaohei-helplistcat', 'tag'}
+        {else}
+		{template 'empty', 'chip'}
+		{/if}
+
+    </ul>
+    </div>
+            </div>
+        </div>
+    </div>
+{template 'footer-mini'}

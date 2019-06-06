@@ -1,0 +1,1 @@
+<?php defined('IN_DESTOON') or exit('Access Denied'); return array (17 => array ('catid' => '17','catname' => '机械执照','style' => '','catdir' => 'jixiezhizhao','linkurl' => 'list.php?catid=17','letter' => 'j','level' => '1','property' => '0','parentid' => '0','arrparentid' => '0','child' => 0,'arrchildid' => 17,),); ?>

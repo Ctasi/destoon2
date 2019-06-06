@@ -1,0 +1,36 @@
+<div class="clear">
+</div>
+  <div class="footer">
+        <div class="layout">
+            <div class="f-btm">
+                <div class="links">
+  <!--{tag("table=webpage&condition=item=1&areaid=$cityid&order=listorder desc,itemid desc&template=list-webpage")}--> 
+<a href="{$MODULE[1][linkurl]}sitemap/">网站地图</a>
+ | <a href="{$EXT[spread_url]}">排名推广</a> 
+{if $EXT[ad_enable]} | <a href="{$EXT[ad_url]}">广告服务</a>{/if}
+{if $EXT[gift_enable]} | <a href="{DT_PATH}gift/" target="_blank" rel="nofollow">积分商城</a>{/if}
+ | <a href="javascript:SendReport();" rel="nofollow">违规举报</a>
+ </div>
+ 
+<div class="copyright">
+<div id="copyright">{$DT[copyright]}</div>
+{if $DT[icpno]}<div><a href="http://www.miibeian.gov.cn" target="_blank" rel="nofollow">{$DT[icpno]}</a></div>{/if}
+{if DT_DEBUG}<div>{debug()}</div>{/if}
+</div>
+
+</div>
+</div>
+</div>
+{template 'zxqq'}
+{template 'banquan'}
+<!--[以下为系统关键代码，请勿删除]-->
+<script type="text/javascript">
+{if $destoon_task}
+show_task('{$destoon_task}');
+{else}
+{php include DT_ROOT.'/api/task.inc.php';}
+{/if}
+{if $lazy}$(function(){$("img").lazyload();});{/if}
+</script>
+</body>
+</html>

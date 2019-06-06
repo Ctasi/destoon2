@@ -1,0 +1,5 @@
+{loop $tags $i $t}
+		 <li class="post-item fd-clr"><a href="{$t[linkurl]}" target="_blank" class="post-title">{$t[title]}</a><span class="click-count">{$t[hits]}</span></li>
+		{if $i==4} <li class="post-item-split"></li> {/if}
+		{/loop}
+          

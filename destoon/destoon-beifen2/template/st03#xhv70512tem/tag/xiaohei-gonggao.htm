@@ -1,0 +1,3 @@
+  {loop $tags $t}
+  <li><i class="tab-icon"></i><a href="{$t[linkurl]}"{if $target} target="{$target}"{/if} title="{$t[alt]}" class="underline" alt="{$t[alt]}" title="{$t[alt]}">{if $cname}【{$cname}】{/if}{$t[title]}</a></li>
+  {/loop}

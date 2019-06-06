@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset={DT_CHARSET}"/>
+<title>{if $seo_title}{$seo_title}{else}{if $head_title}{$head_title}{$DT[seo_delimiter]}{/if}{if $city_sitename}{$city_sitename}{else}{$DT[sitename]}{/if}{/if}</title>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<meta name="generator" content="template - www.dtmuban.com - ST03"/>
+{if $head_keywords}
+<meta name="keywords" content="{$head_keywords}"/>
+{/if}
+{if $head_description}
+<meta name="description" content="{$head_description}"/>
+{/if}
+{if $head_mobile}
+<meta http-equiv="mobile-agent" content="format=html5;url={$head_mobile}">
+{/if}
+<link rel="shortcut icon" type="image/x-icon" href="{DT_STATIC}favicon.ico"/>
+<link rel="bookmark" type="image/x-icon" href="{DT_STATIC}favicon.ico"/>
+{if $head_canonical}
+<link rel="canonical" href="{$head_canonical}"/>
+{/if}
+{if $EXT[archiver_enable]}
+<link rel="archives" title="{$DT[sitename]}" href="{$EXT[archiver_url]}"/>
+{/if}
+<link rel="stylesheet" type="text/css" href="{DT_SKIN}style.css"/>
+<link rel="stylesheet" type="text/css" href="{DT_SKIN}job-common.css"/>
+<link href="{DT_SKIN}job-common.css" rel="stylesheet" type="text/css" />
+<link href="{DT_SKIN}job-2.css" rel="stylesheet" type="text/css" />
+<link href="{DT_SKIN}ui-dialog.css" rel="stylesheet" type="text/css" />
+{if $moduleid>4}
+<link rel="stylesheet" type="text/css" href="{DT_SKIN}{$module}.css"/>
+{/if}
+{if $CSS}
+{loop $CSS $css}
+<link rel="stylesheet" type="text/css" href="{DT_SKIN}{$css}.css"/>
+{/loop}
+{/if}
+<!--[if lte IE 6]>
+<link rel="stylesheet" type="text/css" href="{DT_SKIN}ie6.css"/>
+<![endif]-->
+{if !DT_DEBUG}<script type="text/javascript">window.onerror=function(){return true;}</script>{/if}
+<script type="text/javascript" src="{DT_STATIC}lang/{DT_LANG}/lang.js"></script>
+<script type="text/javascript" src="{DT_STATIC}file/script/config.js"></script>
+<!--[if lte IE 9]><!-->
+<script type="text/javascript" src="{DT_STATIC}file/script/jquery-1.5.2.min.js"></script>
+<!--<![endif]-->
+<!--[if (gte IE 10)|!(IE)]><!-->
+<script type="text/javascript" src="{DT_STATIC}file/script/jquery-2.1.1.min.js"></script>
+<!--<![endif]-->
+<script type="text/javascript" src="{DT_STATIC}file/script/common.js"></script>
+<script type="text/javascript" src="{DT_STATIC}file/script/page.js"></script>
+<script type="text/javascript" src="{DT_SKIN}js/index_foucs.js"></script>
+{if $lazy}<script type="text/javascript" src="{DT_STATIC}file/script/jquery.lazyload.js"></script>{/if}
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+	//选项卡切换
+	$(".n-tab-control>a").each(function(){
+		$(this).click(function(){
+			$(this).addClass("select"); 
+			$(this).siblings("a").removeClass("select");
+			var bull_index = $(".n-tab-control>a").index(this);
+			$(".news-tab-box>ul").eq(bull_index).show().siblings().hide();
+		})
+	});
+	
+</script>
+</head>
+<body >
+<!-- 头部 -->
+<div id="header">
+  <div class="top-nav-wrap">
+    <div class="top-nav clearfix">
+      <ul class="f-left">
+        <li><a href="{DT_PATH}" target="_self" class="nav-li active">平台首页</a></li>
+{if isset($MODULE[5])}<li><a href="{$MODULE[5][linkurl]}" target="_blank" class="nav-li">{$MODULE[5][name]}</a></li>{/if}
+{if isset($MODULE[6])}<li><a href="{$MODULE[6][linkurl]}" target="_blank" class="nav-li">{$MODULE[6][name]}</a></li>{/if}
+{if isset($MODULE[4])}<li><a href="{$MODULE[5][linkurl]}" target="_blank" class="nav-li">{$MODULE[4][name]}</a></li>{/if}
+      </ul>
+      <div class="nav-right f-right" id="destoon_member"></div>
+    </div>
+  </div>
+  <div class="container-index header-main clearfix">
+    <div class="logo-box f-left"><a href="/"><img src="{DT_SKIN}image/job/logo.gif" alt="人才系统" border="0" align="absmiddle" width="260" height="70"/></a></div>
+    <!-- 分站 -->
+    <div class="station-choose f-left">
+      <p class="station-name">{$DT[jdhttp]}</p>
+      <p class="station-name">人才系统</p>
+     </div>
+    <div class="mobile-block f-right">
+      <div class="mob-btn-box f-left"> <a href="{$MODULE[2][linkurl]}{$DT[file_my]}?mid=9&action=add" target="_blank" class="mob-btn phone webApp">发布职位</a></div>
+      <div class="mob-btn-box f-left"> <a href="{$MODULE[2][linkurl]}{$DT[file_my]}?mid=9&action=add&resume=1" target="_blank" class="mob-btn wechat weChat">发布简历</a></div>
+    </div>
+  </div>
+</div>
+<!-- 头部结束 --> 

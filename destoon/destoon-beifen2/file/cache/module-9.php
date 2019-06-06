@@ -1,0 +1,1 @@
+<?php defined('IN_DESTOON') or exit('Access Denied'); return array ('moduleid' => '9','name' => '人才','moduledir' => 'job','module' => 'job','ismenu' => '1','domain' => '','linkurl' => 'http://destoon.yzt-tools.com/job/','mobile' => 'http://destoon.yzt-tools.com/mobile/job/',); ?>

@@ -1,0 +1,10 @@
+{loop $tags $i $t}
+ <dl class="{if $i==0}first{/if}">
+              <dt>
+                <div class="vertical-img"> <a class="box-img" href="{$t[linkurl]}" target="_blank" title="{$t[alt]}" alt="{$t[alt]}"> <img width="80" height="80" alt="{$t[alt]}" src="{if $t[thumb]}{str_replace('thumb', 'middle', $t[thumb])}{else}{DT_SKIN}image/nopic100.gif{/if}" onerror="this.src='{DT_SKIN}image/nopic200.gif'"> </a> </div>
+              </dt>
+              <dd class="company"><a href="{$t[linkurl]}" target="_blank" title="{$t[alt]}" alt="{$t[alt]}">{$t[title]}</a></dd>
+              <dd class="intro">&nbsp; {dsubstr($t[introduce], 40, '…')}</dd>
+              <dd class="name"><a target="_blank" href="{userurl($t[username])}" class="mr10"> {$t[truename]} </a></dd>
+            </dl>
+{/loop}

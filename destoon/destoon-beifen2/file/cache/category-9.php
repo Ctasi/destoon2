@@ -1,0 +1,1 @@
+<?php defined('IN_DESTOON') or exit('Access Denied'); return array (23 => array ('catid' => '23','catname' => '人才管理','style' => '','catdir' => 'rencaiguanli','linkurl' => 'list.php?catid=23','letter' => 'r','level' => '1','property' => '0','parentid' => '0','arrparentid' => '0','child' => 0,'arrchildid' => 23,),); ?>

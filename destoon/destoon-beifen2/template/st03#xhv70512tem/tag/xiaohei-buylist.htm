@@ -1,0 +1,63 @@
+{loop $tags $k $t}
+<li class="row clear">
+  <div class="row-l">
+    <div class="l-top">
+      <div class="big ellipsis">采购项目</div>
+    <div class="small">{group_name($t[groupid])}</div>
+    </div>
+    <div class="l-bottom ellipsis">
+    <?php
+$ti = DT_TIME - $t[edittime];
+$di = floor($ti/60/60/24);
+$hi = floor($ti/60/60);
+$ii = floor($ti/60);
+$si = floor($ti/1);
+if(1<$di){
+echo "$di 天前";
+}
+elseif(1<$hi)
+{
+echo "$hi 时前";
+}
+elseif(1<$ii)
+{
+echo "$ii 分前";
+}
+elseif(1<$si)
+{
+echo "$si 秒前";
+}
+?> 
+    </div>
+  </div>
+  <div class="row-m">
+    <div class="content-new mt20">
+      <p class="line1 f20"> 求购： <span class="mr15"><a  href="{$t[linkurl]}" target="_blank" title="{$t[alt]}">{$t[title]}</a></span> </p>
+      <p class="line2 mt10"> <span class="mr15">采购编号：{$t[itemid]}</span> <span class="mr15">截至日期： {if $t[totime]}{timetodate($t[totime], 5)}{else}长期有效{/if}</span></p>
+    </div>
+    <div class="notice mt10">
+      <div class="info-new">
+        <p class="ellipsis" style="display: inline-block">采购数量：{if $t[amount]}{$t[amount]}{else}不限量{/if}</p>
+        <p class="ellipsis" style="display: inline-block">采购清单：<a href="{$t[linkurl]}">查看</a></p>
+        <p class="ellipsis" style="display: inline-block">采购地址：{area_pos($t[areaid], '')}</p>
+        <p class="ellipsis" style="display: inline-block">更新时间：{$t[editdate]}</p>
+      </div>
+    </div>
+  </div>
+  <div class="row-r">
+
+    <p class="r-top">{if $t[totime]}{if $t[totime] > $DT_TIME}还剩 {dtime($t[totime])} 天{else}已过期{/if}{else}长期有效{/if}</p>
+
+    <p class="r-num">已有<span style="color: #ff7700;"> {$t[pricenums]} </span>家关注</p>
+    <div class="r-bottom">
+    {if $t[totime]}{if $t[totime] > DT_TIME}
+     <span class="r-button give-price"><a href="{$t[linkurl]}">我要报价</a></span>
+     {else}
+     <span class="r-dbutton give-price"><a href="javascript:;">停止报价</a></span>
+     {/if}{else}
+     <span class="r-button give-price"><a href="{$t[linkurl]}">我要报价</a></span>
+     {/if}
+     </div>
+  </div>
+</li>
+{/loop}

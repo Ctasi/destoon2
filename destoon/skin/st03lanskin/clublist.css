@@ -1,0 +1,273 @@
+/*
+www.dtmuban.com | xiaohei |qq:290948585
+*/
+.fd-left{float:left}
+.fd-right{float:right}
+.fd-clear{clear:both}
+.fd-clr{*zoom:1}
+.fd-clr:after{display:block;clear:both;height:0;content:"\0020"}
+.fd-hide{display:none}
+.fd-show{display:block}
+.fd-locate{position:relative}
+.fd-cny{font-family:Helvetica,Arial}
+.fd-gray{color:#666}
+.fd-bold{font-weight:700}
+.screen{width:990px;margin:0 auto;padding:0 5px}
+#header,#content,#footer,.layoutshow{*zoom:1}
+#header:after,#content:after,#footer:after,.layoutshow:after{display:block;clear:both;height:0;content:"\0020"}
+.layoutshow .grid{float:left}
+.layoutshow .grid-fixed{margin-right:0!important}
+.w952{width:952px;margin:0 auto;padding:0 4px}
+body,html{font-family:Arial,"\5FAE\8F6F\96C5\9ED1";color:#333}
+button,input,select,textarea{font-family:Arial,"\5FAE\8F6F\96C5\9ED1"}
+input.placeholder,textarea.placeholder{color:#aaa}
+#alibar-v4 .alibar-container{width:1200px!important}
+.content{min-width:1200px}
+.layoutshow{width:1200px;margin:0 auto}
+.layoutshow .grid-fixed{margin-right:0!important}
+.layoutshow .grid-5{float:left;width:190px;margin-right:30px}
+.layoutshow .grid-6{float:left;width:240px;}
+.layoutshow .grid-19{float:left;width:740px;margin-right:0}
+.thread-detail .main-content .layoutshow{padding-top:30px;background:transparent url(image/club/2021661_1249217316.png) 0 0 repeat-y}
+.thread-detail .main-content .layoutshow .grid-18{margin-left:-10px}
+.thread-detail .nav{height:44px}
+.thread-detail .circle-nav{display:none}
+.thread-detail .mod-circle-info{border:0 none;background-color:transparent}
+.thread-detail .mod-circle-info .circle-avatar{margin-top:0}
+.error-page-content .nav{height:44px}
+.error-page-content .circle-nav{display:none}
+.error-page-content .error-wrap{padding:1px 0 0 0;width:624px;height:200px;margin:160px auto;background:transparent url(image/club/2060665_1249217316.png) center center no-repeat}
+.error-page-content .error-wrap .trigger{display:block;width:60px;height:22px}
+.error-page-content .circle-404{background-position:center 0}
+.error-page-content .circle-404 .trigger{margin:80px 0 0 312px}
+.error-page-content .thread-404{background-position:center -277px}
+.error-page-content .thread-404 .trigger{margin:80px 0 0 312px}
+.error-page-content .thread-is-checking{background-position:center -528px}
+.error-page-content .thread-is-checking .trigger{margin:80px 0 0 312px}
+.error-page-content .content-is-not-found{background-position:center -760px}
+.error-page-content .content-is-not-found .trigger{margin:80px 0 0 312px}
+.join-cirlce-dialog .joinReason{width:360px;height:70px;margin:10px 0 0 0}
+.join-cirlce-dialog .error-tips{color:#ff3c00}
+.delete-thread-dialog .titleclub{font-size:16px;padding:10px 0 10px 0}
+.delete-thread-dialog .titleclub span{color:#999;font-size:12px}
+.delete-thread-dialog ul{padding:0 0 0 10px}
+.delete-thread-dialog li{line-height:28px}
+.delete-thread-dialog li input{vertical-align:-3px}
+.delete-thread-dialog textarea{padding:5px;height:40px;width:350px}
+
+
+.circle-index{background-color:#f6f6f6}
+.circle-index .main-content{padding-top:30px}
+.circle-index .mid-content{margin:0 0 0 20px}
+.circle-index .mid-content .mod{margin:0 0 20px 0}
+.circle-index .mid-content .mod-thread-list .m-header{padding-left:18px}
+.circle-index .mid-content .mod-thread-list .thread-footer{padding-top:16px}
+.circle-index .mid-content .mod-thread-list .thread-footer .date,.circle-index .mid-content .mod-thread-list .thread-footer .txt,.circle-index .mid-content .mod-thread-list .thread-footer .thread-comment{margin-top:13px}
+.circle-index .mid-content .mod-thread-list .thread-footer .date{margin-left:6px}
+
+.mod-circle-info{width:188px;padding:0 0 50px 0;border:1px solid #e8e8e8;background-color:#fff}
+.mod-circle-info .circle-avatar{display:block;text-align:center;margin-top:10px}
+.mod-circle-info .circle-avatar img{display:block;width:118px;height:118px;margin:0 auto;border-radius:50%;border:4px solid #fff;box-shadow:0 -1px 6px #ddd}
+.mod-circle-info .circle-avatar span{display:block;padding:0 20px;margin-top:16px;font-size:21px;color:#333}
+.mod-circle-info .circle-name{display:block;padding:16px 20px 0 20px;font-size:21px;color:#333}
+.mod-circle-info .circle-name h1,.mod-circle-info .circle-name span{display:block;text-align:center}
+.mod-circle-info .circle-name h1 i,.mod-circle-info .circle-name span i{display:inline-block;margin:0 0 -2px 4px;width:18px;height:20px;background:transparent url(image/club/2239398_1249217316.png) 0 0 no-repeat}
+.mod-circle-info .circle-data{margin:0 20px;padding-top:36px}
+.mod-circle-info .circle-data li{float:left;width:66px;text-align:center}
+.mod-circle-info .circle-data li.split{width:1px;border-left:1px solid #eee;height:34px;margin:7px 6px 0 4px}
+.mod-circle-info .circle-data li a,.mod-circle-info .circle-data li span{display:block}
+.mod-circle-info .circle-data li a{color:#333;font-size:18px}
+.mod-circle-info .circle-data li span{color:#999;font-size:12px}
+.mod-circle-info .button-action{margin:13px 0 0 -10px;text-align:center}
+.mod-circle-info .button-action a{margin:0 0 0 8px; color:#FFF}
+.mod-circle-info .circle-bbs{margin:46px 24px 0 24px}
+.mod-circle-info .circle-bbs h3{font-size:14px;color:#333;padding-bottom:6px;font-weight:700}
+.mod-circle-info .circle-bbs p{color:#999;line-height:22px;word-break:break-all}
+
+.qui-btn{display:inline-block;padding:6px 18px;*padding:6px 18px 2px 18px;border:1px solid #d8d8d8;border-radius:3px;color:#333;vertical-align:middle;cursor:pointer;overflow:visible;background-color:#f7f7f7;font-size:14px}
+.qui-btn-small{padding:2px 17px;font-size:12px}
+.qui-btn-disHover:hover{color:#333}
+.qui-btn-action{background-color:#ff500b;color:#fff;border-color:#ff500b}
+.qui-btn-action2{background-color:#333;color:#fff;border-color:#333}
+.qui-btn-action-disHover:hover{color:#fff}
+.qui-btn-disable{border-color:#d8d8d8;background-color:#fff;color:#aaa}
+.qui-btn-disable-disHover:hover{color:#aaa}
+
+.mod-quan-recommended{padding:10px;width:688px;background-color:#fff;border:1px solid #e8e8e8}
+.mod-quan-recommended .m-header{padding:1px 0 0 8px}
+.mod-quan-recommended .m-header .titleclub{color:#333;font-size:18px}
+.mod-quan-recommended .m-content{padding-top:20px}
+.mod-quan-recommended .m-content .headline-news p{padding-top:5px}
+.mod-quan-recommended .m-content .hot,.mod-quan-recommended .m-content .new{display:inline-block;margin:0 6px -2px 0;width:22px;height:17px;background:transparent url(image/club/2053606_1249217316.png) 0 -650px no-repeat}
+.mod-quan-recommended .m-content .hot{background-position:-96px -650px}
+.mod-quan-recommended .m-content .new{background-position:-156px -650px}
+.mod-quan-recommended .txt-recommend{padding-bottom:9px;padding-left:26px;padding-right:26px}
+.mod-quan-recommended .headline-news{border-bottom:1px solid #eee;padding-bottom:14px;margin-bottom:13px}
+.mod-quan-recommended .headline-news a{font-size:18px;height:28px;line-height:28px;width:298px;overflow:hidden}
+.mod-quan-recommended .headline-news p{color:#999;margin-top:4px;line-height:20px}
+.mod-quan-recommended .texture-news li{float:left;width:298px;overflow:hidden;background:transparent url(image/club/2261029_1249217316.png) 0 -567px no-repeat;padding-left:12px;line-height:24px;height:24px; overflow:hidden}
+.mod-quan-recommended .texture-news li a{line-height:24px;font-size:14px}
+.mod-quan-recommended .picture-news{padding-top:11px}
+.mod-quan-recommended .picture-news .focus-news,.mod-quan-recommended .picture-news .headline-news,.mod-quan-recommended .picture-news .texture-news{float:left}
+.mod-quan-recommended .picture-news .headline-news,.mod-quan-recommended .picture-news .texture-news{width:320px;margin-left:20px}
+.mod-quan-recommended .picture-news .focus-news a{display:block;position:relative;width:320px;height:230px}
+.mod-quan-recommended .picture-news .focus-news img{width:320px;height:230px}
+.mod-quan-recommended .picture-news .focus-news .bg{height:40px;width:320px;display:block;position:absolute;bottom:0;left:0;background-image:-webkit-linear-gradient(to bottom,#444,#585858);background-image:linear-gradient(to bottom,#444,#585858);opacity:.6}
+.mod-quan-recommended .picture-news .focus-news .titleclub{height:25px;line-height:25px;width:320px;display:block;position:absolute;bottom:0;left:0;font-size:14px;color:#eee;text-align:center}
+
+/*!!cmd:lessbuild=false*/.mod-thread-list{width:708px;background-color:#fff;border:1px solid #e8e8e8;margin-top:30px}
+.mod-thread-list .m-content{padding:0;padding-top:12px}
+.mod-thread-list .m-content .more-threads{display:block;margin:20px auto 40px auto;width:600px;text-align:center}
+.mod-thread-list .m-header{height:50px;padding:1px 0 0 10px;border-bottom:1px solid #eee}
+.mod-thread-list .m-header .titleclub{float:left;display:inline-block;line-height:50px;height:50px;width:72px;color:#333;font-size:18px}
+.mod-thread-list .m-header .thread-count{float:left;margin:17px 0 0 14px;padding-left:14px;line-height:14px;border-left:1px solid #eee;display:inline-block;color:#999}
+.mod-thread-list .m-header .thread-count .count{color:#333;font-size:18px;padding:0 3px 0 4px}
+.mod-thread-list .m-header .qui-btn{margin:9px 10px 0 0}
+.mod-thread-list .m-header .qui-btn-action{margin-right:10px}
+.mod-thread-list .thread-item{position:relative;padding:22px 30px 0 0;margin-left:35px;border-bottom:1px solid #eee}
+.mod-thread-list .thread-item .avatar-point{display:block;position:absolute;width:12px;height:12px;background:transparent url(image/club/2261029_1249217316.png) 0 -873px no-repeat;top:28px;left:-42px}
+.mod-thread-list .thread-item .user-avatar{display:block;position:absolute;left:-58px;top:16px;z-index:11}
+.mod-thread-list .thread-item .user-avatar img{display:inline;position:absolute;top:2px;left:3px;width:39px;height:39px;border-radius:50%;*top:6px;*left:8px;*width:30px;*height:30px}
+.mod-thread-list .thread-item .user-avatar .avatar-bg{background:transparent url(image/club/2261029_1249217316.png) 0 -480px no-repeat;width:55px;height:55px}
+.mod-thread-list .thread-item .thread-bar .thread-list-check{margin:7px 10px 0 0;*margin:0 10px 0 0}
+.mod-thread-list .thread-item .thread-bar .titleclub{float:left;display:inline-block;font-size:18px;margin:0 4px 0 0}
+.mod-thread-list .thread-item .thread-bar .pic-flag{float:left;margin:4px 0 0 0;color:#666;font-style:normal}
+.mod-thread-list .thread-item .thread-bar .ico{float:left;display:inline-block;margin:5px 6px 0 0;width:22px;height:17px;background:transparent url(image/club/2261029_1249217316.png) 0 -650px no-repeat}
+.mod-thread-list .thread-item .thread-bar .ico-perfect{background-position:0 -650px;width:16px}
+.mod-thread-list .thread-item .thread-bar .ico-hot{background-position:-96px -650px}
+.mod-thread-list .thread-item .thread-bar .ico-new{background-position:-120px -650px}
+.mod-thread-list .thread-item .thread-bar .ico-top{background-position:-31px -650px;width:19px}
+.mod-thread-list .thread-item .thread-bar .ico-shoppingGuide{background-position:-129px -650px;width:16px}
+.mod-thread-list .thread-item .thread-bar .ico-vote{background-position:-64px -650px;width:16px}
+.mod-thread-list .thread-item .thread-bar .ico-pk{background-position:-196px -650px;width:16px}
+.mod-thread-list .thread-item .thread-bar .thread-view{float:right;background:transparent url(image/club/2261029_1249217316.png) 0 -232px no-repeat;padding-left:23px}
+.mod-thread-list .thread-item .thread-bar .thread-view .count{font-size:22px;color:#999}
+.mod-thread-list .thread-item .thread-summary{width:510px;margin-top:-2px;font-size:14px;line-height:24px;color:#999}
+.mod-thread-list .thread-item .thread-footer{color:#999;font-size:0;padding:8px 0 16px 0}
+.mod-thread-list .thread-item .thread-footer .thread-author,.mod-thread-list .thread-item .thread-footer .split,.mod-thread-list .thread-item .thread-footer .thread-publishDate,.mod-thread-list .thread-item .thread-footer .thread-comment,.mod-thread-list .thread-item .thread-footer .circle-link,.mod-thread-list .thread-item .thread-footer .thread-view,.mod-thread-list .thread-item .thread-footer .item-comment,.mod-thread-list .thread-item .thread-footer .date,.mod-thread-list .thread-item .thread-footer .txt{float:left}
+.mod-thread-list .thread-item .thread-footer a,.mod-thread-list .thread-item .thread-footer span{font-size:12px}
+.mod-thread-list .thread-item .thread-footer .item-comment{margin-right:6px}
+.mod-thread-list .thread-item .thread-footer .item-comment img{border-radius:3px}
+.mod-thread-list .thread-item .thread-footer .thread-comment{margin-left:0;padding-left:24px;background:transparent url(image/club/2261029_1249217316.png) -148px -240px no-repeat}
+.mod-thread-list .thread-item .thread-footer .thread-comment .count{color:#999}
+.mod-thread-list .thread-item .thread-footer .thread-view{margin-left:6px;padding-left:24px;background:transparent url(image/club/2261029_1249217316.png) 0 -241px no-repeat}
+.mod-thread-list .thread-item .thread-footer .circle-link{color:#333}
+.mod-thread-list .thread-item .thread-footer .thread-author{color:#333}
+.mod-thread-list .thread-item .thread-footer .split{display:inline-block;margin:2px 12px 0 12px;width:1px;background-color:#ddd;height:12px}
+.mod-thread-list .thread-item .thread-thumbs{margin:10px 0 5px -8px;overflow:hidden}
+.mod-thread-list .thread-item .thread-thumbs-item{float:left;display:inline;margin-left:8px;width:118px;height:78px;border:1px solid #e8e8e8;text-align:center;white-space:nowrap;overflow:hidden}
+.mod-thread-list .thread-item .thread-thumbs-item img{width:118px;display:inline-block;vertical-align:middle}
+.mod-thread-list .thread-item .thread-thumbs-item i{display:inline-block;width:0;height:80px;vertical-align:middle;overflow:hidden}
+.mod-thread-list .item-first .thread-body{padding-top:4px}
+.mod-thread-list .item-fixed{border:0 none}
+
+.sign-mod .sign-action{width:228px;height:50px;border:1px solid #e6e6e6;border-radius:3px}
+.sign-mod .sign-action-disabled{background-color:#fff}
+.sign-mod .sign-action .sign-date{float:left;height:42px;padding-top:3px;width:64px;margin:4px 0 0 5px;background:transparent url(image/club/2261029_1249217316.png) 0 0 no-repeat}
+.sign-mod .sign-action .sign-date span{display:block;width:59px;text-align:center;color:#fff}
+.sign-mod .sign-action .sign-info{float:left;width:140px;margin-left:10px;height:50px;line-height:50px;font-size:22px;color:#333;text-align:center}
+.sign-mod .sign-members{margin:11px 0 0 -8px}
+.sign-mod .sign-members .titleclub{padding:16px 0 13px 8px;font-size:16px}
+.sign-mod .sign-members a{display:inline-block;width:36px;height:36px;margin-left:8px}
+.sign-mod .sign-members a img{width:34px;height:34px;border:1px solid #e6e6e6;border-radius:10px}
+.sign-mod-unlogin{background-color:#f5f5f5}
+
+.mod-circle-members{width:230px;margin:30px 0 15px 0;overflow:hidden}
+.mod-circle-members .m-header{margin-bottom:12px}
+.mod-circle-members .m-header .titleclub{font-size:16px;display:inline-block}
+.mod-circle-members .m-header .showMemberList{font-size:12px;color:#333;float:right;padding-right:14px;margin-top:5px;background:transparent url(image/club/2261029_1249217316.png) 55px -55px no-repeat}
+.mod-circle-members .userclub{float:left}
+.mod-circle-members .userclub img{float:left;width:34px;height:32px;border-radius:10px;border:1px solid #e6e6e6}
+.mod-circle-members .userclub span{display:block;margin-left:46px;width:57px;color:#333}
+.mod-circle-members .userclub .desc{overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.mod-circle-members .userclub .position{color:#999}
+.mod-circle-members .m-circle-admin{padding-top:18px;margin:0 0 0 -22px}
+.mod-circle-members .m-circle-admin .userclub{width:103px;height:36px;margin-bottom:20px;padding:0 0 0 22px;border-left:1px solid #e6e6e6}
+.mod-circle-members .m-circle-admin .user-odd{width:101px;padding:0 0 0 18px}
+.mod-circle-members .m-circle-owner .userclub .desc{width:180px}
+.mod-circle-members .m-circle-admin .user{width:103px;height:36px;margin-bottom:20px;padding:0 0 0 22px;border-left:1px solid #e6e6e6}
+
+
+.mod-sale-group{padding:0 0 0 0}
+.mod-sale-group .m-header .titleclub{font-size:16px;color:#444}
+.mod-sale-group .m-header .subtitle{margin:4px 0 0 10px}
+.mod-sale-group .m-header .subtitle .count{color:#ff3c00}
+.mod-sale-group .m-content{padding:13px 0 0 0}
+.mod-sale-group .m-content .listsclub li{margin:0 0 18px 0}
+.mod-sale-group .m-content .listsclub li a{color:#999}
+.mod-sale-group .m-content .listsclub li a span{padding:5px 0 0 60px;display:block}
+.mod-sale-group .m-content .listsclub li img{float:left;width:48px;height:48px;border:1px solid #eee;border-radius:10px}
+.mod-sale-group .m-content .listsclub li .infoclub{margin:6px 0 0 60px}
+.mod-sale-group .m-content .listsclub li .renqi{padding:0 0 0 0px}
+
+/*!!cmd:lessbuild=false*/.mod-interesting-circle{padding:0 0 20px 0;display:none}
+.mod-interesting-circle .titleclub{float:left;font-size:16px;color:#444}
+.mod-interesting-circle .more{margin:4px 0 0 10px;float:right}
+.mod-interesting-circle .m-content{margin-top:10px}
+.mod-interesting-circle .m-content .prev,.mod-interesting-circle .m-content .next{width:30px;height:200px}
+.mod-interesting-circle .m-content .prev a,.mod-interesting-circle .m-content .next a{display:block;width:100%;height:30px;background:transparent url(image/club/2261029_1249217316.png) 0 -102px no-repeat}
+.mod-interesting-circle .m-content .prev a{margin-top:78px;background-position:0 -110px}
+.mod-interesting-circle .m-content .next a{margin-top:78px;background-position:-250px -110px}
+.mod-interesting-circle .list{width:160px;overflow:hidden}
+.mod-interesting-circle .list .item{height:56px;margin-bottom:14px}
+.mod-interesting-circle .list .item a{display:block}
+.mod-interesting-circle .list .item .link span{padding-left:9px}
+.mod-interesting-circle .list .item .join-circle{margin:6px 0 0 65px;padding-left:20px;width:46px;height:24px;line-height:24px;border:1px solid #d8d8d8;border-radius:3px;color:#444;background:transparent url(image/club/2261029_1249217316.png) 6px -82px no-repeat}
+.mod-interesting-circle .list .item img{float:left;width:50px;height:50px;border-radius:50%;border:3px solid #fff}
+
+.mod-shop-recommend{padding:0 0 15px 0}
+.mod-shop-recommend .m-header .titleclub{font-size:16px;color:#444}
+.mod-shop-recommend .m-content{padding:14px 0 0 0}
+.mod-shop-recommend .m-content .item{margin-bottom:20px;height:60px;overflow:hidden;font-size:0}
+.mod-shop-recommend .m-content .item img{width:230px;height:60px}
+.mod-shop-recommend .m-content .item-txt{height:auto}
+.mod-shop-recommend .m-content .item-txt a{font-size:14px}
+
+/*!!cmd:lessbuild=false*/
+.mod-tips{padding:36px 0 0 0}
+.mod-tips .m-header .titleclub{font-size:16px;color:#444}
+.mod-tips .mod-content li{padding:0 0 0 8px;margin:0 0 9px 0;background:transparent url(image/club/2261029_1249217316.png) 0 -567px no-repeat}
+.mod-tips .mod-content li a{color:#444;line-height:22px}
+.mod-tips .mod-content li a:hover{color:#D8624F}
+
+/*!!cmd:lessbuild=false*/.mod-sidebar{position:fixed;right:-100px;top:0;border-left:1px solid #f0f0f0;background-color:#fbfbfb;width:50px}
+.mod-sidebar .titleclub,.mod-sidebar .login,.mod-sidebar .publishThread,.mod-sidebar .myTask,.mod-sidebar .announce{background:transparent url(image/club/2261029_1249217316.png) 0 0 no-repeat}
+.mod-sidebar .titleclub{display:block;height:22px;background-color:#ff500b;background-position:-255px -386px}
+.mod-sidebar .cont{position:relative;height:300px;background-color:#fbfbfb;z-index:10}
+.mod-sidebar .cont .login,.mod-sidebar .cont .publishThread,.mod-sidebar .cont .myTask,.mod-sidebar .cont .isLogin,.mod-sidebar .cont .announce{display:block;padding:55px 0 16px 0;font-size:13px;color:#333;text-align:center}
+.mod-sidebar .cont .login:hover,.mod-sidebar .cont .publishThread:hover,.mod-sidebar .cont .myTask:hover,.mod-sidebar .cont .isLogin:hover,.mod-sidebar .cont .announce:hover{background-color:#eee}
+.mod-sidebar .cont .login{background-position:7px -373px}
+.mod-sidebar .cont .login:hover,.mod-sidebar .cont .login.hover{background-position:7px -708px}
+.mod-sidebar .cont .publishThread{background-position:-82px -708px}
+.mod-sidebar .cont .publishThread:hover{background-position:-82px -708px}
+.mod-sidebar .cont .myTask{background-position:-173px -373px}
+.mod-sidebar .cont .myTask:hover{background-position:-172px -708px}
+.mod-sidebar .cont .announce{display:block;background-position:-248px -373px}
+.mod-sidebar .cont .announce:hover{background-position:-241px -708px}
+.mod-sidebar .cont .announce span{position:absolute;top:-3px;left:28px;font-size:30px;color:#ff500b}
+.mod-sidebar .cont .isLogin{text-align:center;height:73px;padding:17px 0 0 0}
+.mod-sidebar .cont .isLogin img{width:32px;height:32px;border-radius:50%;display:block;margin:0 auto 5px auto}
+.mod-sidebar .cont .isLogin span{display:block;margin:6px 0 0 0}
+.mod-sidebar .quan-sidebar-login{display:none;width:310px;position:absolute;z-index:8;top:22px;right:50px}
+.mod-sidebar .quan-sidebar-login iframe{border:0 none}
+.mod-sidebar .sidebar-action{z-index:10}
+.mod-sidebar .qui-sidebar-actions .qui-bar-li{width:50px;height:49px;border-top:1px solid #e8e8e8}
+.mod-sidebar .qui-sidebar-actions .qui-bar-li:last-child{border-bottom:1px solid #e8e8e8}
+.mod-sidebar .qui-sidebar-actions .qui-bar-li a{display:block;width:100%;height:49px;background:#fff url(image/club/2261029_1249217316.png) 0 0 no-repeat}
+.mod-sidebar .qui-sidebar-actions .qui-bar-li a:hover{background-color:#fbfbfb}
+.mod-sidebar .qui-sidebar-actions .qui-investigate a{background-position:17px -990px}
+.mod-sidebar .qui-sidebar-actions .qui-gotop a{background-position:17px -909px}
+.mod-sidebar .qui-sidebar-actions .qui-close a{background-position:14px -1161px}
+.mod-sidebar-announce{position:absolute;z-index:0;left:-252px;top:0;width:250px;border:1px solid #f0f0f0;font-size:13px;background-color:#fff;opacity:0}
+.mod-sidebar-announce .announce-title{font-weight:700;padding:10px 0 0 14px}
+.mod-sidebar-announce .announce-content{padding:5px 14px 1px 14px;line-height:22px}
+.mod-sidebar-announce .triggle{position:relative;left:250px;top:-48px;width:10px;height:10px;background:transparent url(image/club/2261029_1249217316.png) -2px -1270px no-repeat}
+.mod-sidebar-closed .mod-sidebar-announce{display:none!important}
+.mod-sidebar-closed .mod-sidebar-expand{right:-50px;bottom:10px;position:fixed}
+.mod-sidebar-closed .mod-sidebar-expand a{display:block;width:50px;height:36px;cursor:pointer;background:transparent url(image/club/2261029_1249217316.png) 0 -1225px no-repeat}
+
+.mod-author-threads{margin:36px 0 26px 0}
+.mod-author-threads .m-header .titleclub{font-size:16px;color:#444}
+.mod-author-threads .m-content{padding:8px 0 0 0}
+.mod-author-threads .m-content .list-item{background:transparent url(image/club/2261029_1249217316.png) 0 -568px no-repeat;margin:0 0 7px 0;padding:0 0 0 12px;font-size:14px}
+.mod-author-threads .m-content .list-item a{display:block;width:196px;overflow:hidden;white-space:nowrap}

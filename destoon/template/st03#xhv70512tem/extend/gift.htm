@@ -1,0 +1,195 @@
+{template 'header-mini'}
+<link rel="stylesheet" type="text/css" href="{DT_SKIN}base.css"/>
+<link rel="stylesheet" type="text/css" href="{DT_SKIN}gift.css"/>
+<div class="supply-header">
+  <div class="header-wrap">
+    <div class="header">
+      <div class="top">
+        <div class="logo-gift fl"> <a href="{DT_PATH}" class="fl" target="_blank" title="{$DT[sitename]}"> <img src="{DT_SKIN}image/logo.png" height="80" width="210" alt="{$DT[sitename]}"> </a> </div>
+        <h1 class="title-gift fl"><a href="{$EXT[gift_url]}">积分商城</a></h1>
+        <div class="h-nav">
+          <ul>
+            <li class="nav-itm"><a href="{DT_PATH}">网站首页</a></li>
+            <li class="nav-itm"><a href="{$url}">积分首页</a></li>
+            <li class="nav-itm"><a href="{$url}index.php?action=my">我的订单</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="supply-wrap"> 
+<div class="supply-main catt">
+<ul>
+{loop $_TP[0] $v0}
+ <li class="nav-itm" id="type_{$v0[typeid]}"><a href="{$url}{list_url($v0[typeid])}">{$v0[typename]}</a></li>
+ {if isset($_TP[1][$v0[typeid]])}
+ {loop $_TP[1][$v0[typeid]] $v1}
+ <li class="nav-itm" id="type_{$v1[typeid]}"><a href="{$url}{list_url($v1[typeid])}">&nbsp;|- {$v1[typename]}</a></li>
+ {/loop}
+ {/if}
+ {/loop}
+</ul>
+</div>
+{if $action == 'my'}
+ <div class="path"> <a href="{$MODULE[1][linkurl]}">首页</a> <span>&gt;</span> <a href="{$url}">积分商城</a> <span>&gt;</span> 我的订单 </div>
+  <div class="supply-main" style="padding-top: 0px;border-radius:3px;">
+    <div class="app-table-dd">
+      <ul>
+        <li>
+          <label>订单编号</label>
+        </li>
+        <li>
+          <label>礼品</label>
+        </li>
+        <li>
+          <label>{$DT[credit_name]}</label>
+        </li>
+        <li>
+          <label>下单时间</label>
+        </li>
+        <li>
+          <label>状态</label>
+          </li>
+          {loop $lists $k $v}
+          <li>{$v[oid]}</li>
+          <li><a href="{$v[linkurl]}" target="_blank">{$v[title]}</a></li>
+          <li>{$v[credit]}</li>
+          <li>{$v[adddate]}</li>
+          <li>{$v[status]}</li>
+          {/loop}
+      </ul>
+    </div>
+
+    <div class="pages">{$pages}</div>
+  </div>
+  <script type="text/javascript">$(function(){$('#type_my').attr('class', 'current');});</script>
+  {else}
+  {if $itemid}
+  <div class="supply-main" style="padding-top: 0px;"> 
+    <!-- path -->
+    <div class="path"> <a href="{$MODULE[1][linkurl]}">首页</a> <span>&gt;</span> <a href="{$url}">积分商城</a> <span>&gt;</span> <a href="{$url}{list_url($typeid)}">{$TYPE[$typeid][typename]}</a> </div>
+    {if isset($success)}
+    <div class="submit_success"> 恭喜您，礼品兑换成功！请检查您的联系方式是否正确，以便工作人员与您取得联系&nbsp;&nbsp; <a href="{$MODULE[2][linkurl]}edit.php" target="_blank">[更新联系方式]</a> <a href="{$url}index.php?action=my">[查看订单]</a> </div>
+    {/if} 
+    <div class="unit clearfix">
+      <div class="app-it-l"> <a href="javascript:;" class="app-it-pic"> <img src="{$thumb}" width="80" alt="{$alt}" title="点击查看大图" onclick="View('{$thumb}');"/>
+        <p>{$title}</p>
+        </a> </div>
+      <div class="app-it-r">
+        <div class="app-table">
+          <ul>
+            <li>
+              <label>浏览次数：</label>
+              {$hits} 次 </li>
+            <li>
+              <label>发布时间：</label>
+              {$adddate}</li>
+            <li>
+              <label>会员权限：</label>
+              {if $gname}{$gname}{else}全部{/if}</li>
+            <li>
+              <label>当前状态：</label>
+              {if $left}<img src="{DT_STATIC}file/image/process_{get_process($fromtime, $totime)}.gif" align="absmiddle" alt="有效期：{$fromdate} 至 {$todate}"/>{else}<span class="f_red">已结束</span>{/if}</li>
+            <li>
+              <label>剩余名额：</label>
+              {$left}</li>
+            <li>
+              <label>所需{$DT[credit_name]}：</label>
+              <span class="app-price"><em>{$credit}</em></span>/{$DT[credit_name]}</li>
+          </ul>
+        </div>
+        <p class="mt20"><a href="javascript:;" class="ui-app-button " onclick="Order();"/>我要兑换</a> </p>
+        <div class="app-tip">加入{VIP}会员，获得全面的网络推广方案！<a href="{$MODULE[2][linkurl]}grade.php" target="_blank"> 去看看></a> </div>
+      </div>
+    </div>
+    <div class="unit app-list-box clearfix">
+      <label>最新兑换</label>
+      <div class="app-list"> 
+        <!--{php $lists=tag("table=gift&length=24&areaid=$cityid&pagesize=12&order=addtime desc&template=null");}--> 
+        {loop $lists $k $v} <a href="{$v[linkurl]}"> <img src="{$v[thumb]}" width="48" height="48" alt="{$v[alt]}"/>
+        <p>{$v[title]}</p>
+        </a> {/loop} </div>
+    </div>
+    <div class="unit app-r-box">
+      <h2 class="unit-tit-show">兑换规则详情</h2>
+      <div class="app-unlimit-p"> {if $content}{$content}{else}&nbsp;{/if} </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+				function Order() {
+					{if $process == 1}return confirm('抱歉，此兑换还没有开始');{/if}
+					{if $process == 2}if(confirm('确定要兑换吗？系统将扣除您{$credit}{$DT[credit_name]}')) Go('{$url}index.php?action=order&itemid={$itemid}'){/if}
+					{if $process == 3}return confirm('抱歉，此兑换已经过期');{/if}
+					{if $process == 4}return confirm('抱歉，此兑换名额用尽，已经结束');{/if}
+				}
+				</script> 
+  <script type="text/javascript">try{Dd('type_{$typeid}').className='current';}catch(e){}</script> 
+</div>
+{else}
+<div class="supply-main">
+  <div class="supply-tbanner clearfix" style="height: auto;">
+    <div class="unit market-new">
+      <h3 class="unit-tit">新品推荐</h3>
+      <!--{php $tags=tag("table=gift&length=24&condition=level=1&areaid=$cityid&pagesize=1&order=addtime desc&template=null");}--> 
+      {loop $tags $k $t}
+      <div class="market-first market-first-to">
+        <div class="market-pic"> <a href="{$t[linkurl]}"><img src="{if $t[thumb]}{$t[thumb]}{else}{DT_SKIN}image/nopic60.gif{/if}" width="48" height="48" alt="{$t[alt]}" onerror="this.src='{DT_SKIN}image/nopic60.gif'"/></a> </div>
+        <dl>
+          <dt>{$t[title]}</dt>
+          <dd><span class="app-price"><em>{$t[credit]}</em></span></em>/{$DT[credit_name]}</dd>
+        </dl>
+      </div>
+      <p class="markt-fir-tip">总兑换名额{$t[amount]}人</p>
+      <div class="apply-buy"> <a href="{$t[linkurl]}" target="_blank">我要兑换</a> </div>
+      {/loop} </div>
+    <div class="sup-banner-box ">
+    <!--大幻灯片广告-->
+      <div class="banner-mode market-banner fl"> {ad(158)} </div>
+    </div>
+    <div class="sup-rl market-rl">
+      <h3 class="unit-tit">热门排行</h3>
+      <div class="buy-top show-control">
+        <ul>
+          <!--{php $tags=tag("table=gift&length=24&areaid=$cityid&pagesize=4&order=hits desc&template=null");}--> 
+          {loop $tags $i $t}
+          <li class="select" >
+            <p class="market-item-tit"><a href="{$t[linkurl]}">{$i+1}.&nbsp;{$t[title]}</a> </p>
+            <div class="buy-top-item clearfix" >
+              <div class="market-first">
+                <div class="market-pic"> <a href="{$t[linkurl]}"><img src="{if $t[thumb]}{$t[thumb]}{else}{DT_SKIN}image/nopic60.gif{/if}" width="48" height="48" alt="{$t[alt]}" onerror="this.src='{DT_SKIN}image/nopic60.gif'"/></a> </div>
+                <dl>
+                  <dt>{$t[title]}</dt>
+                  <dd><span>{$t[hits]}人关注</span></dd>
+                </dl>
+              </div>
+              <a href="{$t[linkurl]}" class="buy-now-btn" target="_blank">立即兑换</a> </div>
+          </li>
+          {/loop}
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="unit apply-box">
+    <h3 class="unit-tit">{if $typeid==0}{else}{$TYPE[$typeid][typename]}{/if}物品兑换</h3>
+    <div class="apply-list">
+      <ul class="clearfix">
+        {loop $lists $i $v}
+        <li class="li-hover {if $i==3}bb{elseif $i==7}bb{elseif $i==11}bb{elseif $i==15}bb{/if}"> <a href="{$v[linkurl]}">
+          <div class="market-pic"> <img src="{$v[thumb]}" width="48" height="48" alt="{$v[alt]}"/> </div>
+          <p class="apply-name">{$v[title]}</p>
+          </a>
+          <p class="apply-tip">剩余{$v[left]}个名额</p>
+          <p class="apply-price"><span class="app-price"><em>{$v[credit]}</em></span>/{$DT[credit_name]}</p>
+          <a href="{$v[linkurl]}" class="apply-btn" target="_blank">立即兑换</a> </li>
+        {/loop}
+      </ul>
+    </div>
+    <div class="pages">{$pages}</div>
+  </div>
+</div>
+<script type="text/javascript">$(function(){$('#type_{$typeid}').attr('class', 'current');});</script>
+{/if}
+			{/if}
+</div>
+{template 'footer-mini'}

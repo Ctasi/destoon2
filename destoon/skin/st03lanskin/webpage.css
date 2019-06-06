@@ -1,0 +1,180 @@
+@charset "utf-8";
+/*
+ST03-CSS-xiaohei-qq:290948585-dtmuban.com-20180414 v7
+*/
+
+html{color:#333;background:#fff;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}
+
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,textarea,p,blockquote,th,hr,button,article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{margin:0;padding:0}
+
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
+
+audio,canvas,video{display:inline-block;*display:inline;*zoom:1}
+
+body,button,input,select,textarea{font:12px/1.5 tahoma,arial,"Hiragino Sans GB",\5b8b\4f53}
+
+input,select,textarea{font-size:100%}
+
+table{border-collapse:collapse;border-spacing:0}
+
+th{text-align:inherit}
+
+fieldset,img{border:0}
+
+iframe{display:block}
+
+abbr,acronym{border:0;font-variant:normal}
+
+del{text-decoration:line-through}
+
+address,caption,cite,code,dfn,em,th,var{font-style:normal;font-weight:500}
+
+ol,ul{list-style:none}
+
+caption,th{text-align:left}
+
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:500}
+
+q:before,q:after{content:''}
+
+sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}
+
+sup{top:-.5em}
+
+sub{bottom:-.25em}
+
+a{color:#333}
+
+a:hover{color:#0f69dc;text-decoration:none}
+
+ins,a{text-decoration:none}
+
+code,kbd,pre,samp{font-family:monospace,serif;font-size:1em}
+
+.clearfix:after,.layout:after,.clf:after{visibility:hidden;display:block;font-size:0;content:'.';clear:both;height:0}
+
+.clearfix,.layout,.clf{zoom:1}
+
+.clear{font-size:0;line-height:0;height:0;clear:both;visibility:hidden;overflow:hidden}
+
+.fn-hide{display:none}
+
+.fl,.fr{display:inline}
+
+.fl{float:left}
+
+.fr{float:right}
+
+body{min-width:1200px;background:#f5f5f5;font-family:"microsoft yahei",SimSun,arial,sans-serif}
+
+.layout{width:1200px;margin-left:auto;margin-right:auto}
+
+.header-wrap{height:93px;background:#fff;border-bottom:1px solid #d2d3d5}
+
+.header{position:relative;width:1200px;margin-left:auto;margin-right:auto;border:0}
+
+.header .top{position:relative;z-index:10;height:80px;padding-top:10px}
+
+.header .logo{padding:0 20px 0 0}
+
+.header .title-about{font-size:20px;font-weight:700;line-height:80px}
+
+.header .title-about a:hover{color:#333;text-decoration:none}
+
+.header .h-nav{font-size:16px;height:80px;line-height: 80px;}
+
+.header .current a{color:#1a6dd9}
+
+.header .nav-itm,.header .current{float:left;padding:0 10px;position:relative}
+
+.path{position:relative;padding-bottom:18px;height:28px;padding:13px 0 13px 0;font-size:14px;line-height:2}
+
+.main{border-radius:4px;overflow:hidden;background:#fff}
+
+.unit{border:0;border-radius:4px;background:#fff}
+
+
+
+.content-about{width:1200px;margin-right:0;min-height:665px}
+
+.content-hd{position:relative;font-size:24px;padding-left:32px;line-height:43px;padding-top:21px;height:43px}
+
+
+
+.detail{padding:0 30px 0 30px;border-top:1px solid #e0e0e0;margin-top:10px}
+
+.detail .article{padding-top:25px;line-height:27px;font-size:14px!important;padding-bottom:70px}
+
+.detail .article img{max-width:800px}
+
+.detail .article a{color:#304f8f!important}
+
+.detail .article a span{color:#304f8f!important}
+
+.detail .article p,.detail .article span,.detail .article a{font-size:14px!important;font-family:"microsoft yahei",SimSun,arial,sans-serif!important}
+
+.detail .article p{text-indent:2em}
+
+.detail .service-bd{padding:100px 0}
+
+.detail .service-bd dl,.detail .service-bd dd{margin:0;padding:0;color:#757575;font-size:14px}
+
+.detail .service-bd dl{width:49%;text-align:center;float:left;height:270px;padding:20px 0}
+
+.detail .service-bd dl dt{font-size:30px;padding:10px 0;color:#424242}
+
+.detail .service-bd .bd{padding:100px 0}
+
+.detail .service-bd .o{border-right:1px solid #e0e0e0}
+
+.detail .service-bd .t a{margin:25px auto 0 auto;color:#fff;width:160px;height:40px}
+
+.detail .service-bd .o a{margin:25px auto 0 auto;color:#fff;width:160px;height:40px}
+
+
+
+.icon-contact{background-position:top left;width:100px;height:100px;display:block;margin:0 auto;background-repeat:no-repeat;background-image:url("image/help/service_contact.jpg")}
+
+.icon-contact01{background-position:0 0}
+
+.icon-contact02{background-position:0 -109px}
+
+.icon-contact03{background-position:0 -219px}
+
+.icon-contact04{background-position:0 -329px}
+
+
+
+
+
+.btn-primary{background:#247ef2;border-color:#2277e6;color:#fff}
+
+.btn-primary:hover{background-color:#2170d9;color:#fff}
+
+.btn{display:inline-block;*zoom:1;*display:inline;padding:0;font-size:14px;line-height:38px;text-align:center;cursor:pointer;-webkit-transition:all .4s;transition:all .4s}
+
+
+
+.content_diz{border-top:1px solid #ddd;}
+
+.content_dizname{font-size:24px;line-height:43px;height:43px;border-bottom:1px solid #ddd;text-align:center}
+
+.detail_diz ul{padding:20px 0}
+
+.detail_diz li{height:30px;line-height:30px;padding-left:200px;font-size:14px}
+
+
+
+
+
+.footer{margin-top:80px;background:#313131;color:gray}
+
+.footer a{color:gray}
+
+.footer a:hover{color:gray;text-decoration:underline}
+
+.footer .f-btm{padding-bottom:0;padding-top:14px;text-align:center}
+
+.footer .links span{color:#3d3d3d;padding:0 3px}
+
+.footer .copyright{color:#4c4c4c;line-height:26px;margin-bottom:12px}

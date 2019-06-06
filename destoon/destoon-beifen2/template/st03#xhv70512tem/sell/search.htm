@@ -1,0 +1,206 @@
+{template 'header'}
+<script type="text/javascript">var sh = '{$MOD[linkurl]}search.php?catid={$catid}';</script>
+<script type="text/javascript" src="{DT_SKIN}js/category_list.js"></script>
+<div class="wrapper mt20 clear">
+<div class="main-content clear">
+<div class="sort-filter ">
+<div class="sf-hot">
+<h3>你现在的位置：</h3>
+    <ul>
+  <li><a href="{$MODULE[1][linkurl]}" target="_self">首页</a> » <a href="{$MOD[linkurl]}">{$MOD[name]}</a> » {cat_pos($CAT, ' » ')} {$kw}</li>
+   <li class="fr mr-10">共找到 <b class="red">{$items}</b> 条产品信息</li> 
+    </ul>
+</div>
+<div class="sf-content">
+    <h3>分  类：</h3>
+    <div class="sf-link">
+    <div class="zk close">
+<ul>
+        <li class="li_1"><a  href="{$MOD[linkurl]}" {if $catid==0}class="current"{else}{/if}>全部</a></li>
+        {php $mid = $moduleid;}
+				{php $child = get_maincat(0, $mid, 1);}
+				{loop $child $i $c}
+            <li><a {if $c[catid]==$catid} class="current"{/if} href="{$MOD[linkurl]}{$c[linkurl]}" target="_self">{$c[catname]}{if !$cityid} <span>{$c[item]}</span>{/if}</a></li>
+            {/loop}
+    </ul>
+    <a class="more theca" href="javascript:void(0)">更多</a>
+     </div>
+    </div>
+</div>
+<div class="sf-content">
+    <h3>区&nbsp;&nbsp;域：</h3>
+    <div class="sf-link sf-unfold">
+    <div class="zk close">
+              <ul>
+            <li class="li_1"><a href="{$MOD[linkurl]}" {if $areaid==99}class="current"{else}{/if}>全部</a></li>
+            {php $mainarea = get_mainarea(0)}
+            {loop $mainarea $k $v}
+             <li><a href="{$MOD[linkurl]}search.php?areaid={$v[areaid]}&catid={$catid}" {if $v[areaid]==$areaid} class="current"{/if}>{$v[areaname]}</a></li>
+            {/loop}
+                  </ul>
+                  <a class="more theca" href="javascript:void(0)">更多</a>
+     </div>
+    </div>
+</div>
+<div class="sf-content">
+    <h3>类  别：</h3>
+    <div class="sf-link">
+<ul>
+<li class="li_1"><a  href="{$MOD[linkurl]}" {if $typeid==99}class="current"{else}{/if}>全部</a></li>
+
+      {loop $TYPE $k $v}
+		<li><a href="javascript:Go('{$MOD[linkurl]}{rewrite('search.php?typeid='.$k.'&catid='.$catid)}');" {if $typeid==$k}class="current"{/if}>{$v}</a></li>
+		{/loop}
+    </ul>
+    </div>
+</div>
+{if $CP}{template 'property_search', 'chip'}{/if}
+<div class="sf-sequence">
+    <div class="fl">
+        <a href="javascript:void(0)" sort="default" onclick="Go(sh+'&order=0&kw={$kw}');" title="默认排序" class="current left">默认排序</a>     
+        <a href="javascript:void(0)" sort="price" onclick="Go(sh+'&order=3&kw={$kw}');" title="价格从低到高" ><span>价格</span><i class="down"></i></a>
+        <a href="javascript:void(0)" sort="price2" onclick="Go(sh+'&order=2&kw={$kw}');" title="价格从高到低" ><span>价格</span><i class="up"></i></a>
+    </div>&nbsp;
+      <select onchange="Go(sh+'&day='+this.value)">
+			<option value="0">更新时间</option>
+			<option value="1">1天内</option>
+			<option value="3">3天内</option>
+			<option value="7">7天内</option>
+			<option value="15">15天内</option>
+			<option value="30">30天内</option>
+			</select> 
+			<select onchange="Go(sh+'&order='+this.value)">
+			<option value="0">显示顺序</option>
+			<option value="2">价格由高到低</option>
+			<option value="3">价格由低到高</option>
+			<option value="4">{VIP}级别由高到低</option>
+			<option value="5">{VIP}级别由低到高</option>
+			<option value="6">供货量由高到低</option>
+			<option value="7">供货量由低到高</option>
+			<option value="8">起订量由高到低</option>
+			<option value="9">起订量由低到高</option>
+			</select> 	
+    <label class="merger"><input type="checkbox" onclick="Go(sh+'&price=1');"/> 标价</label>    <label class="merger"><input type="checkbox" onclick="Go(sh+'&thumb=1');"/> 图片</label>    <label class="merger"><input type="checkbox" onclick="Go(sh+'&vip=1');"/> {VIP}</label> 
+    <div class="listtul fr">
+    <form action="{$MOD[linkurl]}search.php" id="fsearch">
+			{if $list == 0}
+			<img src="{DT_SKIN}image/list_img_on.gif" width="16" height="16" alt="图片列表" align="absmiddle" class="c_p"/>大图 
+			{else}
+			<a class="style_1" href="javascript:;" onclick="Go(sh+'&list=0&kw={$kw}');"><img src="{DT_SKIN}image/list_img.gif" width="16" height="16" alt="图片列表" align="absmiddle" class="c_p" />大图 </a>
+			{/if}
+			{if $list == 1}
+			<img src="{DT_SKIN}image/list_mix_on.gif" width="16" height="16" alt="图文列表" align="absmiddle" class="c_p"/>列表 
+			{else}
+			<a class="style_0" href="javascript:;" onclick="Go(sh+'&list=1&kw={$kw}');"><img src="{DT_SKIN}image/list_mix.gif" width="16" height="16" alt="图文列表" align="absmiddle" class="c_p"/>列表 </a>
+			{/if}
+              </form>  
+            </div>
+    </div>
+</div>
+
+ <div class="list-index clear">
+<!--左边列表 开始-->  
+<div class="list-content">
+<div class="goods-list clear">
+       
+ <div class="goods-list-plus clear">
+      {ad($moduleid,$catid,$kw,6)}
+      {load('m'.$moduleid.'_k'.urlencode($kw).'.htm')}
+      </div>
+      {if $tags}
+ <form method="post">
+    		<div class="sell_tip" id="sell_tip" style="display:none;" title="双击关闭" ondblclick="Dh(this.id);">
+      <div>
+        <p>您可以</p>
+        <input type="submit" value="对比选中" onclick="this.form.action='{$MOD[linkurl]}compare.php';" class="tool-btn"/> 或 
+        <input type="submit" value="批量询价" onclick="this.form.action='{$MOD[linkurl]}inquiry.php';" class="tool-btn"/>
+      </div>
+    </div>	
+		<div class="img_tip" id="img_tip" style="display:none;"> </div>
+{if $list==1}
+<div class="goods-list-plus clear">
+{loop $tags $k $t}
+<ul class="list mt10" id="item_{$t[itemid]}">
+    <li class="img"><a href="{$t[linkurl]}" target="_blank" title="{$t[alt]}"><img src="{imgurl($t[thumb])}" original="{imgurl($t[thumb])}" alt="{$t[alt]}" title="{$t[alt]}" style="display: inline; "border="0" onerror="this.src='{DT_SKIN}image/nopic100.gif'"></a></li>
+    <li class="inform">
+        <h2><span class="f14 blue blist"><input type="checkbox" id="check_{$t[itemid]}" name="itemid[]" value="{$t[itemid]}" onclick="sell_tip(this, {$t[itemid]});" style="vertical-align:middle"/> <a href="{$t[linkurl]}" target="_blank" title="{$t[alt]}">{$t[title]}</a> </span></h2>
+     <p class="text">介绍：{dsubstr($t[introduce], 120, '..')}</p>
+    </li>
+    {if $t[unit] && $t[price]>0}
+    <li class="price">
+    <p>{$DT[money_sign]}<span class="red f14">{$t[price]}</span>/{$t[unit]}</p>
+    <p>{$t[minamount]}{$t[unit]}起订</p>
+    <p class="f_gray">关注量： {$t[hits]}</a></p>
+    </li>
+    {else}
+    <li class="price">
+    <p class="f_gray f14">面议</p>
+    <p class="f_gray">关注量： {$t[hits]}</a></p>
+    </li>
+    {/if}
+    <li class="sw-company">
+        <p><a href="{userurl($t[username])}" class="gray orange" target="_blank">{$t[company]}</a></p>
+        <p class="f_gray"><span class="sw-mod-offerImg-company-place">{area_pos($t[areaid], '/', 2)}</span></p>
+        <p>{if $t[vip]}<img src="{DT_SKIN}image/sell/ico-vip.png" alt="{VIP}" title="{VIP}:{$t[vip]}级" align="absmiddle"/> {/if}
+   {if $t[validated]}<img src="{DT_SKIN}image/sell/ico-cx.png" width="16" height="16" title="高级诚信企业" align="absmiddle"/>{else}<img src="{DT_SKIN}image/sell/ico-cx-no.png" width="16" height="16" title="普通诚信企业" align="absmiddle"/>{/if} 
+    {if $t[validated]} <img src="{DT_SKIN}image/sell/ico-qyrz.png" width="24" height="16" title="企业已通过认证" align="absmiddle"/>{else}<img src="{DT_SKIN}image/sell/ico-qyrz-no.png" width="24" height="16" title="企业未通过认证" align="absmiddle"/>{/if} </p>
+</li>
+    <li class="btn black">
+        
+        <p class="btn-msg">
+
+        <a onclick="Go('{$path}{rewrite('inquiry.php?itemid='.$t['itemid'])}');" href="javascript:;">在线议价</a></p>
+        <p class="btn-tel">
+        <a target="_blank" href="{userurl($t[username])}">联系我们</a></p>
+        {if $t[qq] && $DT[im_qq]}<p class="btn-qq">
+            <a href="http://wpa.qq.com/msgrd?v=3&uin={$t[qq]}&site=qq&menu=yes" qq="{$t[qq]}" target="_blank">QQ在线</a>
+        </p>{/if}
+    </li>
+</ul>
+{/loop}		
+</div>
+		{elseif $list==0}
+        {template 'list-selllist', 'tag'}
+        {/if}
+		</form>
+        {else}
+        <div class="goods-list-plus clear">
+       {template 'empty', 'chip'}
+        </div>
+        {/if}           
+               
+</div>
+</div>
+ <!--左边列表 end-->                  
+ <!--右边推荐开始-->
+               <div class="list-sidebar">
+               <div class="list-sidebarcen ">
+              <div id="adword">
+<div class="adword">
+<!--{tag("moduleid=$moduleid&length=20&condition=status=3 and thumb<>''&pagesize=3&order=edittime desc&width=220&height=220&template=xiaohei-list_tj")}--> 
+</div>
+</div>
+
+<div class="clear"> </div>
+        <div class="guess mt15" id="guess">
+       <h4>— 猜你喜欢 —</h4>
+       
+            <ul>
+<!--{tag("moduleid=$moduleid&length=30&condition=status=3 and title like'%".$kw."%' and thumb<>''&group=username&pagesize=1&order=vip desc,hits desc,editdate desc,edittime desc&template=xiaohei-show_tj")}--> 
+            </ul>
+        </div>
+		
+</div></div>
+ <!--右边推荐 END-->
+  </div>
+  
+{if $showpage && $pages}
+<div class="pages clear">{$pages}</div>
+{/if}          
+
+</div>
+</div>
+<!-- main end -->
+<div class="clear"></div>
+<!--底部版权-->
+{template 'footer'}

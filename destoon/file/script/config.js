@@ -1,0 +1,1 @@
+var DTPath = "http://www.pop.com/";var DTMob = "http://www.pop.com/mobile/";var SKPath = "http://www.pop.com/skin/st03lanskin/";var MEPath = "http://www.pop.com/member/";var DTEditor = "fckeditor";var CKDomain = "";var CKPath = "/";var CKPrex = "c02_";

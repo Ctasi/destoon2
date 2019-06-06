@@ -1,0 +1,8 @@
+{loop $tags $i $t}
+<div class="tag_sell_01  ">
+<ul>
+<li class="sell_01_img"><a href="{$t[linkurl]}" target="_blank" alt="{$t[alt]}" title="{$t[alt]}"><img src="{$t[thumb]}" width="{$width}" height="{$height}" alt="{$t[alt]}" onerror="this.src='{DT_SKIN}image/nopic200.gif'"/></a></li>
+<li class="sell_01_title"><a href="{$t[linkurl]}" alt="{$t[alt]}" title="{$t[alt]}"">{$t[title]}</a></li>
+<li>起订价：￥ {if $t[unit] && $t[price]>0}<span class="f_red">{$t[price]}/{$t[unit]}</span>{else}<span class="f_gray">电议</span>{/if}</li>
+</ul></div>
+{/loop}

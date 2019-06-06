@@ -1,0 +1,368 @@
+/*
+www.dtmuban.com | xiaohei |qq:290948585
+*/
+html{color:#000;overflow-y:scroll;background:#fff}
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,fieldset,lengend,button,input,textarea,form,th,td{margin:0;padding:0}
+body,button,input,select,textarea{font:12px/1.5 Tahoma,Arial,"\5b8b\4f53",sans-serif}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:400}
+address,cite,dfn,em,var{font-style:normal}
+code,kbd,pre,samp,tt{font-family:"Courier New",Courier,monospace}
+small{font-size:12px}ul,ol{list-style:none}
+a{text-decoration:none}
+a:hover{text-decoration:underline}abbr[title],acronym[title]{border-bottom:1px dotted;cursor:help}q:before,q:after{content:''}:focus{outline:0}
+legend{color:#000}fieldset,img{border:none}
+button,input,select,textarea{font-size:100%;}
+table{border-collapse:collapse;border-spacing:0}
+hr{border:none;height:1px;*color:#fff}
+img{-ms-interpolation-mode:bicubic}
+th {line-height:35px;text-align:center;}
+
+a.group_post:link,a.group_post:visited,a.group_post:active {float:left;display:block;line-height:23px;margin-top:3px;padding:0 15px 0 15px;border-radius:5px;margin-left:6px;background:#FF7300;color:#FFFFFF;letter-spacing:2px;font-size:14px;}
+a.group_post:hover {background:#ff500b;}
+
+
+a.group_post2:link,a.group_post2:visited,a.group_post2:active {float:left;display:block;line-height:23px;margin-top:3px;padding:0 15px 0 15px;border-radius:5px;margin-left:6px;background:#333;color:#FFFFFF;letter-spacing:2px;font-size:14px;}
+a.group_post2:hover {background:#f60;}
+
+.thumb {margin:10px}
+.fd-left{float:left}
+.fd-right{float:right}
+.fd-clear{clear:both}
+.fd-clr{*zoom:1}
+.fd-clr:after{display:block;clear:both;height:0;content:"\0020"}
+.fd-hide{display:none}
+.fd-show{display:block}
+.fd-locate{position:relative}
+.fd-cny{font-family:Helvetica,Arial}
+.fd-gray{color:#666}
+.fd-bold{font-weight:700}
+.screen{width:990px;margin:0 auto;padding:0 5px}#header,#content,#footer,.layout{*zoom:1}#header:after,#content:after,#footer:after,.layout:after{display:block;clear:both;height:0;content:"\0020"}
+.layout .grid{float:left}
+.layout .grid-fixed{margin-right:0!important}
+.w952{width:952px;margin:0 auto;padding:0 4px}
+body{font-family:'\5FAE\8F6F\96C5\9ED1',Tahoma,Arial}
+.row-screen{width:1199px;margin:10px auto}
+.mod-quan-menu{width:100%;height:40px;background-color:#e60026}
+.mod-quan-menu .menu-content{width:1190px;height:40px;margin:0 auto;background-color:#c40020}
+.mod-quan-menu .menu-content ul.menu-ul{height:40px}
+.mod-quan-menu .menu-content ul.menu-ul .item{height:40px;float:left;text-align:center;margin-left:11px}
+.mod-quan-menu .menu-content ul.menu-ul .item .menu-a{display:inline-block;*diplay:inline;min-width:46px;padding:8px 12px 9px 12px;font-size:16px;color:#fff;text-decoration:none}
+.mod-quan-menu .menu-content ul.menu-ul .item .menu-a:hover,.mod-quan-menu .menu-content ul.menu-ul .item .menu-a:active,.mod-quan-menu .menu-content ul.menu-ul .item .menu-a.hover{color:#9a0722!important;background-color:#f5f5f5;background-image:none;border-top:3px solid #6b0518;border-bottom-width:0;padding:5px 12px 8px 12px}
+.mod-quan-menu .menu-content ul.menu-ul .item-active .menu-a{color:#9a0722!important;background-color:#f5f5f5;border-top:3px solid #6b0518;border-bottom-width:0;padding:5px 12px 8px 12px}
+.mod-quan-menu .menu-content ul.menu-ul .item-split{width:2px;background:url(image/club/quan09.png) -52px 12px no-repeat;*background:url(image/club/quan10.png) -52px 12px no-repeat}
+.mod-quan-menu .menu-content ul.menu-ul li.item-first{margin-left:0}
+.mod-quan-menu .menu-content ul.menu-ul .menu-dropdown-item .menu-a{padding-right:20px;background:url(image/club/quan09.png) 86px 19px no-repeat;*background:url(image/club/quan10.png) 86px 19px no-repeat}
+.mod-quan-menu .menu-content ul.menu-ul li.menu-dropdown-item:hover{background-image:none;width:96px}
+.mod-quan-menu .menu-content ul.menu-ul li.quan-statistic{height:40px;line-height:40px;padding-left:14px;margin-right:27px;float:right;background:url(image/club/quan09.png) -52px 12px no-repeat;*background:url(image/club/quan10.png) -52px 12px no-repeat}
+.mod-quan-menu .menu-content ul.menu-ul li.quan-statistic a{padding-right:10px;color:#f4f4f4;text-decoration:none;background:url(image/club/quan09.png) 77px -25px no-repeat;*background:url(image/club/quan10.png) 77px -25px no-repeat}
+.myquan-popup{display:none;position:absolute;z-index:100;background-color:#fff;border:1px solid #d6d6d6;border-top:none;padding:3px;left:0}
+.myquan-popup .listclub{width:150px;_font-size:0}
+.myquan-popup .listclub li a{background:transparent url(image/club/quan01.png) no-repeat left center;padding:0 3px 0 20px;display:block;height:28px;line-height:28px;_font-size:12px;color:#444}
+.myquan-popup .listclub li a:hover{background-color:#f0f0f0;color:#d8624f}
+.myquan-popup .listclub li.host a .quan-name,.myquan-popup .listclub li.host a .host-icon{display:inline-block;float:left;height:28px}
+.myquan-popup .listclub li.host a .quan-name,.myquan-popup .listclub li.host a .host-icon{*display:inline}
+.myquan-popup .listclub li.host a .host-icon{font-size:0;width:13px;margin-left:5px;background-image:url(image/club/quan05.png);background-position:left -1164px}
+.myquan-popup .listclub li.host a .quan-name{font-size:12px;color:#444}
+.myquan-popup .listclub li.host a:hover .quan-name{color:#d8624f}
+
+.category-entrance{height:108px;width:1199px;border:1px solid #eee;margin-top:10px; background-color:#fff;margin:12px auto;border-radius:3px;
+}
+.category-entrance .top-list{padding-left:13px}
+.category-entrance .category-item{position:relative;z-index:99;display:block;width:110px;height:108px;margin-right:7px;float:left;*border:0 none!important;text-align:center;font-size:14px}
+.category-entrance .category-item a{text-decoration:none;color:#444}
+.category-entrance .category-item .category-img{display:block;width:58px;height:58px;margin:12px 26px;transition:all .2s;-moz-transition:all .2s;-webkit-transition:all .2s;-o-transition:all .2s;background-image:url(image/club/quan12.png)}
+.category-entrance .category-item .category-name{display:block;margin-top:-5px}
+.category-entrance .category-item.hover .category-img{cursor:pointer}
+.category-entrance .category-item.hover .category-name{color:#d8624f}
+.category-entrance .hot-quan .category-img{background-position:-508px 0}
+.category-entrance .hot-quan:hover .category-img{background-position:-508px -102px}
+.category-entrance .bbs-quan .category-img{background-position:-579px 0}
+.category-entrance .bbs-quan:hover .category-img{background-position:-579px -102px}
+.category-entrance .yuan-cai-liao .category-img{background-position:0 0}
+.category-entrance .yuan-cai-liao:hover .category-img{background-position:0 -102px}
+.category-entrance .gong-ye-pin .category-img{background-position:-63px 0}
+.category-entrance .gong-ye-pin:hover .category-img{background-position:-63px -102px}
+.category-entrance .fu-zhuang .category-img{background-position:-126px 0}
+.category-entrance .fu-zhuang:hover .category-img{background-position:-126px -102px}
+.category-entrance .bai-huo .category-img{background-position:-190px 0}
+.category-entrance .bai-huo:hover .category-img{background-position:-190px -102px}
+.category-entrance .xiao-shang-pin .category-img{background-position:-318px 0}
+.category-entrance .xiao-shang-pin:hover .category-img{background-position:-318px -102px}
+.category-entrance .fu-wu .category-img{background-position:-381px 0}
+.category-entrance .fu-wu:hover .category-img{background-position:-381px -102px}
+.category-entrance .sha-long .category-img{background-position:-443px 0}
+.category-entrance .sha-long:hover .category-img{background-position:-443px -102px}
+.category-entrance .xin-qing .category-img{background-position:-254px 0}
+.category-entrance .xin-qing:hover .category-img{background-position:-254px -102px}
+.category-entrance .office-circle .category-img{background-position:-663px 0}
+.category-entrance .office-circle:hover .category-img{background-position:-663px -102px}
+.menu-extra{display:none;position:absolute;top:109px;left:-14px;background-color:#fff;width:690px;border:1px solid #eee;border-top:none}
+.menu-extra .menu-bottom-line{border-top:2px #ddd solid;border-bottom:2px #fff solid}
+.menu-extra dl{overflow:auto;_height:1%;padding:9px 1px 4px 1px}
+.menu-extra dl.bg{background:#fff url(image/club/quan02.png) 0 bottom repeat-x}
+.menu-extra dt{color:#444;font-weight:700;float:left;font-size:12px;width:80px;margin:0 8px 0 9px;*display:inline}
+.menu-extra dd{width:590px;float:left;overflow:hidden;*display:inline}
+.menu-extra ul{margin-left:-6px;float:left;width:594px}
+.menu-extra ul li{float:left;text-align:center;height:16px;line-height:16px;width:auto;padding:0 9px 0 11px;margin-bottom:8px;background:transparent url(image/club/quan03.png) -24px -1565px}
+.menu-extra a{font-size:12px;color:#444;word-break:keep-all}
+.menu-extra a:hover{font-size:12px;color:#B0060F}
+#alibar-v4 .alibar-container{width:1190px!important}
+.index-doc{background:#f5f5f5 url(image/club/quan08.png) center 230px no-repeat;margin-bottom:-14px}#footer #footer-v0{background-color:#f5f5f5!important}
+.row-screen{background-color:#fff}
+.row-screen .area-title{float:left;padding-left:10px;height:16px;line-height:16px;font-size:16px;border-left:3px solid #ff500b;color:#222}
+.row-screen .left,.row-screen .center,.row-screen .right{float:left}
+.row-screen .right{width:350px}
+.row-screen .post-item{padding-left:9px;line-height:28px;background-image:url(image/club/quan05.png);background-position:0 -238px;background-repeat:no-repeat}
+.row-screen .post-item-current{background-image:none}
+.row-screen .post-item .post-title{display:inline-block;font-size:14px;float:left;color:#444;overflow:hidden}
+.row-screen .post-item .post-category{float:left;color:#888;font-size:14px;text-decoration:none}
+.row-screen .post-item .click-count{display:inline-block;width:42px;font-size:12px;color:#888;overflow:hidden;float:right;text-align:right}
+.row-screen .post-item .quan-link{width:60px;font-size:12px;display:block;float:right;text-align:right;overflow:hidden;color:#888}
+.row-screen .post-item-split{height:1px;background:transparent url(image/club/quan09.png) 0 -50px repeat-x;*background:transparent url(image/club/quan10.png) 0 -50px repeat-x;overflow:hidden;font-size:0}
+.center-img-container{overflow:hidden;position:relative}
+.center-img-container .center-img{display:table-cell;font:12px/1 Tahoma,Helvetica,Arial;text-align:center;vertical-align:middle;text-decoration:none}
+.center-img-container .center-img .float-layer{position:absolute;display:block;overflow:hidden;text-align:center;bottom:1px;left:1px;height:30px;line-height:30px;font-size:12px;white-space:nowrap;cursor:pointer;background-color:rgba(255,255,255,.9);filter:alpha(opacity=90);color:#444;*background-color:#000;*color:#fff}
+.center-img-container .center-img:hover .float-layer{background-color:#000;background-color:rgba(0,0,0,.6);_background-color:#000;filter:alpha(opacity=60);color:#fff}
+.center-img-container .center-img img{vertical-align:middle;border:1px solid #eee}
+.center-img-container.index-center-img-item{width:280px;height:200px;margin-left:0}
+.center-img-container.index-center-img-item a{width:278px}
+.center-img-container.index-center-img-item a .float-layer{width:278px;font-size:12px}
+.center-img-container.index-center-img-item a img{width:278px;height:198px}
+.pic-news-small-item{height:50px;margin-bottom:17px;position:relative}
+.pic-news-small-item a{display:block;text-decoration:none}
+.pic-news-small-item a img{position:absolute;left:0;z-index:100;width:48px;height:48px;border:1px solid #d9d9d9;-webkit-border-radius:5px;border-radius:5px}
+.pic-news-small-item a .infoclub{padding-left:62px}
+.pic-news-small-item a .infoclub .name{display:block;font-size:14px;line-height:21px;height:21px;overflow:hidden;color:#444;*cursor:pointer}
+.pic-news-small-item a .infoclub .name .introduce{font-size:12px;margin-left:5px;*cursor:pointer}
+.pic-news-small-item a .infoclub .spec{display:block;padding-top:5px;line-height:20px;font-size:12px;color:#888;height:21px;overflow:hidden;*cursor:pointer}
+.pic-news-small-item a:hover .infoclub .name,.pic-news-small-item a:hover .infoclub .spec{color:#d8624f}
+.pic-news-big-item{margin:0 0 12px 0}
+.pic-news-big-item img{display:block;width:64px;height:64px;border:3px solid #e6e6e6;-webkit-border-radius:50%;border-radius:50%;float:left}
+.pic-news-big-item .infoclub{float:right;width:390px;margin-top:-6px}
+.pic-news-big-item .infoclub .tip{float:left;display:block;height:16px;line-height:15px;margin-top:6px;padding:0 2px 0 3px;background-color:#ff7c6a;text-align:center;color:#fff;font-size:12px}
+.pic-news-big-item .infoclub .arrow{float:left;display:block;height:16px;margin-top:6px;width:3px;margin-right:3px;background-image:url(image/club/quan05.png);background-position:right -682px}
+.pic-news-big-item .infoclub .titleclub{float:left;font-size:16px;font-weight:700;display:block;height:28px;line-height:28px;overflow:hidden;color:#444}
+.pic-news-big-item .infoclub .contentclub{display:block;margin-top:5px;max-height:36px;font-size:12px;line-height:20px;color:#888;overflow:hidden}
+.pic-news-big-item .infoclub .foot-tip{display:block;margin-top:4px;font-size:12px;line-height:21px;height:21px;overflow:hidden;color:#888}
+.one-col-layout .header{padding-left:14px;height:40px;border-bottom:1px solid #eee;background-color:#fdfdfd}
+.one-col-layout .filters{margin:5px 4px 0 0}
+
+.one-col-layout .filters li{float:left}
+
+.one-col-layout .filters li.isell_2_2 {display:block;text-align:center;margin:0 13px 0 0;color:#fff;width:50px;line-height:28px;vertical-align:middle;border:1px solid #ff500b;background-color:#ff500b}
+.one-col-layout .filters li.isell_2_2 a {text-align:center;color:#fff;font-size:12px}
+.one-col-layout .filters li.isell_2_1 {display:block;text-align:center;margin:0 13px 0 0;color:#333;width:50px;line-height:28px;vertical-align:middle;border:1px solid #e6e6e6}
+
+.one-col-layout .filters li.isell_2 {display:block;text-align:center;margin:0 13px 0 0;color:#fff;width:50px;line-height:28px;vertical-align:middle;border:1px solid #ff500b;background-color:#ff500b}
+.one-col-layout .filters li.isell_2 a {text-align:center;color:#fff;font-size:12px}
+.one-col-layout .filters li.isell_1 {display:block;text-align:center;margin:0 13px 0 0;color:#333;width:50px;line-height:28px;vertical-align:middle;border:1px solid #e6e6e6}
+
+
+/*.one-col-layout .filters li a{display:block;text-align:center;margin:0 13px 0 0;color:#333;width:50px;line-height:28px;vertical-align:middle;border:1px solid #e6e6e6}
+.one-col-layout .filters li a.current{background-color:#f55a4c!important;border:1px solid #d6212e!important;width:50px;line-height:28px;background-image:none!important;color:#fff!important}*/
+.one-col-layout .area-title{padding-left:10px;margin-top:12px;width:295px;height:16px;line-height:16px;font-size:16px;border-left:3px solid #ff500b;color:#222}
+.three-col-layout{border:1px solid #eee}
+.three-col-layout .listclub{*font-size:0}
+.three-col-layout .left{float:left;width:839px}
+.three-col-layout .left .header{padding-left:14px;height:40px;width:825px;border-bottom:1px solid #eee;background:#fff url(image/club/quan07.png) 0 0 no-repeat}
+.three-col-layout .left .header .area-title{float:left;padding-left:10px;margin-top:12px;width:295px;height:16px;line-height:16px;font-size:16px;border-left:3px solid #ff500b;color:#222}
+.three-col-layout .left .header .center-title{float:left;margin-top:11px;height:20px;line-height:20px;font-size:12px;color:#444;font-weight:700}
+.three-col-layout .left .header .area-cat{float:left;margin-top:5px}
+.three-col-layout .left .header .area-cat a{float:left;padding:0 14px;border-right:1px solid #ececec;line-height:12px;margin-top:10px;margin-bottom:10px;font-size:12px;color:#444}
+.three-col-layout .left .header .area-cat a.last{border-right:0 none}
+.three-col-layout .left .body{padding:14px 0 0 0;float:left}
+.three-col-layout .left .body .trend-split{width:1px;background-color:#efefef;float:left;background:-moz-linear-gradient(top,#fff 0,#eee 20%,#eee 80%,#fff 100%);background:-webkit-gradient(linear,left top,left bottom,color-stop(0%,#fff),color-stop(20%,#eee),color-stop(80%,#eee),color-stop(100%,#fff));background:-webkit-linear-gradient(top,#fff 0,#eee 20%,#eee 80%,#fff 100%);background:-o-linear-gradient(top,#fff 0,#eee 20%,#eee 80%,#fff 100%);background:-ms-linear-gradient(top,#fff 0,#eee 20%,#eee 80%,#fff 100%);background:linear-gradient(to bottom,#fff 0,#eee 20%,#eee 80%,#fff 100%);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ffffff', GradientType=0)}
+.three-col-layout .left .body .side-container{float:left;width:280px;padding:0 14px}
+.three-col-layout .left .body .main-container{padding:0 26px 0 24px;width:480px;float:left}
+.three-col-layout .left .body .main-container .listclub .item{margin:8px 0 12px 0}
+.three-col-layout .left .body .main-container .listclub .item img{display:block;width:66px;height:66px;border:1px solid #eee;padding:1px;-webkit-border-radius:50%;border-radius:50%;float:left}
+.three-col-layout .left .body .main-container .listclub .item .infoclub{float:right}
+.three-col-layout .left .body .main-container .listclub .item .infoclub .tip{float:left;display:block;height:16px;line-height:15px;margin-top:6px;padding:0 2px 0 3px;background-color:#ff7c6a;text-align:center;color:#fff;font-size:12px}
+.three-col-layout .left .body .main-container .listclub .item .infoclub .arrow{float:left;display:block;height:16px;margin-top:6px;width:3px;margin-right:3px;background-image:url(image/club/quan05.png);background-position:right -682px}
+.three-col-layout .left .body .main-container .listclub .item .infoclub .titleclub{float:left;font-size:14px;font-weight:700;display:block;height:28px;line-height:28px;overflow:hidden;color:#444}
+.three-col-layout .left .body .main-container .listclub .item .infoclub .contentclub{display:block;max-height:36px;font-size:12px;line-height:18px;color:#888;overflow:hidden}
+.three-col-layout .left .body .main-container .listclub .item .infoclub .foot-tip{display:block;font-size:12px;line-height:21px;height:21px;overflow:hidden;color:#888}
+.three-col-layout .right{width:320px;padding:0 14px 10px 14px;border-left:1px solid #eee;float:left;background-color:#fafafa}
+.three-col-layout .right .header{height:25px;border-bottom:1px solid #eee;padding-top:15px}
+.three-col-layout .right .header .right-title{display:block;font-size:12px;color:#444;font-weight:700;height:20px;line-height:20px}
+.three-col-layout .right .body{padding-top:14px}
+.three-col-layout .right .body .listclub .cat-item a{display:block;height:27px;line-height:27px;font-size:12px;padding-left:11px;color:#444;overflow:hidden;background-image:url(image/club/quan05.png);background-position:0 -238px;background-repeat:no-repeat}
+.three-col-layout .right .pic-news .pic{float:left}
+.three-col-layout .right .pic-news .pic img{width:118px;height:78px;border:1px solid #eee}
+.three-col-layout .right .pic-news .infoclub{float:left;width:188px;margin-left:11px}
+.three-col-layout .right .pic-news .infoclub .titleclub{display:block;font-size:14px;color:#444}
+.three-col-layout .right .pic-news .infoclub .contentclub{display:block;color:#888;padding-top:5px}
+.three-col-layout .circle-card{height:56px;overflow:hidden;padding:0 0 0 35px;position:relative}
+.three-col-layout .circle-card img{position:absolute;left:0;z-index:100;width:50px;height:50px;border:3px solid #e6e6e6;-webkit-border-radius:50%;border-radius:50%}
+.three-col-layout .circle-card .infoclub{padding:2px 0 0 30px;border:1px solid #eee;border-left:none;background-color:#fafafa}
+.three-col-layout .circle-card .infoclub .titleclub{display:block;line-height:26px;height:26px;font-size:14px;color:#444;overflow:hidden}
+.three-col-layout .circle-card .infoclub .count{float:left;color:#888;height:22px;margin:6px 0 0 8px}
+.three-col-layout .circle-card .infoclub .desc{font-size:12px;color:#888;display:block;line-height:18px;height:18px;overflow:hidden}
+.more-post a{font-size:14px;color:#444;display:block;float:left;width:230px;overflow:hidden}
+.personal-talk .avatar{float:left}
+.personal-talk .avatar img{border-radius:5px;width:48px;height:48px;border:1px solid #eee}
+.personal-talk .contentclub,.personal-talk .contentclub .txt,.personal-talk .contentclub .bt{background:transparent url(image/club/quan09.png) 0 0 no-repeat;*background:transparent url(image/club/quan10.png) 0 0 no-repeat}
+.personal-talk .contentclub{float:left;margin-left:8px;width:221px;overflow:hidden;background-position:0 -295px}
+.personal-talk .contentclub .txt{display:block;margin-left:6px;color:#444;padding:7px 10px;width:195px;border-bottom:1px solid #e6e6e6;background-position:right -295px}
+.first-screen{border:1px solid #eee;*height:678px;*overflow:hidden;border-radius:3px;}
+.first-screen .left{width:309px}
+.first-screen .left .center-img-container img{border:0 none}
+.first-screen .center{float:left;margin:0 0 0 30px;padding:14px 40px 10px 0;border-right:1px solid #eee;width:459px}
+.first-screen .center .main-title{color:#9b0000;font-size:23px;display:block;text-align:center;height:44px;line-height:44px;overflow:hidden}
+.first-screen .center .main-info{margin-top:3px;height:44px;line-height:21px;font-size:12px;color:#888;overflow:hidden;display:block}
+.first-screen .center .main-info a{color:#258}
+.first-screen .center .post-center{padding:10px 0 4px 0;*font-size:0}
+.first-screen .center .post-center li.post-item .post-title{width:295px}
+.first-screen .center .post-center li.post-item .quan-link{width:60px;font-size:12px;display:block;float:right;height:28px;line-height:28px;text-align:right;overflow:hidden;color:#369}
+.first-screen .center .seminar-suggest{margin-top:20px}
+.first-screen .center .seminar-suggest .headclub{margin-bottom:9px}
+.first-screen .center .seminar-suggest .headclub .suggest-item{display:block;margin-left:5px;float:right;color:#444}
+.first-screen .center .seminar-suggest .headclub .suggest-item .left-corner,.first-screen .center .seminar-suggest .headclub .suggest-item a,.first-screen .center .seminar-suggest .headclub .suggest-item .right-corner{display:block;float:left}
+.first-screen .center .seminar-suggest .headclub .suggest-item .left-corner,.first-screen .center .seminar-suggest .headclub .suggest-item .right-corner{width:10px;height:21px;background-image:url(image/club/quan05.png)}
+.first-screen .center .seminar-suggest .headclub .suggest-item .left-corner{background-position:0 -290px}
+.first-screen .center .seminar-suggest .headclub .suggest-item .right-corner{background-position:right -290px}
+.first-screen .center .seminar-suggest .headclub .suggest-item a{height:19px;line-height:19px;border:1px solid #d9d9d9;border-left-width:0;border-right-width:0;color:#444}
+.first-screen .center .seminar-suggest .body{font-size:0}
+.first-screen .center .seminar-suggest .body li.post-item .post-title{width:390px;overflow:hidden;white-space:nowrap}
+.first-screen .center .seminar-suggest .body li.post-item .post-item-hover{padding:7px 0 7px 35px;margin-left:-9px;position:relative}
+.first-screen .center .seminar-suggest .body li.post-item .post-item-hover img{position:absolute;left:0;_left:-35px;z-index:100;width:66px;height:66px;border:1px solid #d9d9d9;padding:1px;-webkit-border-radius:50%;border-radius:50%}
+.first-screen .center .seminar-suggest .body li.post-item .post-item-hover .infoclub{padding:8px 40px 4px 40px;border:1px solid #eee;border-left:none;background-color:#fafafa}
+.first-screen .center .seminar-suggest .body li.post-item .post-item-hover .infoclub .titleclub{display:block;line-height:28px;height:28px;font-size:14px;color:#444;overflow:hidden}
+.first-screen .center .seminar-suggest .body li.post-item .post-item-hover .infoclub .quan-name{font-size:12px;color:#888;display:block;line-height:28px;height:28px;overflow:hidden}
+.first-screen .center .seminar-suggest .body .post-item-split{margin:10px 0}
+.first-screen .right{float:left;width:349px;_overflow:hidden}
+.first-screen .right .announcement{height:34px;line-height:34px;padding-left:18px;background-color:#fcf5e9;margin-top:19px;border:1px solid #eee;border-left:none;border-right:none;display:block;color:#444}
+.first-screen .right .now-post{padding:22px 0 10px 0;*padding-bottom:23px}
+.first-screen .right .now-post .headclub{padding-right:13px;margin-bottom:15px}
+.first-screen .right .now-post .headclub #change-btn{float:right;display:block;height:20px;line-height:20px;color:#444;padding-left:18px;background-image:url(image/club/quan05.png);background-position:left -647px;cursor:pointer;text-decoration:none}
+.first-screen .right .now-post .body .listclub .item{padding-top:12px;height:94px;margin-bottom:7px;position:relative}
+.first-screen .right .now-post .body .listclub .item .post-title{padding-left:9px;background-image:url(image/club/quan05.png);background-position:0 -238px;background-repeat:no-repeat;line-height:28px;height:28px;font-size:14px;float:left;color:#444;overflow:hidden}
+.first-screen .right .now-post .body .listclub .item .avatar{font-size:0;position:absolute;z-index:12;left:-23px;top:0}
+.first-screen .right .now-post .body .listclub .item .avatar img{width:38px;height:38px;margin:4px;border:1px solid #e2e2e2 9;padding:2px 9;margin:4px 0 0 0 9;-webkit-border-radius:50%;-moz-border-radius:50%;-ms-border-radius:50%;border-radius:50%}
+.first-screen .right .now-post .body .listclub .item .water-drop{left:-23px;top:0;display:block;position:absolute;z-index:2;width:55px;height:55px;background:transparent url(image/club/quan04.png) 0 0 no-repeat;background-position:0 -655px;background:none\9}
+.first-screen .right .now-post .body .listclub .item .time{float:left;display:block;height:21px;width:50px;-webkit-border-radius:0 12px 12px 0;border-radius:0 12px 12px 0;font-size:12px;line-height:21px;background-color:#90c0db;padding-left:28px;margin-bottom:9px;color:#fff}
+.time a{color:#fff}
+.first-screen .right .now-post .body .listclub .item .spec{padding-left:18px;overflow:hidden;height:28px}
+.first-screen .right .now-post .body .listclub .item .spec .post-title{max-width:200px}
+.first-screen .right .now-post .body .listclub .item .contentclub{font-size:12px;color:#888;max-height:36px;_height:36px;line-height:18px;display:block;margin:4px 12px 0 18px;overflow:hidden}
+.first-screen .right .now-post .body .listclub .item .from{float:left;margin:2px 0 0 18px;font-size:12px;color:#888}
+.first-screen .right .now-post .body .listclub .item .from a{color:#258;padding-left:5px}
+.promo-tabs{height:258px;width:308px;border-right:1px solid #eee;border-bottom:1px solid #eee;position:relative}
+.promo-tabs img{width:308px;height:258px}
+.promo-tabs .tabs-content{height:258px;overflow:hidden}
+.promo-tabs .tabs-title{margin-top:-20px;position:absolute;bottom:10px;right:10px}
+.promo-tabs .tabs-title-ul{text-align:center;font-size:0}
+.promo-tabs .tabs-title-ul .tab-t{width:10px;height:10px;font-size:0;overflow:hidden;cursor:pointer;display:inline-block;margin:0 3px;background-image:url(image/club/quan06.png);_background-image:none;_position:relative;background-position:left -10px}
+.promo-tabs .tabs-title-ul .tab-t span{_display:inline;_width:10px;_height:30px;_filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="//cbu01.alicdn.com/cms/upload/2013/758/958/quan06.png");_position:absolute;_left:0;_top:-10px}
+.promo-tabs .tabs-title-ul .tab-t{*display:inline}
+.promo-tabs .tabs-title-ul .tab-t.tab-current{background-position:left top!important;_top:0}
+.hot-threads{padding:22px 18px 10px 15px;border-right:1px solid #eee}
+.hot-threads .headclub{margin-bottom:12px}
+.hot-threads .headclub .area-title{margin-left:-15px}
+.hot-threads .headclub .new-post-info{float:right;font-size:12px;color:#888}
+.hot-threads .headclub .new-post-info .post-count{color:#c20c0b;font-weight:700;margin-left:8px;padding-right:13px;background-image:url(image/club/quan05.png);background-position:right -218px;background-repeat:no-repeat}
+.hot-threads .body{*font-size:0}
+.hot-threads .body .post-item .post-title{width:220px;white-space:nowrap}
+.hot-threads .body .post-item .click-count{float:right}
+.hot-threads .body .post-item-split{margin:9px 0 9px 0}
+.unlogin .bar,.unlogin .infoclub,.unlogin .default-avatar,.has-login .infoclub{background:transparent url(image/club/quan09.png) 0 0 no-repeat;*background:transparent url(image/club/quan10.png) 0 0 no-repeat}
+.qr-code{width:350px;height:90px;font-size:0;margin-left:-1px}
+.unlogin{margin-bottom:-4px}
+.unlogin .default-avatar{margin-top:21px;margin-right:20px;width:85px;height:85px;background-position:0 -798px}
+.unlogin .infoclub{height:126px;background-position:1px -75px}
+.unlogin .infoclub .data{margin:27px 0 0 19px}
+.unlogin .infoclub .data .sp{padding:0 6px;color:#e5e5e5}
+.unlogin .infoclub .data .count{font-weight:700}
+.unlogin .infoclub .data .welcome-tips{font-size:14px}
+.unlogin .infoclub .data .desc{margin-top:9px}
+.unlogin .bar{width:353px;height:46px;margin-left:-1px;background:transparent url(image/club/quan14.png) 0 0 no-repeat}
+.unlogin .bar a{color:#fff;line-height:38px;font-size:14px;text-decoration:none}
+.unlogin .bar a.sign{margin-left:33px}
+.unlogin .bar a.login{margin-left:62px}
+.unlogin .bar a.getMoneny{margin-left:58px}
+.unlogin .qr-code{margin-top:-4px}
+.has-login{position:relative;padding:0 0 16px 18px}
+.has-login .infoclub{height:80px;padding-top:14px;background-position:2px -75px}
+.has-login .head-pic{position:absolute;right:15px;top:9px;width:84px;height:84px;border:3px solid #d9d9d9;-webkit-border-radius:50%;border-radius:50%;z-index:100}
+.has-login .name-wel .name{font-size:14px;color:#369;font-weight:700;height:30px;line-height:30px;max-width:75px;overflow:hidden;display:block;float:left}
+.has-login .name-wel .wel{display:block;float:left;font-size:14px;height:30px;line-height:30px;color:#444;margin-left:15px}
+.has-login .name-wel .belong-to{font-size:14px}
+.has-login .about-me{width:220px;margin-top:-10px}
+.has-login .about-me a{float:left;padding-left:39px;margin:0 8px 8px 0;width:61px;height:26px;line-height:26px;color:#444;background:transparent url(image/club/quan09.png) 0 -912px no-repeat;*background:transparent url(image/club/quan10.png) 0 -912px no-repeat}
+.has-login .about-me a.my-quan{background-position:0 -912px}
+.has-login .about-me a.my-homepage{background-position:-108px -912px}
+.has-login .about-me a.my-state{background-position:0 -946px}
+.has-login .about-me a.my-message{background-position:-108px -946px}
+.has-login .about-me .my-message span{display:block;font-size:12px;float:left}
+.has-login .about-me .my-message .new-msg-icon{display:block;width:10px;height:10px;margin:4px 0 0 3px;background:transparent url(image/club/quan05.png) -290px -1168px no-repeat;font-size:0}
+.has-login .about-me .my-message span.clr-span{float:none;clear:both;width:0;height:0;overflow:hidden;font-size:0}
+.has-login .new-getMoneny{width:140px;height:30px;position:absolute;top:70px;left:18px;cursor:pointer}
+.has-login .my-operation{width:349px;height:38px;position:relative;top:10px;margin-left:-18px;border:1px solid #eee;border-left:0;border-right:0;background:#fafafa}
+.has-login .my-operation .my-club,.has-login .my-operation .add-article,.has-login .my-operation .my-homepage{display:block;width:96px;padding-left:20px;background:url(image/club/quan13.png) 20px 0 no-repeat;text-align:center;height:15px;margin-top:10px}
+.has-login .my-operation .add-article{width:95px;background-position:20px -85px;border-right:1px solid #ddd;border-left:1px solid #ddd}
+.has-login .my-operation .my-homepage{background-position:20px -42px}
+.second-screen,.sixth-screen{margin:14px auto;width:1190px;font-size:0}
+.third-screen{width:1199px;margin:0 auto}
+#club-card-list .club-card{position:relative;width:587px;height:328px;float:left;border:1px solid #e1e1e1;margin-bottom:20px;background:#fff;border-radius:3px;}
+#club-card-list .club-card.odd{margin-right:20px}#club-card-list .club-card .headclub{height:40px;border-bottom:1px solid #eee;background-color:#fff}
+#club-card-list .club-card .headclub .area-title{float:left;margin-top:12px;padding-left:7px;height:16px;line-height:16px;font-size:16px;border-left:3px solid #ff500b;color:#222}#club-card-list .club-card .body{padding:17px 15px 20px 10px;overflow:hidden}#club-card-list .more-btn{margin-top:10px;margin-right:15px}#club-card-list .more-btn span{font-family:"\5B8B\4F53";margin-left:3px}#club-card-list .tag{height:19px;line-height:19px;padding:0 10px;margin-top:10px;margin-left:10px;border:1px solid #d9d9d9;border-radius:20px}#club-card-list .show-pic{width:200px;height:250px;margin-right:20px}#club-card-list .black-des,#club-card-list .black-des-small{position:absolute;bottom:20px;width:200px;height:30px;text-align:center;line-height:30px;background:#000;opacity:.8;color:#fff;font-size:15px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;left:10px}#club-card-list .black-des-small{position:absolute;bottom:160px;width:185px}#club-card-list .detailclub{width:335px}#club-card-list .tip{float:left;display:block;height:16px;line-height:15px;margin-top:6px;padding:0 2px 0 3px;background-color:#ff7c6a;text-align:center;color:#fff;font-size:12px}#club-card-list .arrow{float:left;display:block;height:16px;margin-top:6px;width:3px;margin-right:3px;background-image:url(image/club/quan05.png);background-position:right -682px}
+#club-card-list .titleclub{float:left;width:300px;height:28px;display:block;line-height:28px;font-size:16px;font-weight:700;color:#444;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+
+#club-card-list .title-new {float: left;width: 300px;height: 28px;display: block;line-height: 28px;font-size: 16px;font-weight: 700;color: #444;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+
+#club-card-list .contentclub{display:block;clear:both;margin-top:10px;max-height:36px;font-size:12px;line-height:20px;color:#888;overflow:hidden}#club-card-list .from{margin-top:6px;color:#999}#club-card-list .articles{margin-top:15px}#club-card-list .articles li{margin-top:5px;*margin-top:0;padding-left:9px;background-image:url(image/club/quan05.png);background-position:0 -242px;background-repeat:no-repeat}#club-card-list .articles a{display:block;width:285px;font-size:14px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}#club-card-list .articles .view-count,#club-card-list .articles .author{width:40px;color:#999;font-size:12px;text-align:right;overflow:hidden}#club-card-list .group-list{width:200px;height:250px;float:left;margin-right:20px}#club-card-list .group-list li{width:198px;height:53px;margin-bottom:10px;border:1px solid #e6e6e6;border-top-left-radius:55px;border-bottom-left-radius:55px;background:#fafafa}#club-card-list .group-list .last{margin-bottom:0}#club-card-list .group-list .group-pic{width:49px;height:49px;padding:2px;margin-right:10px;float:left;background:#e6e6e6;border-radius:50px}
+
+#club-card-list .group-list .group-name{margin-top:6px;font-size:14px;overflow:hidden;height:20px}
+
+#club-card-list .group-list .group-count{margin-top:5px;color:#999;font-size:12px}
+#club-card-list .left-article{width:185px;height:250px;padding-right:14px;margin-right:20px;border-right:1px solid #d9d9d9}
+#club-card-list .left-article .show-pic-small{width:185px;height:110px}
+#club-card-list .left-article .article-des{margin-top:10px;color:#999}
+#club-card-list .left-article .author{margin-top:12px;color:#999}
+#club-card-list .left-article .author span{color:#333}
+.zonghe-rank-container .header .show-more{margin:11px 42px 0 0;font-size:13px}
+.zonghe-rank-container .header .area-title{margin-left:-15px}
+.zonghe-rank-container .header .filters a{color:#8c8c8c}
+.zonghe-rank-container .header .filters a:hover{}
+.zonghe-rank-container .header .filters a.current:hover{color:#fff!important}
+.zonghe-rank-container .header .new-filters{margin-left:665px}
+.zonghe-rank-container .header .more-btn{margin-top:10px}
+.zonghe-rank-container .header .more-btn span{font-family:"\5B8B\4F53";margin-left:3px}
+.zonghe-rank-container .body ul{padding:12px 0 8px 0;border-right:1px solid #f6f6f6}
+.zonghe-rank-container .body ul.list-last{border-right:0 none}
+.zonghe-rank-container .body .item{padding:0 13px 0 14px;margin:0 0 7px 0;*width:206px}
+.zonghe-rank-container .body .item .rank{display:inline-block;float:left;width:18px;height:18px;background:transparent url(image/club/quan11.png) 0 -90px no-repeat;text-align:center}
+.zonghe-rank-container .body .item .rank-one,.zonghe-rank-container .body .item .rank-two,.zonghe-rank-container .body .item .rank-three{color:#fff}
+.zonghe-rank-container .body .item .rank-one{background-position:0 0}
+.zonghe-rank-container .body .item .rank-two,.zonghe-rank-container .body .item .rank-three{background-position:0 -30px}
+.zonghe-rank-container .body .item .titleclub{display:inline-block;float:left;width:164px;margin:0 0 0 13px;color:#333;font-size:14px}
+.zonghe-rank-container .body .item .trend{float:right;display:inline-block;width:11px;height:10px;-margin:10px 0 0 0;-background:transparent url(image/club/quan11.png) 0 -171px no-repeat}
+.zonghe-rank-container .body .item .trend-up{margin:6px 0 0 0;background-position:0 -136px}
+.zonghe-rank-container .body .item .trend-down{margin:6px 0 0 0;background-position:0 -197px}
+.zonghe-rank-container .body .item .title-sq{display:inline-block;float:left;width:164px;margin:0 0 0 13px;color:#333;font-size:14px}
+
+
+
+
+.has-login{padding:20px 0 19px 18px;position:relative}
+.unlogin .default-avatar .head-pic{ margin-right: 20px;width: 85px;height: 85px;border:1px solid #d9d9d9;padding:1px;-webkit-border-radius:50%;border-radius:50%;z-index:100}
+
+.reply_list{border:#dfdfdf 1px solid;border-bottom:none;}
+.reply_list table {width:100%;}
+.reply_list div {height:40px;line-height:40px;overflow:hidden;padding:0 30px 0 15px;}
+.reply_list td {border-bottom:#dfdfdf 1px solid;}
+.reply_list em {color:#666666;font-style:normal;font-family:Arial;}
+.btn_post {background:#FF7300;color:#FFFFFF;font-size:14px;padding:5px 15px 5px 15px;border:none;cursor:pointer;}
+.btn_reply {background:#2CAE5A;color:#FFFFFF;font-size:14px;padding:5px 15px 5px 15px;border:none;cursor:pointer;}
+
+.club_list div {height:32px;line-height:32px;overflow:hidden;padding:0 30px 0 0;font-size:16px;}
+.club_list em {color:#225588;font-style:normal;font-family:Arial;}
+.club_list p {color:#999999;margin:4px 0 0 0;font-family:Arial;}
+
+
+.club_quote {background:#FAFAFA url('image/club_quote_a.gif') no-repeat 10px 10px;margin:10px 0 10px 0;font-size:12px;padding:10px;}
+.club_quote div {display:inline-block;padding:5px 40px 5px 40px;background:url('image/club_quote_b.gif') no-repeat right bottom;line-height:20px;}
+.club_quote p {margin:0;text-indent:0;}
+.club_quote a:link,.club_quote a:visited,.club_quote a:active {color:#555555;text-decoration:none;}
+.club_quote a:hover {color:#FF6600;}
+.club_break {display:none;}

@@ -1,0 +1,12 @@
+{loop $tags $t}
+                    <li class="post-item fd-clr post-item-current">
+                      <div class="post-item-hover">
+                                 <img src="{useravatar($t[username], 'large')}" alt=""/>
+                                 <div class="infoclub"><a href="{$t[linkurl]}" target="_blank" class="titleclub">{$t[title]}</a><a href="{userurl($t[username])}" target="_blank" class="quan-name">{$t[passport]}</a></div>
+                            </div>
+                      </li>
+                 <!--{php $tags=tag("moduleid=$moduleid&condition=status=3 and username='".$t[username]."'&areaid=$cityid&order=addtime desc&pagesize=4&template=null");}-->         
+                 {loop $tags $v}                                     
+              <li class="post-item fd-clr"><a href="{$v[linkurl]}" target="_blank" class="post-title">{$v[title]}</a><span class="click-count">{$t[hits]}</span> </li>
+        {/loop}              
+     {/loop}

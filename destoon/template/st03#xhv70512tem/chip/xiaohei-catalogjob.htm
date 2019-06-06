@@ -1,0 +1,11 @@
+{php $mid = $moduleid;}
+{php $child = get_maincat(0, $mid, 1);}
+{loop $child $i $c}
+{if $i<12 && $c[child]}
+{php $sub = get_maincat($c[catid], $mid, 1);}
+<li class=a{$i+1}>
+<div class=tx><a href="{$MODULE[$mid][linkurl]}{$c[linkurl]}"><i class="level-icon icon{$i+1} f-left"></i>{set_style($c[catname], $c[style])}</a> </div>
+{template 'xiaohei-catalogjobmini', 'chip'}
+</li>
+{/if}
+{/loop} 

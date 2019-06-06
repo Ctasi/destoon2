@@ -1,0 +1,67 @@
+@charset "utf-8";
+/*
+ST03-CSS-xiaohei-qq:290948585-dtmuban.com-20180414 v7
+*/
+.list-sidebarcen h3,.list-sidebarcen li,.li_dot li,.rank_list,.catlist_li{background: url(image/xiaohei_common.png) no-repeat;}
+.list-content{width: 880px; float:left; overflow:hidden; border-top: 1px solid #e0e0e0;}
+.list-sidebar{width:299px; border-right:1px solid #e0e0e0; border-bottom:1px solid #e0e0e0; border-left:1px solid #e0e0e0; float:right; margin-top: -1px; margin-left: -1px; background-color: #FFFFFF;}
+.list-sidebarcen{width:279px; padding:10px; background-color:#FFF; margin-bottom:12px; border-top: 1px solid #e0e0e0;}
+.list-sidebarcen h3{height:20px; line-height:20px; font-weight: 700; padding-bottom: 10px; background-position: 0px -524px;}
+.list-sidebarcen h3 span{display:inline-block; font-size:16px; float:left; color:#3d3d3d; padding-left: 8px;}
+.list-sidebarcen h3 a{display:inline-block; float:right; color:#b0b0b0;}
+.list-sidebarcen li{overflow: hidden;text-overflow: ellipsis;white-space: nowrap; font-size: 14px; height: 30px; width: 271px; line-height: 30px; padding-left: 8px; background-position: -596px -477px;}
+.list-index{width:100%; position:relative;}
+/*企业列表标签开始*/
+.linkcom{margin-right: 5px;}
+.pcm-prolist{overflow:hidden; background:#fff}
+.pcmp-itembox{margin-top:-1px; padding:10px 20px; border:1px solid #e1e1e1; background:#fff; height: 156px;;}
+.pcmp-itembox .infobox{float:left; width: 405px;}
+.pcmp-itembox .picbox{float:right; width: 420px;}
+.pcmp-itembox .infobox .proname{font-size:18px}
+.pcmp-itembox .infobox .proname em{color:#e65f16}
+.pcmp-itembox .infobox .proinfo{float:left; width:445px; height:auto}
+.pcmp-itembox .picbox .proshow li{width: 130px; float: left; padding: 0px 0px 10px 10px;}
+.pcmp-itembox .picbox .proshow dt{width: 120px; height: 120px; border: 1px solid #DDD; padding: 3px; overflow: hidden;}
+.pcmp-itembox .picbox .proshow dt img{width: 120px; height: 120px; overflow: hidden;}
+.pcmp-itembox .picbox .proshow dt:hover{width: 120px; height: 120px; border-color:#FF7E00;}
+.pcmp-itembox .picbox .proshow dd{margin-top: 5px; text-align: center; height:20px;overflow:hidden;width:125px;}
+.usertype{background:url(image/sell/icon_sell.png) no-repeat 0 0;display: inline-block;width: 18px;height: 18px;vertical-align: middle;}
+.okvali{background:url(image/sell/icon_sell.png) no-repeat -50px -123px;display: inline-block;width: 18px;height: 18px;vertical-align: middle;}
+.novali{background:url(image/sell/icon_sell.png) no-repeat -24px 0px;display: inline-block;width: 42px;height: 18px;vertical-align: middle;}
+.comintro{font-size:14px; color:#8c8c8c; margin-top:14px}
+.comintro li{width: 405px;height:30px;line-height:30px;padding-left:30px;overflow:hidden;background:url(image/sell/icon_sell.png) no-repeat;}
+.comintro li label{display:inline-block; width:70px; text-align:right; margin-right:15px}
+.comintro li.pro{padding-left:10px; background-position:-50px -18px;}
+.comintro li.bus{padding-left:10px; background-position:-50px -44px;}
+.comintro li.cont{padding-left:9px; background-position:-51px -70px;}
+.comintro li.addr{padding-left:7px; background-position:-53px -93px;}
+.pcmp-itembox:hover{background-color: #f9f9f9;}
+/*企业列表标签结束*/
+/*列表页面结束*/
+/* 公司信息页面 */
+.m_l{width:890px;}
+.m_r{width:300px;}
+.left_box{border:#DDDDDD 1px solid;}
+.contact_head{height:31px;line-height:31px;border:#DDDDDD 1px solid;border-bottom:none;border-top:#FF8110 2px solid;background:#EEEEEE;padding:0 10px 0 10px;font-weight:bold;font-size:14px;}
+.contact_body{padding:10px;border:#DDDDDD 1px solid;border-top:none;}
+.contact_body li{line-height:24px;border-bottom:#E2E2E2 1px solid;padding:0 0 0 10px;}
+.contact_body li span{color:#1B4C7A;padding:0 8px 0 0;}
+.c_content{font-size:14px;line-height:180%;padding:10px 20px 10px 20px;}
+.c_content p{text-indent:2em;}
+.c_content a:link,.content a:visited,.content a:active{color:#225588;text-decoration:underline;}
+.c_content a:hover{color:#FF6600;text-decoration:none;}
+.box_head{border:#DDDDDD 1px solid;border-bottom:none;height:31px;line-height:31px;overflow:hidden;padding:0 10px 0 10px;background-color: #f6f6f6;}
+.box_head strong{font-size:14px;}
+.box_body{border:#DDDDDD 1px solid;border-top:none;padding:6px 8px 6px 8px;background-color: #ffffff;}
+.box_body li{height:30px;line-height:30px;overflow:hidden;}
+.li_dot li{background-position: 0px -471px;padding:0 10px 0 12px;}
+.rank_list{background-position: -574px -248px;}
+.rank_list li{height:23px;line-height:23px;overflow:hidden;padding:0 5px 0 35px;}
+.catlist{padding:15px 15px 15px 20px;line-height:30px;background-color: #ffffff;}
+.catlist_li{font-size:14px;height:30px;line-height:30px;background-position: 0px -471px;padding:0 10px 0 12px;overflow:hidden;}
+
+
+.adword{/* padding-top:0px; *//* background:#ffffff; */}
+.adword .pcmp-itembox{border: #0e69c5 1px solid;position: relative;margin-bottom: 15px;margin-top: 0;}
+.adword .pcmp-itembox:hover{background:none}
+.adword_tip{color:#FF1100;clear: both;padding: 8px 10px 8px 47px;background: #ffffff url('image/arrow_up.gif') no-repeat 30px 10px;margin-top: 20px;margin-bottom:20px;border: 1px solid #e1e1e1;}

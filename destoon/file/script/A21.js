@@ -1,0 +1,1 @@
+document.write('<a href="http://www.destoon.com/" target="_blank"><img src="file/image/a1.jpg" width="116" height="212" alt=""/></a>');

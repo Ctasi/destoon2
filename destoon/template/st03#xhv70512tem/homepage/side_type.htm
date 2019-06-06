@@ -1,0 +1,11 @@
+
+<div class="side_head"><div><span class="f_r"><a href="{userurl($username, 'file='.$_file, $domain)}"><img src="{DT_STATIC}{$MODULE[4][moduledir]}/image/more.gif" title="更多"/></a></span><strong>公司新闻</strong></div></div>
+<div class="side_body">
+<ul>
+
+{loop $newslist $v0}
+<li id="type_{$v0[typeid]}"{if $typeid==$v0[typeid]} class="f_b"{/if}><a href="{$v0['linkurl']}" title="{$v0[title]}">{$v0['title']}</a></li>
+{/loop}
+
+</ul>
+</div>

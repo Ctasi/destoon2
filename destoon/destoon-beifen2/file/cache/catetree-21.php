@@ -1,0 +1,1 @@
+<option value="4">机械设备</option><option value="12">软件通讯</option><option value="13">医学药物</option><option value="14">科学技术</option><option value="15">电子商务</option></select>

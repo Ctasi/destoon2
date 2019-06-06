@@ -1,0 +1,16 @@
+ {loop $tags $i $t}   
+     <li class="item">
+     <a class="avatar" href="{userurl($t[username])}" target="_blank"><img class="headclub-pic" src="{useravatar($t[username], 'large')}" /></a>
+                    <div class="bar fd-clr">
+                        <a class="water-drop"></a>
+                        <span class="time"><a href="{userurl($t[username])}" target="_blank">{$t[passport]}</a></span>
+                        <div class="from">来自: <a href="{$t[caturl]}" target="_blank">{$t[catname]}</a>
+                                </div>
+                    </div>
+                    <div class="spec fd-clr">
+ <a href="{$t[linkurl]}" target="_blank" class="post-title">{$t[title]}</a><span class="hot"></span>
+                    </div>
+                    <span class="contentclub"> {dsubstr($t[introduce], 80, '…')}</span>
+                </li>
+              
+     {/loop}

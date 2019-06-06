@@ -1,0 +1,64 @@
+{template 'header-help'}
+<script type="text/javascript">var module_id= {$moduleid},item_id={$itemid},content_id='content',img_max_width={$MOD[max_width]};</script>
+ <div class="layout">
+        <div class="path">
+            <a href="{$MODULE[1][linkurl]}">首页</a> <span>&gt;</span> <a href="{$MOD[linkurl]}">{$MOD[name]}</a> <span>&gt;</span> {cat_pos($CAT, ' &raquo; ')} </div>
+        <div class="l-search">
+        <div class="h-search">
+                <form id="destoon_search" action="{$MOD[linkurl]}search.php" onsubmit="return Dsearch(1);">
+                <input type="hidden" name="moduleid" value="{$moduleid}" id="destoon_moduleid"/>
+<input type="hidden" name="spread" value="0" id="destoon_spread"/>
+                    <div class="h-search-box">
+                        <input name="kw" id="destoon_kw" type="text" class="h-search-txt" placeholder="搜搜您的问题" />
+                    </div>
+                    <input type="submit" class="h-search-btn" value="搜索" />
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- main -->
+    <div class="layout">
+        <div class="main clf">
+          <div class="unit side">
+                <p class="side-hd"><b>帮助问题分类</b></p>
+                
+           <ul class="menu">
+       {php $mid = $moduleid;}
+  {php $child = get_maincat(0, $mid, 1);}
+   {loop $child $i $c}
+        <li class="m-item sub-menu-a current" id="h_{$i}"> <a href="{$MODULE[$mid][linkurl]}{$c[linkurl]}" class="m-hd" target="_blank">{set_style($c[catname], $c[style])}</a><i class="i-arrow"></i>
+        <div class="sub-menu-b" id="sub_{$i}" style="display:none">
+          <ul>
+           {if $c[child]}
+{php $sub = get_maincat($c[catid], $mid, 1);}
+{loop $sub $j $s}
+   <li class="s-item"><a class="s-link " href="{$MODULE[$mid][linkurl]}{$s[linkurl]}">{set_style($s[catname], $s[style])}</a></li>
+              {/loop}
+              {/if}
+          </ul>
+        </div>
+        </li>
+        {/loop}
+      
+      </ul>
+            </div>
+            
+            <div class="unit content-help">
+               <h2 class="content-hd" id="title">{$title}</h2>
+                <div class="detail">
+                {if $CP}{template 'property_show', 'chip'}{/if}
+        <div class="article" id="content">{template 'content', 'chip'} </div>
+         {if $MOD[fee_award]}<div class="award"><div onclick="Go('{$MODULE[2][linkurl]}award.php?mid={$moduleid}&itemid={$itemid}');">打赏</div></div>{/if}
+          <center>
+    [ <a href="{$MOD[linkurl]}search.php" rel="nofollow">{$MOD[name]}搜索</a> ]&nbsp;
+    [ <a href="javascript:SendFav();">加入收藏</a> ]&nbsp;
+    [ <a href="javascript:Print();">打印本文</a> ]&nbsp;
+    [ <a href="javascript:SendReport();">违规举报</a> ]&nbsp;
+    [ <a href="javascript:window.close()">关闭窗口</a> ]
+    </center>
+    </div>
+        </div>
+            </div>
+        </div>
+{if $content}<script type="text/javascript" src="{DT_STATIC}file/script/content.js"></script>{/if}
+{template 'footer-mini'}

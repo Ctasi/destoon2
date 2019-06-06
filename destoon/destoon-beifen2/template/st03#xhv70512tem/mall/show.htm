@@ -1,0 +1,342 @@
+{template 'header'}
+<script type="text/javascript">var module_id= {$moduleid},item_id={$itemid},content_id='content',img_max_width={$MOD[max_width]};</script>
+<div class="m">	
+	<div class="nav"><div><img src="{DT_SKIN}image/ico-share.png" class="share" title="分享好友" onclick="Dshare({$moduleid}, {$itemid});"/></div><a href="{$MODULE[1][linkurl]}">首页</a> <i>&gt;</i> <a href="{$MOD[linkurl]}">{$MOD[name]}</a> <i>&gt;</i> {cat_pos($CAT, ' <i>&gt;</i> ')}</div>
+</div>
+<div class="m nobg">
+<div class="left_box">		
+		<table width="100%">
+		<tr>
+		<td width="10"> </td>
+		<td>
+			<table width="100%">
+			<tr>
+			<td colspan="3"><h1 class="title_trade" id="title">{$title}</h1></td>
+			</tr>
+			<tr>
+			<td width="300" valign="top">
+				<div id="mid_pos"></div>
+				<div id="mid_div" onmouseover="SAlbum();" onmouseout="HAlbum();" onclick="PAlbum(Dd('mid_pic'));">
+				<img src="{$albums[0]}" width="300" height="290" id="mid_pic"/><span id="zoomer"></span>
+				</div>
+				<div class="b5"></div>
+				<div>
+				{loop $thumbs $k $v}<img src="{$v}" width="60" height="60" onmouseover="if(this.src.indexOf('nopic60.gif')==-1)Album({$k}, '{$albums[$k]}');" class="{if $k}ab_im{else}ab_on{/if}" id="t_{$k}"/>{/loop}
+                <img src="{DT_SKIN}image/zoom.png" width="60" height="60" class="ab_im01" onclick="PAlbum(Dd('mid_pic'));">
+				</div>
+				<div class="b5"></div>
+			</td>
+			<td width="15"> </td>
+			<td valign="top">
+				<div id="big_div" style="display:none;"><img src="" id="big_pic"/></div>
+			{if $a2}
+			<div class="step_price">
+			<table width="100%" cellpadding="6" cellspacing="0">
+			<tr>
+			<td>起批</td>
+			<td>{$a1}-{$a2}{$unit}</td>
+			{if $a3}
+			<td>{$a2+1}-{$a3}{$unit}</td>
+			<td>{$a3}{$unit}以上</td>
+			{else}
+			<td>{$a2+1}{$unit}以上</td>
+			{/if}
+			</tr>
+			<tr>
+			<td>价格</td>
+			<td class="f_price">{$DT[money_sign]}<span class="px14">{$p1}</span></td>
+			{if $a3}
+			<td class="f_price">{$DT[money_sign]}<span class="px14">{$p2}</span></td>
+			<td class="f_price">{$DT[money_sign]}<span class="px14">{$p3}</span></td>
+			{else}
+			<td class="f_price">{$DT[money_sign]}<span class="px14">{$p2}</span></td>
+			{/if}
+			</tr>
+			</table>
+			</div>
+			{/if}
+			<table width="100%" cellpadding="5" cellspacing="5">
+			{if !$a2}
+			<tr>
+			<td>单价：</td>
+			<td class="f_price">{$DT[money_sign]}<span class="px16">{$price}</span></td>
+			</tr>
+			{/if}
+			{if $promos}
+			<tr>
+			<td>优惠：</td>
+			<td class="promos">
+			<a href="{$MODULE[2][linkurl]}coupon.php?username={$username}" target="_blank">
+			{loop $promos $v}
+			{if $v[cost]}
+			<span>满{$v[cost]}减{$v[price]}</span>
+			{else}
+			<span>{$v[price]}{$DT[money_unit]}优惠</span>
+			{/if}
+			{/loop}
+			</a>
+			</td>
+			</tr>
+			{/if}
+			{if $express_name_1 == '包邮'}
+			<tr>
+			<td>物流：</td>
+			<td>
+			{if $fee_start_1>0}
+			{if $fee_start_2>0} {$express_name_2}:{$fee_start_2}&nbsp;&nbsp;{/if}
+			{if $fee_start_3>0} {$express_name_3}:{$fee_start_3}&nbsp;&nbsp;{/if}
+			满{$fee_start_1}包邮
+			{else}
+			包邮
+			{/if}
+			</td>
+			</tr>
+			{elseif $fee_start_1>0 || $fee_start_2>0 || $fee_start_3>0}
+			<tr>
+			<td>物流：</td>
+			<td class="f_gray">
+			{if $fee_start_1>0} {$express_name_1}:{$fee_start_1}&nbsp;&nbsp;{/if}
+			{if $fee_start_2>0} {$express_name_2}:{$fee_start_2}&nbsp;&nbsp;{/if}
+			{if $fee_start_3>0} {$express_name_3}:{$fee_start_3}&nbsp;&nbsp;{/if}
+			</td>
+			</tr>
+			{/if}
+			{if $cod}
+			<tr>
+			<td>到付：</td>
+			<td>支持货到付款</td>
+			</tr>
+			{/if}
+			<tr>
+			<td>品牌：</td>
+			<td>{if $brand}<a href="{$MOD[linkurl]}{rewrite('search.php?fields=4&kw='.urlencode($brand))}" target="_blank" class="b">{$brand}</a>{else}未填写{/if}</td>
+			</tr>
+			<tr>
+			<td>销量：</td>
+			<td><a href="#order" onclick="Mshow('order');" class="b">累计出售 <span class="f_orange">{$sales}</span> {$unit}</a></td>
+			</tr>
+			<tr>
+			<td>评价：</td>
+			<td><a href="#comment" onclick="Mshow('comment');" class="b">已有 <span class="f_orange">{$comments}</span> 条评价</a></td>
+			</tr>
+			{if $MOD[hits]}
+			<tr>
+			<td>人气：</td>
+			<td>已有 <span class="f_orange"><span id="hits">{$hits}</span></span> 人关注</td>
+			</tr>
+			{/if}
+			<tr>
+			<td width="50">更新：</td>
+			<td>{$editdate}</td>
+			</tr>
+			{if $RL}
+			<tr>
+			<td>{$relate_name}：</td>
+			<td>
+			{loop $RL $v}
+			<div class="relate_{if $itemid==$v[itemid]}2{else}1{/if}">{if $itemid==$v[itemid]}<em></em>{/if}<a href="{$MOD[linkurl]}{$v[linkurl]}"><img src="{$v[thumb]}" alt="" title="{$v[relate_title]}"/></a></div>
+			{/loop}				
+			</td>
+			</tr>
+			{/if}
+			{if $P1}
+			<tr>
+			<td>{$n1}：</td>
+			<td id="p1">
+			<ul>
+			{loop $P1 $i $v}
+			<li class="nv_{if $i==0}2{else}1{/if}">{$v}</li>
+			{/loop}
+			</ul>
+			</td>
+			</tr>
+			{/if}
+			{if $P2}
+			<tr>
+			<td>{$n2}：</td>
+			<td id="p2">
+			<ul>
+			{loop $P2 $i $v}
+			<li class="nv_{if $i==0}2{else}1{/if}">{$v}</li>
+			{/loop}
+			</ul>
+			</td>
+			</tr>
+			{/if}
+			{if $P3}
+			<tr>
+			<td>{$n3}：</td>
+			<td id="p3">
+			<ul>
+			{loop $P3 $i $v}
+			<li class="nv_{if $i==0}2{else}1{/if}">{$v}</li>
+			{/loop}
+			</ul>
+			</td>
+			</tr>
+			{/if}
+			{if $amount}
+			{if $status == 3}
+			<tr>
+			<td>数量：</td>
+			<td class="f_gray"><img src="{DT_SKIN}image/arrow_l.gif" width="16" height="8" alt="减少" class="c_p" onclick="Malter('-', {$a1}, {$amount});"/> <input type="text" value="{$a1}" size="4" class="cc_inp" id="amount" onkeyup="Malter('', {$a1}, {$amount});"/> <img src="{DT_SKIN}image/arrow_r.gif" width="16" height="8" alt="增加" class="c_p" onclick="Malter('+', {$a1}, {$amount});"/>{$unit} 库存{$amount}{$unit}</td>
+			</tr>
+			<tr>
+			<td colspan="2">
+			<img src="{DT_SKIN}image/btn_tobuy.gif" alt="立即购买" class="c_p" onclick="BuyNow();"/>
+			&nbsp;
+			<img src="{DT_SKIN}image/btn_addcart.gif" alt="加入购物车" class="c_p" onclick="AddCart();"/>
+			</td>
+			</tr>
+			{else}
+			<tr>
+			<td></td>
+			<td><strong class="f_red px14">该商品已下架</strong></td>
+			</tr>				
+			{/if}
+			{else}
+			<tr>
+			<td></td>
+			<td><strong class="f_red px14">该商品库存不足</strong></td>
+			</tr>
+			{/if}
+			</table>
+			</td>
+			</tr>
+		</table>
+			  
+		</td>
+		<td width="10"> </td>
+		<td width="280" valign="top">		
+			 <!--大右边资料--> 
+			 <div class="promo-meta">
+	  <div class="counter">
+              <div class="rate-counter clear" onmouseout="document.getElementById('qrcode_con').style.display='none'" onmouseover="document.getElementById('qrcode_con').style.display='block'"> 
+              <img src="{DT_SKIN}image/sell/sell-ewm.jpg" width="94" height="48" data-bd-imgshare-binded="1"></div>
+             <div class="qrcode_con" id="qrcode_con" style="display: none;"><img src="{DT_PATH}api/qrcode.png.php?auth={$head_mobile}" width="130" height="130" data-bd-imgshare-binded="1">
+<p>手机扫码，简单快捷</p>
+</div>
+                 
+                </div>
+				</div>  
+      <div class="sidebar clear">
+        <div class="shop-infotop">
+          <div class="companytitle">
+            <dl>
+              <dd>诚信商家资料</dd>
+            </dl>
+          </div>
+         <div id="contact">
+          {template 'contact', 'chip'}
+		  </div>
+		  
+      </div>
+</div>
+			{if !$username}
+			<br/>
+			&nbsp;<strong class="f_red">注意</strong>:发布人未在本站注册，建议优先选择<a href="{$MODULE[2][linkurl]}grade.php"><strong>{VIP}会员</strong></a>
+			{/if}
+			
+			</div>
+		</td>
+		<td width="10"> </td>
+		</tr>
+		</table>
+		<div class="b10">&nbsp;</div>
+</div>
+</div>
+
+<div class="m">
+	<div class="b10">&nbsp;</div>
+      <div class="detail-left">
+        <div class="list-sidebarcenshow nomb">
+          <div class="uselltit"><span>该企业其他产品</span><b class="f_r"><a href="{userurl($username, 'file=sell')}">更多&raquo;</a></b></div>
+        </div>
+        <div class="detail-sidebar">
+		  <!--{tag("moduleid=$moduleid&length=28&condition=status=3 and thumb<>'' and username='$username'&pagesize=5&order=edittime desc&width=220&height=220&template=xiaohei-show_tj")}--> 
+
+		 </div>
+      </div>
+     <div class="detail-right">
+	<div class="mall_tab">
+		<ul>
+		<li class="mall_tab_2" id="t_detail"><a href="#detail" onclick="Mshow('detail');">商品详情</a></li>
+		<li class="mall_tab_1" id="t_comment"><a href="#comment" onclick="Mshow('comment');">评价详情({$comments})</a></li>
+		<li class="mall_tab_1" id="t_order"><a href="#order" onclick="Mshow('order');">交易记录({$orders})</a></li>
+		</ul>
+	</div>
+	<div class="mall_c" style="display:;" id="c_detail">
+		{if $CP}{template 'property_show', 'chip'}{/if}
+		<div class="content c_b" id="content">{$content}</div>
+		{if $MOD[fee_award]}
+		<div class="award"><div onclick="Go('{$MODULE[2][linkurl]}award.php?mid={$moduleid}&itemid={$itemid}');">打赏</div></div>
+		{/if}
+	</div>
+	<div class="mall_c" style="display:none;" id="c_comment">
+		<center>正在载入评论详细...</center>
+	</div>
+	<div class="mall_c" style="display:none;" id="c_order">
+		<center>正在载入交易记录...</center>
+	</div>
+
+ <!--流程和声明-->
+<div class="allrecords">
+							<ul class="recordslist">
+								<li class="retitle">保障说明</li>
+								<li class="jiaoybox">
+									<div class="fn-clear">
+										<a href="#" class="icon-zf"><img src="{DT_SKIN}image/mall/bao.png" alt=""></a>
+										<span class="zfxq">
+                            	<em class="mjbzh">买家保障：</em>
+                                <em>卖家缴纳保证金为买家提供交易保障，若卖家发生违约或不诚信行为，保证金先行赔付。
+                                <!-- <a href="#">了解更多></a> -->
+                                </em>
+                            </span>
+									</div>
+									<div>
+										<p><img src="{DT_SKIN}image/mall/mjbzimg.png" alt="" width="754" height="120"></p>
+									</div>
+								</li>
+							</ul>
+						</div>
+						<div class="statementbox fn-clear">
+							<a href="#" class="icon-sm"><img src="{DT_SKIN}image/mall/jingao.png" width="59" height="71"></a>
+							<span class="smnr">
+                    <em class="mzsm">免责声明：</em>
+                    <em>本站所展示的宝贝供求信息由买卖双方自行提供，其真实性、准确性和合法性由信息发布者负责。本站不提供任何保证，并不承担任何法律责任。本站友情提醒：为保障您的利益，请网上成交。
+                    </em>
+                </span>
+						</div>
+	<!--完-->					
+</div>
+</div>
+<script type="text/javascript" src="{DT_STATIC}file/script/album.js"></script>
+{if $content}<script type="text/javascript" src="{DT_STATIC}file/script/content.js"></script>{/if}
+<script type="text/javascript">
+var mallurl = '{$MOD[linkurl]}';
+var mallmid = {$moduleid};
+var mallid = {$itemid};
+var n_c = {$comments};
+var n_o = {$orders};
+var c_c = Dd('c_comment').innerHTML;
+var c_o = Dd('c_order').innerHTML;
+var s_s = {'1':0,'2':0,'3':0};
+var m_l = {
+	no_comment:'暂无评论',
+	no_order:'暂无交易',
+	no_goods:'商品不存在或已下架',
+	no_self:'不能添加自己的商品',
+	lastone:''
+};
+</script>
+<script type="text/javascript" src="{DT_STATIC}file/script/mall.js"></script>
+<script type="text/javascript">
+{if $P1}addE(1);{/if}
+{if $P2}addE(2);{/if}
+{if $P3}addE(3);{/if}
+if(window.location.href.indexOf('#') != -1) {
+	var t = window.location.href.split('#');
+	try {Mshow(t[1]);} catch(e) {}
+}
+</script>
+{template 'footer'}

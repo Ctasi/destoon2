@@ -1,0 +1,1 @@
+<?php defined('IN_DESTOON') or exit('Access Denied'); return array ('moduleid' => '12','name' => '图库','moduledir' => 'photo','module' => 'photo','ismenu' => '1','domain' => '','linkurl' => 'http://destoon.yzt-tools.com/photo/','mobile' => 'http://destoon.yzt-tools.com/mobile/photo/',); ?>

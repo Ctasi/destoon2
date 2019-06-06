@@ -1,0 +1,24 @@
+<div class="m-content fd-clr"> 
+{loop $tags $k $t}
+  <div class="thread-item"> <a class="user-avatar" href='{userurl($t[username])}' title="{$t[passport]}" target="_blank"><img src="{useravatar($t[username], 'large')}">
+    <div class="avatar-bg fix-png"></div>
+    </a>
+    <div class="thread-bar fd-clr"> <a class="titleclub" href="{$t[linkurl]}" title="{$t[alt]}" target="_blank">{$t[title]}</a>{if $t[ontop]} <img src="{DT_SKIN}image/club_ontop_{$t[ontop]}.gif" alt="" style="margin-top:5px;"  title="{if $t[ontop]==1}本圈{else}全局{/if}置顶"/> {elseif $t[level]} <img src="{DT_SKIN}image/club_level_{$t[level]}.gif" alt="" style="margin-top:5px;" title="精华{$t[level]}"/> {elseif $t[thumb]} <img src="{DT_SKIN}image/club_thumb.gif" alt="" style="margin-top:5px;" title="图片帖"/> {elseif $t[video]} <img src="{DT_SKIN}image/club_video.gif" alt="" style="margin-top:5px;" title="视频帖"/> {else}
+      
+      &nbsp;
+      
+      {/if} <a href="{$t[linkurl]}" class="thread-view"><span class="count">{$t[hits]}</span></a> </div>
+    <p class="thread-summary"></p>
+    <div class="thread-footer fd-clr"> <span class="date"> 作者:<a href="{userurl($t[username])}" target="_blank">{$t[passport]}</a>&nbsp;发布于：{timetodate($t[addtime], 3)}&nbsp;&nbsp;
+      
+      {if $t[replyer]} <a href="{userurl($t[replyuser])}" target="_blank">{$t[replyer]}</a>&nbsp;&nbsp;最后回复&nbsp;&nbsp;{timetodate($t[replytime], 5)}
+      
+      {else} <a href="{userurl($t[username])}" target="_blank">{$t[passport]}</a>&nbsp;&nbsp;最后回复&nbsp;&nbsp;{timetodate($t[replytime], 5)}
+      
+      {/if} </span> &nbsp;<a href="{userurl($t[replyuser])}" class="thread-comment"><span class="count">{$t[reply]}</span></a> </div>
+  </div>
+  {/loop}
+   </div>
+{if $showpage && $pages}
+<div class="pages">{$pages}</div>
+{/if}

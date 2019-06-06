@@ -1,0 +1,1 @@
+<?php defined('IN_DESTOON') or exit('Access Denied'); return array (22 => array ('catid' => '22','catname' => '品牌分类','style' => '','catdir' => 'pinpaifenlei','linkurl' => 'list.php?catid=22','letter' => 'p','level' => '1','property' => '0','parentid' => '0','arrparentid' => '0','child' => 0,'arrchildid' => 22,),); ?>

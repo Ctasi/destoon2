@@ -1,0 +1,3 @@
+<?php defined('IN_DESTOON') or exit('Access Denied');?><?php if(is_array($tags)) { foreach($tags as $t) { ?>
+  <li><i class="tab-icon"></i><a href="<?php echo $t['linkurl'];?>"<?php if($target) { ?> target="<?php echo $target;?>"<?php } ?> title="<?php echo $t['alt'];?>" class="underline" alt="<?php echo $t['alt'];?>" title="<?php echo $t['alt'];?>"><?php if($cname) { ?>【<?php echo $cname;?>】<?php } ?><?php echo $t['title'];?></a></li>
+  <?php } } ?>

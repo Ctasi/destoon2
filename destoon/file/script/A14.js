@@ -1,0 +1,1 @@
+document.write('<script type="text/javascript" src="http://www.anxiety-info.net/file/script/slide.js"></script><div id="slide_a14" class="slide" style="width:748px;height:285px;"></div><script type="text/javascript">new dslide(\'slide_a14\');</script>');

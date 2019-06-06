@@ -1,0 +1,5 @@
+{loop $tags $i $t}
+ <li class="l-img"><a href="{$t[linkurl]}" title="{$t[alt]}"><img src="{$t[thumb]}" width="{$width}" height="{$height}" alt="{$t[alt]}"/></a></li>
+ <li class="r-title"> <a href="{$t[linkurl]}" target="_blank">{$t[title]}</a> </li>
+ <p>{$t[introduce]}<a href="{$t[linkurl]}" target="_blank" class="a_f60">[详细]</a></p>
+{/loop}

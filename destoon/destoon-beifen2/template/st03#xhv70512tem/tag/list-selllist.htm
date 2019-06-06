@@ -1,0 +1,29 @@
+{loop $tags $k $t}
+<div class="goods" id="item_{$t[itemid]}">
+  <div class="goods-img"><a href="{$t[linkurl]}" target="_blank"><img src="{imgurl($t[thumb])}" width="220" height="220" alt="{$t[alt]}"/></a></div>
+  <h3>
+    <input type="checkbox" id="check_{$t[itemid]}" name="itemid[]" value="{$t[itemid]}" onclick="sell_tip(this, {$t[itemid]});" style="vertical-align:middle;width:14px;float: left"/>
+    &nbsp;<a class="goods-name" href="{$t[linkurl]}" target="_blank" title="{$t[alt]}" id="title">{$t[title]}</a></h3>
+  <div class="goods-info"> <span class="price"><em>&yen;</em>{if $t[unit] && $t[price]>0}{$t[price]}{else}电议{/if}</span> <span class="money"></span>
+  {if SELL_ORDER && $t[username] && $t[price]>0 && $t[minamount]>0 && $t[amount]>0 && $t[unit]} <span class="number-gou"><a href="{$MODULE[2][linkurl]}buy.php?mid={$moduleid}&itemid={$t[itemid]}" title="我们建议您优先选择{VIP}会员">下单购买</a></span> {else} <span class="number"><a href="{$MODULE[$moduleid][linkurl]}{rewrite('inquiry.php?itemid='.$t['itemid'])}" title="我们建议您优先选择{VIP}会员">询问底价</a></span> {/if} </div>
+  <div class="goods-company"> <span><a href="{$t[linkurl]}" target="_blank" title="{$t[company]}" class="sell_CompanyName">{$t[company]}</a> <em class="right">{if !$t[username]}未注册{else}{group_name($t[groupid])}{/if}</em> </span> </div>
+  <div class="goods-tags">
+    <div class="area"> <img src="{DT_SKIN}image/sell/ico-dw.png" width="12" height="16" title="企业所在地" align="absmiddle"/>&nbsp;{area_pos($t[areaid], '/', 2)} </div>
+    <div class="web"> {if $t[username] && $DT[im_web]}{im_web($t[username].'&mid='.$moduleid.'&itemid='.$t[itemid])}&nbsp;{/if}
+      {if $t[qq] && $DT[im_qq]}{im_qq($t[qq])}&nbsp;{/if}
+      {if $t[wx] && $DT[im_wx]}{im_ali($t[wx])}&nbsp;{/if} </div>
+    <div class="vali"> {if $t[vtruename]}<i title="实名认证" class="icon-vali_name"></i>&nbsp;{/if}
+      {if $t[validated]}<i title="资质认证" class="icon-vali_gong"></i>&nbsp;{/if}
+      {if $t[vmobile]}<i title="手机认证" class="icon-vali_phone"></i>&nbsp;{/if}
+      {if $t[vemail]}<i title="邮箱认证" class="icon-vali_email"></i> &nbsp;{/if} </div>
+  </div>
+  <div class="tag_sell_button">
+    <div class="tag_sell_box1">
+      <dl class="tag_sell_box2">
+        <dd class="shoucang"><a href="{userurl($t[username])}" target="_blank">旺铺</a></dd>
+        <dd class="shangpu"><a href="{$t[linkurl]}" target="_blank">详情</a></dd>
+      </dl>
+    </div>
+  </div>
+</div>
+{/loop}
