@@ -1,4 +1,4 @@
-<?php 
+<?php
 defined('IN_DESTOON') or exit('Access Denied');
 require DT_ROOT.'/module/'.$module.'/common.inc.php';
 $could_comment = in_array($moduleid, explode(',', $EXT['comment_module'])) ? 1 : 0;
@@ -102,6 +102,15 @@ if($DT_PC) {
 	$head_name = $CAT['catname'];
 	$foot = '';
 }
+$news_tab = 'b2b_news';
+$news_addtime = 'addtime';
+$result = $db->query("SELECT * FROM {$news_tab} limit 0 , 10");
+while($r = $db->fetch_array($result)) {
+    $news_lists[] = $r;
+}
+//echo '<pre>';
+//var_dump($news_lists);
+
 $header_title = $title.'-农商桥';
 if(!$DT_BOT) include DT_ROOT.'/include/update.inc.php';
 $seo_file = 'show';

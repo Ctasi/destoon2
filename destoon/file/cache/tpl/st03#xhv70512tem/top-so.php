@@ -9,9 +9,8 @@
                     <!--<div class="searchcont">-->
                         <!--<div class="search">-->
     <!--<form action="<?php echo $MODULE[$searchid]['linkurl'];?>search.php">-->
-    <!--<input name="kw" type="text" class="txt" value="<?php echo $kw;?>" placeholder="请输入搜索产品信息的关键字!" x-webkit-speech speech/> -->
+    <!--<input name="kw" type="text" class="txt" value="<?php echo $kw;?>" placeholder="请输入搜索产品信息的关键字!" x-webkit-speech speech/>-->
     <!--<input type="submit" value="网一下" class="btn"/>-->
-  <!---->
                               <!--</form>-->
                         <!--</div>-->
                     <!--</div>-->

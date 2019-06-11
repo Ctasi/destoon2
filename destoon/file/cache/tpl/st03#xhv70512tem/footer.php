@@ -1,5 +1,5 @@
 <?php defined('IN_DESTOON') or exit('Access Denied');?><!-- 主体结束 -->
-<div class="pbin_link clearfix"><span>全站链接：</span>
+<div class="pbin_link clearfix" style="clear:both"><span>全站链接：</span>
     <ul>
         <li>
             <a href="http://www.huizhou.cn/flsx/" target="_blank">今日惠州网</a>
@@ -9,7 +9,7 @@
         </li>
     </ul>
 </div>
-<div id="footer">
+<div id="footer" style="">
     <div id="footer_in">
         <div class="relevantout">
             <div class="relevant">

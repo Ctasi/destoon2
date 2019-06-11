@@ -1,4 +1,4 @@
-<?php 
+<?php
 defined('IN_DESTOON') or exit('Access Denied');
 if(!$MOD['show_html'] || !$itemid) return false;
 $item = $db->get_one("SELECT * FROM {$table} WHERE itemid=$itemid");
@@ -48,7 +48,7 @@ $seo_file = 'show';
 include DT_ROOT.'/include/seo.inc.php';
 $template = $item['template'] ? $item['template'] : ($CAT['show_template'] ? $CAT['show_template'] : ($MOD['template_show'] ? $MOD['template_show'] : 'show'));
 if($EXT['mobile_enable']) {
-	include DT_ROOT.'/include/mobile.htm.php';	
+	include DT_ROOT.'/include/mobile.htm.php';
 	$back_link = $MOD['mobile'].$CAT['linkurl'];
 	$head_name = $CAT['catname'];
 	$foot = '';
@@ -90,6 +90,7 @@ for(; $page <= $total; $page++) {
 		$filename = str_replace(DT_ROOT, DT_ROOT.'/mobile', $filename);
 		$DT_PC = $GLOBALS['DT_PC'] = 0;
 		ob_start();
+		echo 111;
 		include template($template, $module);
 		$data = ob_get_contents();
 		ob_clean();
