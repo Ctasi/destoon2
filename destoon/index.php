@@ -63,6 +63,18 @@ if($username) {
 		if(!is_file($html_file)) tohtml('index');
 		if(is_file($html_file)) exit(include($html_file));
 	}
+    $com_table = 'b2b_news';
+    $com_news = $db->query("SELECT * FROM {$com_table}");
+
+    while($r = $db->fetch_array($com_news)){
+        $news[] = $r;
+    }
+    $b2b_article = 'b2b_article_21';
+    $addtime = 'addtime';
+    $b2b_article_21 = $db->query("SELECT * FROM {$b2b_article} ORDER BY {$addtime} desc limit 0 , 100");
+    while($r = $db->fetch_array($b2b_article_21)){
+        $article[] = $r;
+    }
 	$AREA or $AREA = cache_read('area.php');
 	if($EXT['mobile_enable']) $head_mobile = DT_MOB;
 	$index = 1;

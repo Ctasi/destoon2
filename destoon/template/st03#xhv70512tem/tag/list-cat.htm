@@ -1,7 +1,19 @@
-<ul>
-{loop $tags $i $t}
-<li>{if $datetype}<i>{timetodate($t[addtime], $datetype)}</i>{/if}<a href="{$t[linkurl]}" target="_blank" title="{$t[alt]}">{$t[title]}</a></li>
-{if $cols && $i && $i%$cols==($cols-1)}<li class="sp">&nbsp;</li>{/if}
-{/loop}
-</ul>
+
+
+<div style="min-height:500px;background:#fff;border-radius:5px;clear:both">
+    {loop $tags $i $t}
+    <div class="title_c">
+
+        <div class="title_in">
+            <a href="{$t['linkurl']}" class="f14 fbluef" target="_blank">{$t['title']}</a>
+            <br>
+            <span class="content">{$t['introduce']}</span>
+        </div>
+        <div class="time_c">{php echo date("Y-m-d h:i:sa",$t['addtime'])}</div>
+    </div>
+    {if $cols && $i && $i%$cols==($cols-1)}<li class="sp">&nbsp;</li>{/if}
+    {/loop}
+</div>
+
+
 {if $showpage && $pages}<div class="pages">{$pages}</div>{/if}

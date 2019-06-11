@@ -1,83 +1,127 @@
 <?php defined('IN_DESTOON') or exit('Access Denied');?><?php include template('header');?>
-<script type="text/javascript">var module_id= <?php echo $moduleid;?>,item_id=<?php echo $itemid;?>,content_id='content',img_max_width=<?php echo $MOD['max_width'];?>;</script>
-<div class="m">
-<div class="nav"><div><img src="<?php echo DT_SKIN;?>image/ico-share.png" class="share" title="分享好友" onclick="Dshare(<?php echo $moduleid;?>, <?php echo $itemid;?>);"/></div><a href="<?php echo $MODULE['1']['linkurl'];?>">首页</a> <i>&gt;</i> <a href="<?php echo $MOD['linkurl'];?>"><?php echo $MOD['name'];?></a> <i>&gt;</i> <?php echo cat_pos($CAT, ' <i>&gt;</i> ');?></div>
+<div class="container">
+<div class="content_detail">
+<div class="tipsh">
+<div class="col_detail">
+<h2 style="margin-top:20px;font-size: 30px;"><?php echo $title;?></h2>
+<script>
+function tipgoUrl(mod) {
+var obj = mod;
+if (obj == "edit") {
+return "/user/article_edit//id/1196809.html";
+}
+else {
+return "/user/article_delete//id/1196809.html";
+}
+}
+</script>
+<div class="tipshnav" style="margin-top: 20px;">
+<div class="fl"><a href="http://bj.dm67.com/" target="_blank">首页</a> &gt;&gt; <a href="http://bj.dm67.com/" target="_blank">北京DM67信息网</a> &gt;&gt; <a href="http://bj.dm67.com/dm67/?citx=25" target="_blank">北京商务服务</a></div>
+<div class="fr f9">发布时间：<?php echo date('Y-m-d  h:i:sa',$addtime)?>&nbsp;</div>
+<div style="clear:both;"></div>
 </div>
-<div class="m m3">
-<div class="m3l nobg bxh">
-<h1 class="title" id="title"><?php echo $title;?></h1>
-<div class="info"><span class="f_r"><img src="<?php echo DT_SKIN;?>image/ico-zoomin.png" width="16" height="16" title="放大字体" class="c_p" onclick="fontZoom('+', 'article');"/>&nbsp;&nbsp;<img src="<?php echo DT_SKIN;?>image/ico-zoomout.png" width="16" height="16" title="缩小字体" class="c_p" onclick="fontZoom('-', 'article');"/></span>
-日期：<?php echo $adddate;?>&nbsp;&nbsp;&nbsp;&nbsp;
-<?php if($copyfrom) { ?>来源：<?php if($fromurl) { ?><a href="<?php echo $fromurl;?>" target="_blank"><?php } ?><?php echo $copyfrom;?><?php if($fromurl) { ?></a><?php } ?>&nbsp;&nbsp;&nbsp;&nbsp;<?php } ?>
-<?php if($author) { ?>作者：<?php echo $author;?>&nbsp;&nbsp;&nbsp;&nbsp;<?php } ?>
-<?php if($MOD['hits']) { ?>浏览：<span id="hits"><?php echo $hits;?></span>&nbsp;&nbsp;&nbsp;&nbsp;<?php } ?>
-<?php if($could_comment) { ?><a href="<?php echo $EXT['comment_url'];?><?php echo rewrite('index.php?mid='.$moduleid.'&itemid='.$itemid);?>">评论：<?php echo $comments;?></a>&nbsp;&nbsp;&nbsp;&nbsp;<?php } ?>
+<div class="tipshnr">
+<div id="tip_msg_3_s" class="tipsempty info_fail" style="padding: 8px 0px 8px 0px">
+<!--<span class="fb f14">以下是“<strong>公司年检都是什么流程和费用</strong>”信息发布人联系方式：</span>-->
+<!--<p class="fred lh22">提示:要求提前汇款或缴纳定金或保证金的均属诈骗,经网站核实的被举报信息,将在第一时间删除,构建一个安全的免费发布信息平台!</p>-->
+<div class="mq4"></div>
+<div class="tipshnr_link">
+<table width="100%" class="table_detail">
+<tbody><tr>
+<td><span class="fb"><strong>作者：</strong></span><?php echo $editor;?></td>
+<!--<td><span class="fred fb fs"><strong>联 系 人</strong>：</span>李洁</td>-->
+</tr>
+<!--<tr>-->
+<!--<td><span class="fb"><strong>单位名称：</strong></span>经典世纪投资顾问有限公司</td>-->
+<!--<td><span class="fred fb"><strong>联系电话：</strong></span>18911744094</td>-->
+<!--</tr>-->
+<!--<tr>-->
+<!--<td><span class="fb"><strong>所在城市：</strong></span>北京</td>-->
+<!--<td><span class="fred fb"><strong>联系邮箱：</strong></span>1139731202@qq.com</td>-->
+<!--</tr>-->
+<!--<tr>-->
+<!--<td colspan="4"><span class="fb">联系我时请说明是从DM67信息网看到的，这样我会给你最大的优惠！</span></td>-->
+<!--</tr>-->
+</tbody></table>
 </div>
-<?php if($introduce && $user_status == 3 && $page == 1) { ?><div class="introduce">核心提示：<?php echo $introduce;?></div><?php } ?>
-<?php if($CP) { ?><?php include template('property_show', 'chip');?><?php } ?>
-<div id="content" style="overflow:hidden"><?php include template('content', 'chip');?></div>
-<?php if($voteid) { ?><div class="pd20"><?php if(is_array($voteid)) { foreach($voteid as $v) { ?>
-<?php echo load('vote_'.$v.'.htm');?><?php } } ?></div>
-<?php } ?>
-<?php if($pages) { ?><div class="pages"><?php echo $pages;?></div><?php } ?>
-<div class="b20 c_b">&nbsp;</div>
-<?php if($subtitles) { ?>
-<div class="subtitle">
-<strong>本文导航：</strong>
-<ul>
-<?php if(is_array($titles)) { foreach($titles as $i => $t) { ?>
-<?php if($subtitles > $i) { ?>
-<li>
-(<?php echo $i+1;?>)
-<?php if($page == $i+1) { ?>
-<strong><?php echo $t;?></strong>
-<?php } else { ?>
-<a href="<?php echo $MOD['linkurl'];?><?php if($i) { ?><?php echo itemurl($item, $i+1);?><?php } else { ?><?php echo $item['linkurl'];?><?php } ?>" title="<?php echo $t;?>"><?php echo $t;?></a>
-<?php } ?>
-</li>
-<?php } ?>
+</div>
+<div id="tip_msg_3_s" class="tipsempty info_fail" style="padding: 8px 0px 8px 0px;background:#F1F1F1;">
+<b>核心提示：</b><?php echo $introduce;?>
+</div>
+<div style="padding-top: 8px; padding-bottom: 8px;">
+</div>
+<div id="tip_msg_1_s" class="con tipsempty">
+<?php include template('content', 'chip');?>
+</div>
+<div id="tip_msg_2_s" class="con tipsempty">
+<div class="mq"></div>
+</div>
+<table width="98%">
+<tbody><tr>
+<td>
+<div class="bdsharebuttonbox bdshare-button-style1-16" data-bd-bind="1559788052797"><a class="bds_more" href="http://bj.dm67.com/dm67.php?dm=1196809#" data-cmd="more">分享到：</a><a class="bds_mshare" title="分享到一键分享" href="http://bj.dm67.com/dm67.php?dm=1196809#" data-cmd="mshare">一键分享</a><a class="bds_qzone" title="分享到QQ空间" href="http://bj.dm67.com/dm67.php?dm=1196809#" data-cmd="qzone">QQ空间</a><a class="bds_tsina" title="分享到新浪微博" href="http://bj.dm67.com/dm67.php?dm=1196809#" data-cmd="tsina">新浪微博</a><a class="bds_tqq" title="分享到腾讯微博" href="http://bj.dm67.com/dm67.php?dm=1196809#" data-cmd="tqq">腾讯微博</a><a class="bds_renren" title="分享到人人网" href="http://bj.dm67.com/dm67.php?dm=1196809#" data-cmd="renren">人人网</a><a class="bds_weixin" title="分享到微信" href="http://bj.dm67.com/dm67.php?dm=1196809#" data-cmd="weixin">微信</a><a class="bds_baidu" title="分享到百度搜藏" href="http://bj.dm67.com/dm67.php?dm=1196809#" data-cmd="baidu">百度搜藏</a></div>
+<script>window._bd_share_config = { "common": { "bdSnsKey": {}, "bdText": "", "bdMini": "2", "bdMiniList": false, "bdPic": "", "bdStyle": "1", "bdSize": "16" }, "share": { "bdSize": 16 } }; with (document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];</script>
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="mq"></div>
+<div class="mq"></div>
+<style>
+.tipsh_tonglei h3 span { color: #dedada; padding-right: 10px; }
+.tipsh_tonglei h3 span a { color: #666; }
+</style>
+<div class="tipsh_tonglei">
+<h3><span class="fr f12  fnb"><a href="http://bj.dm67.com/" target="_blank" rel="nofollow"></a></span>最新公司新闻</h3>
+<div class="nr">
+<?php if(is_array($news_lists)) { foreach($news_lists as $c) { ?>
+<p><span class="fs">·</span><a href="<?php echo $c['linkurl'];?>" title="<?php echo $c['title'];?>"><?php echo $c['title'];?></a></p>
+<?php } } ?>
+</div>
+</div>
+<div class="tipsh_tonglei">
+<h3>最新供应</h3>
+<div class="nr">
+<?php $tags = tag("moduleid=5&order=addtime desc&template=null")?>
+<?php if(is_array($tags)) { foreach($tags as $d) { ?>
+<p><a href="<?php echo $d['linkurl'];?>" target="_blank"><?php echo $d['title'];?></a></p>
+<?php } } ?>
+</div>
+</div>
+</div>
+<div class="col2_detail">
+<div class="tiprightinfo">
+<div class="con">
+<ul style="padding-left: 10px;">
+<?php $tags = tag("moduleid=21&template=null")?>
+<?php if(is_array($tags)) { foreach($tags as $m) { ?>
+<!--<li>[<a href="http://bj.dm67.com/dm67/?citx=25" class="f6">商务服务</a>]&nbsp;<a href="http://bj.dm67.com/dm67.php?dm=1196825" class="f6" title="转让北京市门头沟区特种工程">转让北京市门头沟区特种工程</a></li>-->
+<li  style="font-size: 12px"><a href="<?php echo $m['linkurl'];?>" class="f6" title="<?php echo $m['title'];?>"  style="display:inline-block;font-size: 12px;width:202px;overflow: hidden;white-space: nowrap;text-overflow: ellipsis;"><?php echo $m['title'];?></a>&nbsp;&nbsp;&nbsp;[ <?php echo date('Y-m-d',$m['addtime']);?> ]</li>
 <?php } } ?>
 </ul>
-<div class="c_b"></div>
+<div style="clear:both;"></div>
 </div>
-<?php } ?>
-<?php if($keytags) { ?>
-<div class="keytags">
-<strong>标签：</strong>
-<?php if(is_array($keytags)) { foreach($keytags as $t) { ?>
-<a href="<?php echo $MOD['linkurl'];?><?php echo rewrite('search.php?kw='.urlencode($t));?>" target="_blank" class="b"><?php echo $t;?></a>
-<?php } } ?>
 </div>
-<?php } ?>
-<?php if($MOD['fee_award']) { ?><div class="award"><div onclick="Go('<?php echo $MODULE['2']['linkurl'];?>award.php?mid=<?php echo $moduleid;?>&itemid=<?php echo $itemid;?>');">打赏</div></div><?php } ?>
-<?php if($MOD['page_srelate']) { ?>
-<div class="b20">&nbsp;</div>
-<?php if($keytags) { ?>
-<div class="head-txt"><span><a href="<?php echo $MOD['linkurl'];?><?php echo rewrite('search.php?kw='.urlencode($keytags[0]));?>">更多<i>&gt;</i></a></span><strong>同类<?php echo $MOD['name'];?></strong></div>
-<div class="related"><?php echo tag("moduleid=$moduleid&length=44&condition=status=3 and itemid<>$itemid and keyword like '%".$keytags['0']."%'&areaid=$cityid&pagesize=".$MOD['page_srelate']."&order=".$MOD['order']."&cols=2&template=list-table", -2);?></div>
-<?php } else { ?>
-<div class="head-txt"><span><a href="<?php echo $MOD['linkurl'];?><?php echo $CAT['linkurl'];?>">更多<i>&gt;</i></a></span><strong>同类<?php echo $MOD['name'];?></strong></div>
-<div class="related"><?php echo tag("moduleid=$moduleid&length=44&catid=$catid&condition=status=3 and itemid!=$itemid&areaid=$cityid&pagesize=".$MOD['page_srelate']."&order=".$MOD['order']."&cols=2&template=list-table", -2);?></div>
-<?php } ?>
-<?php } ?>
-<?php include template('comment', 'chip');?>
-<br/>
 </div>
-<div class="m3r">
-<?php if($MOD['page_srecimg']) { ?>
-<div class="head-sub"><strong>推荐图文</strong></div>
-<div class="list-thumb"><?php echo tag("moduleid=$moduleid&length=20&condition=status=3 and level=3 and thumb!=''&catid=$catid&areaid=$cityid&pagesize=".$MOD['page_srecimg']."&order=".$MOD['order']."&width=124&height=93&cols=2&template=thumb-table");?></div>
-<?php } ?>
-<?php if($MOD['page_srec']) { ?>
-<div class="head-sub mt20"><strong>推荐<?php echo $MOD['name'];?></strong></div>
-<div class="list-txt"><?php echo tag("moduleid=$moduleid&condition=status=3 and level=1&catid=$catid&areaid=$cityid&order=".$MOD['order']."&pagesize=".$MOD['page_srec']);?></div>
-<?php } ?>
-<?php if($MOD['page_shits']) { ?>
-<div class="head-sub mt20"><strong>点击排行</strong></div>
-<div class="list-rank"><?php echo tag("moduleid=$moduleid&condition=status=3 and addtime>$today_endtime-30*86400&catid=$catid&areaid=$cityid&order=hits desc&key=hits&pagesize=9&template=list-rank");?></div>
-<?php } ?>
+<div style="clear:both;"></div>
 </div>
-<div class="c_b"></div>
 </div>
+</div>
+<script type="text/javascript">
+document.body.oncopy = function () {
+setTimeout(function () {
+var text = getClipboard();
+if (text) {
+text = text + "\r\n详细出处参考：" + document.location.href;
+copy2Clipboard(text);
+}
+}, 100)
+}
+function copyfUrl() {
+var clipBoardContent = "公司年检都是什么流程和费用" + "\r\n详细出处参考：" + document.location.href;
+window.clipboardData.setData("Text", clipBoardContent);
+alert("复制地址成功,赶快发送给您的客户吧!");
+}
+</script>
 <?php if($content) { ?><script type="text/javascript" src="<?php echo DT_STATIC;?>file/script/content.js"></script><?php } ?>
 <?php include template('footer');?>

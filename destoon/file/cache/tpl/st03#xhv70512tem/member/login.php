@@ -1,24 +1,75 @@
 <?php defined('IN_DESTOON') or exit('Access Denied');?><?php include template('header-login', 'member');?>
-<div class="m" style="padding:32px 0;overflow: hidden;">
-<div class="login-show"><img src="<?php echo DT_SKIN;?>image/zc/denglu.jpg" width="820" height="380" alt=""/>&nbsp;</div>
-<div class="login-main">
-<div id="msgs"></div>
-<div class="login-head">
+<style>
+* {
+margin: 0px; padding: 0px; border: 0px currentColor; border-image: none; color: rgb(102, 102, 102); font-family: "΢���ź�"; font-size: 16px; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;
+}
+.bgone {
+margin: auto; left: 0px; top: 0px; width: 100%; height: 100%; right: 0px; bottom: 0px; position: absolute;
+}
+.pic {
+margin: auto; left: 0px; top: 46px; width: 492px; height: auto; right: 453px; bottom: 0px; position: absolute; z-index: 99999;
+}
+.table {
+margin: auto; left: 0px; top: 20%; width: 960px; height: 465px; right: 0px; bottom: 0px; position: absolute; background-color: rgb(255, 255, 255);
+}
+.password {
+top: 12.8rem; right: 4rem; display: flex; position: absolute;
+}
+.btn {
+border-radius: 10px; border: currentColor; border-image: none; top: 22.5rem; width: 373px; height: 50px; text-align: center; right: 3.9rem; color: rgb(255, 255, 255); text-indent: 0rem; font-size: 20px; position: absolute; box-shadow: 2px 2px 1px rgba(0,0,0,0.2); text-shadow: 2px 2px 1px rgba(0,0,0,0.2); background-color: rgb(21, 146, 239);
+}
+.wel {
+top: -7rem; width: 960px; height: 35px; text-align: center; color: rgb(255, 255, 255); font-size: 30px; position: absolute;
+}
+.wel1 {
+top: -4rem; width: 960px; height: 35px; text-align: center; color: rgb(255, 255, 255); font-size: 12.38px; position: absolute;
+}
+input {
+background: rgb(238, 246, 253); width: 373px; height: 55px; text-indent: 55px; border-bottom-color: rgb(214, 231, 250); border-bottom-width: 2px; border-bottom-style: solid;
+}
+.password input {
+border: 0px currentColor; border-image: none;
+}
+.user {
+top: 7.8rem; right: 4rem; display: flex; position: absolute;
+}
+#yonghu img {
+left: 10px; top: 13px; height: 30px; position: absolute;
+}
+.title {
+top: 5.8rem;
+right: 23rem;
+display: flex;
+position: absolute;
+}
+.code {
+top: 16.8rem;
+right: 4rem;
+display: flex;
+position: absolute;
+}
+</style>
+<?php echo DT_SKIN?>
+<IMG class="bgone" src="<?php echo DT_SKIN;?>image/zc/1.jpg" height="800px"> <IMG class="pic" src="<?php echo DT_SKIN;?>image/zc/a.png">
+<div style="width:100%;height:800px;position:relative;">
+<div class="m table" style="padding:32px 0;overflow: hidden;top:-3%">
+<DIV class="wel">某某系统后台登录</DIV>
+<DIV class="wel1">MOU MOU XI TONG HUO TAI DENG LU</DIV>
+<div class="title">
 <ul>
 <li<?php if($action=='login') { ?> class="on"<?php } ?>><a href="?action=login&forward=<?php echo $_forward;?>">帐号登录</a></li>
 <?php if($could_sms) { ?><li<?php if($action=='sms') { ?> class="on"<?php } ?>><a href="?action=sms&forward=<?php echo $_forward;?>">短信登录</a></li><?php } ?>
 <?php if($could_scan) { ?><li<?php if($action=='scan') { ?> class="on"<?php } ?>><a href="?action=scan&forward=<?php echo $_forward;?>">扫码登录</a></li><?php } ?>
 </ul>
 </div>
-<div class="login-body">
 <?php if($action == 'scan') { ?>
 <div id="weixin_qrcode"></div>
 <script src="//res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js"></script>
 <script type="text/javascript">
 var obj = new WxLogin({
-id:"weixin_qrcode", 
-appid: "<?php echo WX_ID;?>", 
-scope: "snsapi_login", 
+id:"weixin_qrcode",
+appid: "<?php echo WX_ID;?>",
+scope: "snsapi_login",
 redirect_uri: "<?php echo urlencode(WX_CALLBACK);?>",
 state: "",
 style: "",
@@ -29,22 +80,32 @@ href: "<?php echo DT_PATH;?>api/oauth/wechat/style.css"
 <form method="post" action="?" onsubmit="return Scheck();">
 <input type="hidden" name="forward" value="<?php echo $forward;?>"/>
 <input type="hidden" name="action" value="<?php echo $action;?>"/>
-<div><input name="mobile" type="text" id="mobile" placeholder="已认证手机号" class="input-mob"/></div>
+<DIV class="user">
+<input name="mobile" type="text" id="mobile" placeholder="已认证手机号" class="input-mob"/>
+<DIV id="yonghu"><IMG
+src="<?php echo DT_SKIN;?>image/zc/yhm.png"></DIV><INPUT type="text" placeholder="用户名" value="">
+</DIV>
+<DIV class="password">
 <div><?php include template('captcha', 'chip');?></div>
 <div>&nbsp;&nbsp;<a href="javascript:;" class="b" onclick="Dsend();" id="send">发送短信</a></div>
 <div><input name="code" type="text" id="code" placeholder="短信验证码" class="input-code"/></div>
 <div><input type="submit" name="submit" value="登 录" class="btn-blue login-btn"/></div>
+</DIV>
 </form>
 <?php } else { ?>
 <form method="post" action="?" onsubmit="return Dcheck();">
 <input type="hidden" name="forward" value="<?php echo $forward;?>"/>
 <input type="hidden" name="action" value="<?php echo $action;?>"/>
 <input type="hidden" name="auth" value="<?php echo $auth;?>"/>
-<div><input name="username" type="text" id="username" value="<?php echo $username;?>" placeholder="用户名/Email/已认证手机" class="input-user"/></div>
-<div><input name="password" type="password" id="password" value="" placeholder="密码"  class="input-pass"/></div>
-<?php if($MOD['captcha_login']) { ?><div><?php include template('captcha', 'chip');?></div><?php } ?>
-<div><input type="submit" name="submit" value="登 录" class="btn-blue login-btn"/></div>
+<DIV class="user">
+<DIV id="yonghu"><IMG
+src="<?php echo DT_SKIN;?>image/zc/yhm.png"></DIV><input name="username" type="text" id="username" value="<?php echo $username;?>" placeholder="用户名/Email/已认证手机" />
+</DIV>
+<DIV class="password">
+<DIV id="yonghu"><IMG src="<?php echo DT_SKIN;?>image/zc/mm.png"></DIV><input name="password" type="password" id="password" value="" placeholder="密码"/>
+</DIV><INPUT name="submit" class="btn  btn-blue login-btn" type="submit" value="登录">
 <div class="t_c f_gray"><a href="<?php echo $DT['file_register'];?>" class="b">会员注册</a> &nbsp;|&nbsp; <a href="send.php" class="b">忘记密码</a></div>
+<?php if($MOD['captcha_login']) { ?><div class="code"><?php include template('captcha', 'chip');?></div><?php } ?>
 <?php if($oa) { ?><div title="使用社交帐号登录" class="login-oauth">
 <?php if(is_array($OAUTH)) { foreach($OAUTH as $k => $v) { ?>
 <?php if($v['enable']) { ?><a href="<?php echo DT_PATH;?>api/oauth/<?php echo $k;?>/connect.php" title="<?php echo $v['name'];?>"><img src="<?php echo DT_PATH;?>api/oauth/<?php echo $k;?>/icon.png" alt="<?php echo $v['name'];?>"/></a><?php } ?>
@@ -52,9 +113,23 @@ href: "<?php echo DT_PATH;?>api/oauth/wechat/style.css"
 </div><?php } ?>
 </form>
 <?php } ?>
-</div>
-</div>
+<style>
+#captcha {
+ width: 263px; height: 55px; text-indent: 22px; border-bottom-color: rgb(214, 231, 250); border-bottom-width: 2px; border-bottom-style: solid;
+}
+.f_gray {
+top: 20.8rem;
+right: 18rem;
+display: flex;
+position: absolute;
+}
+.ccaptcha {
+margin-right: -24px;
+}
+</style>
+</DIV>
 <div class="c_b"></div>
+</div>
 </div>
 <script type="text/javascript">
 function Dmsgs(msg) {

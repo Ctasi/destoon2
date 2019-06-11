@@ -7,6 +7,7 @@
 <?php if($addr) { ?>地址：<?php echo $addr;?><br/><?php } ?>
 <?php if($postcode) { ?>邮编：<?php echo $postcode;?><br/><?php } ?>
 <?php if($mobile) { ?>手机：<?php echo anti_spam($mobile);?><br/><?php } ?>
+<?php echo '<pre/>';var_dump(anti_spam);die;?>
 电话：<?php echo anti_spam($telephone);?><br/>
 <?php if($fax) { ?>传真：<?php echo anti_spam($fax);?><br/><?php } ?>
 <?php if($email) { ?>Email：<?php echo anti_spam($email);?><br/><?php } ?>

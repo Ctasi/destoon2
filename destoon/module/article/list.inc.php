@@ -90,6 +90,7 @@ if($DT_PC) {
 	$head_title = $head_name = $CAT['catname'];
 }
 $seo_file = 'list';
+$_GET['catid'];
 include DT_ROOT.'/include/seo.inc.php';
 $template = $CAT['template'] ? $CAT['template'] : ($MOD['template_list'] ? $MOD['template_list'] : 'list');
 include template($template, $module);

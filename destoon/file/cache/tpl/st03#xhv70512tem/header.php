@@ -5,6 +5,7 @@
   <title><?php echo $header_title;?></title>
   <meta name="referrer" content="never">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <link href="https://cdn.bootcss.com/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet">
   <?php if($head_keywords) { ?>
   <meta name="keywords" content="<?php echo $head_keywords;?>"/>
   <?php } ?>
@@ -22,8 +23,6 @@
   <?php if($EXT['archiver_enable']) { ?>
   <link rel="archives" title="<?php echo $DT['sitename'];?>" href="<?php echo $EXT['archiver_url'];?>"/>
   <?php } ?>
-  <link rel="stylesheet" type="text/css" href="<?php echo DT_SKIN;?>style.css"/>
-  <link rel="stylesheet" type="text/css" href="<?php echo DT_SKIN;?>style2.css"/>
   <?php if($moduleid>1) { ?>
   <link rel="stylesheet" type="text/css" href="<?php echo DT_SKIN;?><?php echo $module;?>.css"/>
   <?php } ?>
@@ -35,6 +34,9 @@
   <!--[if lte IE 6]>
   <link rel="stylesheet" type="text/css" href="<?php echo DT_SKIN;?>ie6.css"/>
   <![endif]-->
+  <link rel="stylesheet" type="text/css" href="<?php echo DT_SKIN;?>style_1.css"/>
+  <link rel="stylesheet" type="text/css" href="<?php echo DT_SKIN;?>style.css"/>
+  <link rel="stylesheet" type="text/css" href="<?php echo DT_SKIN;?>style2.css"/>
   <?php if(!DT_DEBUG) { ?><script type="text/javascript">window.onerror=function(){return true;}</script><?php } ?>
   <script type="text/javascript" src="<?php echo DT_STATIC;?>lang/<?php echo DT_LANG;?>/lang.js"></script>
   <script type="text/javascript" src="<?php echo DT_STATIC;?>file/script/config.js"></script>
@@ -147,12 +149,11 @@
   </div>
   <!--SEARCH !!-->
   <div class="bar">
-    <div class="barin">
+    <div class="barin" style="width:1200px;">
       <div class="barin_l">
-          <span class="bar_hover"><a href="http://bozhou.dm67.com/">首页</a></span>
-          <?php $arr = array_slice($MODULE,0,5)?>
-          <?php if(is_array($arr)) { foreach($arr as $m) { ?><?php if($m['ismenu']) { ?>
-          <span <?php if($m['moduleid']==$moduleid) { ?>class="active"<?php } ?> style="width:131px;text-align: center"  class="bar_link"><a href="<?php echo $m['linkurl'];?>"<?php if($m['isblank']) { ?> target="_blank"<?php } ?>><?php echo $m['name'];?></a>
+          <span class="bar_hover" style="background-color:#0e69c5"><a href="<?php echo $MODULE['1']['linkurl'];?>">首页</a></span>
+          <?php if(is_array($MODULE)) { foreach($MODULE as $m) { ?><?php if($m['ismenu']) { ?>
+          <span  style="width:85px;text-align: center"  class="bar_link" ><a href="<?php echo $m['linkurl'];?>"<?php if($m['isblank']) { ?> target="_blank"<?php } ?> <?php if($m['moduleid']==$moduleid) { ?>style="color:#0e69c5"<?php } ?>><?php echo $m['name'];?></a>
 </span>
           <?php } ?><?php } } ?>
       </div>
